@@ -1,3 +1,27 @@
+.mainContentWrapper { // Tabs Menu
+  ::ng-deep .mat-tab-group {
+      .mat-tab-header {
+        width: 10%;
+        @media screen and (max-width: 1440px) {
+          width: 15%;
+          @media screen and (max-width: 1200px) {
+            width: 20%;
+            @media screen and (max-width: 992px) {
+              position: unset !important;
+              height: unset !important;
+              clip-path: ellipse(75% 150% at 50% -50%) !important;
+              width: 100% !important;
+            }
+          }
+        }
+      }
+  }
+  .socialLinks {
+    @media screen and (max-width: 1440px) {
+      left: 6.5vw !important
+    }
+  }
+}
 .aboutResponssiveComponent {
   /* ABOUT DESKTOP || ABOUT DESKTOP || ABOUT DESKTOP || ABOUT DESKTOP */
   .inComponentWrapper {
@@ -546,6 +570,34 @@
                 width: 35%;
                 .mat-expansion-panel {
                   width: 85%;
+                  .mat-expansion-panel-header {
+                    padding: 35px;
+                    .mat-content {
+                      .mat-expansion-panel-header-title {
+                        h1 {
+                          font-size: 1.2rem;
+                        }
+                      }
+                      .mat-expansion-panel-header-description{
+                        h5 {
+                          font-size: .8rem;
+                        }
+                      }
+                      @media screen and (max-width: 1280px) {
+                        .mat-expansion-panel-header-title {
+                          h1 {
+                            font-size: 1.1rem;
+                          }
+                        }
+                        .mat-expansion-panel-header-description{
+                          h5 {
+                            font-size: .7rem;
+                          }
+                        }
+                      }
+
+                    }
+                  }
                   &:not(.mat-expanded) {
                   }
                   .logoWrapper {
