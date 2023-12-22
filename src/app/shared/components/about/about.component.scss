@@ -1,0 +1,371 @@
+.aboutComponent {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  .inComponentWrapper {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: scale(1);
+    @media screen and (min-width: 1366px) {
+      &:hover {
+        .componentHeader:not(:hover) {
+          .headerWrapper {
+            .aboutTitle {
+              .staticTitle {
+                left: 25vw;
+                transition: all 0.6s 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+                opacity: 0;
+              }
+              transition: all 0.6s 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+              opacity: 1;
+              h1,
+              h2,
+              h3 {
+                transition: color 0.4s 0.1s
+                  cubic-bezier(0.455, 0.03, 0.515, 0.955);
+                color: #ecfdfb;
+              }
+              .textCarouselWrapper {
+                width: 33%;
+                position: relative;
+                transition: left 0.45s 0.8s
+                    cubic-bezier(0.455, 0.03, 0.515, 0.955),
+                  top 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+                  opacity 0.3s 0.9s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+                opacity: 1;
+                .textWrapper {
+                  .carouselText {
+                    opacity: 1;
+                    position: relative;
+                    h1 {
+                      color: #02fef6;
+                    }
+                    .animateHeader {
+                      div {
+                        animation: animateInfiniteText 4s infinite forwards
+                          cubic-bezier(0.455, 0.03, 0.515, 0.955);
+                      }
+                      .delay1 {
+                        animation-delay: 0.4s;
+                      }
+                      .delay2 {
+                        animation-delay: 1.4s;
+                      }
+                      .delay3 {
+                        animation-delay: 2.4s;
+                      }
+                      .delay4 {
+                        animation-delay: 3.4s;
+                      }
+                      @keyframes animateInfiniteText {
+                        0% {
+                          transform: translateY(130px);
+                          opacity: 0;
+                        }
+                        50% {
+                          transform: translateY(0);
+                          opacity: 1;
+                        }
+                        75% {
+                          transform: translateY(-55px);
+                          opacity: 0;
+                        }
+                        100% {
+                          transform: translateY(-185px);
+                          opacity: 0;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .headerOverlay {
+              transition: left 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+              .aboutImg {
+                .imgWrapper {
+                  transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+                  top: 8px;
+                  transform: scale(0.99) translateY(0);
+                  .aboutImageBackground {
+                    transition: border-radius 0.3s
+                    cubic-bezier(0.47, 0, 0.745, 0.715),
+                  background-color 0.4s 0.2s cubic-bezier(0.39, 0.575, 0.565, 1),
+                  box-shadow 0.3s .2s cubic-bezier(0.23, 1, 0.320, 1);
+                    animation-play-state: paused;
+                    background-color: #1d062e1f;
+                    border-radius: 50%;
+                    box-shadow: 1px 2px 15px -2px #02fef630;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .componentContent {
+          .aboutContent {
+            .portfolioBtn {
+              transition: top 0.2s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
+              top: 0;
+              button {
+                transition: opacity 0.4s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+    }
+    .componentHeader {
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: background-color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+        width 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+        transform 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      width: 100%;
+      padding: 40px 0 0 0;
+      .headerWrapper {
+        position: relative;
+        width: 100%;
+        .aboutTitle {
+          transition: all 0.6s 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          position: absolute;
+          width: 100%;
+          max-height: fit-content;
+          line-height: 1.5;
+          z-index: 3;
+          h1,
+          h2,
+          h3 {
+            transition: color 0.2s 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            color: #fffade;
+          }
+          h1 {
+            font-size: 2.4rem;
+          }
+          h2 {
+            font-size: 2.3rem;
+          }
+          h3 {
+            font-size: 2.2rem;
+          }
+          .staticTitle {
+            //Jonathan Daniel....
+            position: relative;
+            transition: opacity 0.6s 0.4s
+              cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            opacity: 1;
+            z-index: 5;
+            font-family: "Raleway", sans-serif;
+            span {
+              color: #02fef6;
+              position: relative;
+              font-size: 1.1rem;
+              font-weight: 100;
+              padding: 0;
+              bottom: 10px;
+              left: 0%;
+            }
+          }
+          .textCarouselWrapper {
+            position: relative;
+            transition: left 0.2s 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+              top 0.2s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+              opacity 0.3s 0.02s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+            width: 100%;
+            .staticTextDiv {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              .textWrapper {
+                position: relative;
+                top: 0;
+                margin: 0;
+                bottom: 0;
+                overflow: hidden;
+                .carouselText {
+                  position: relative;
+                  height: 5vh;
+                  padding: 5px 0;
+
+                  // top: 15px;
+                  .animateHeader {
+                    // actual changing text
+                    position: relative;
+                    height: 100%;
+                    top: 10px;
+                    h1 {
+                      text-align: left;
+                    }
+                    div {
+                      position: absolute;
+                      opacity: 0;
+                      bottom: 0;
+                      right: 0;
+                      left: 0;
+                    }
+                  }
+                }
+              }
+              h1 {
+                font-size: 2.8rem;
+                position: relative;
+              }
+            }
+          }
+        }
+
+        .headerOverlay {
+          position: relative;
+          line-height: 1.5;
+          left: 18%;
+          padding: 45px 0;
+          top: 0;
+          z-index: 4;
+          transition: background-color 0.35s
+              cubic-bezier(0.445, 0.05, 0.55, 0.95),
+            width 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+            transform 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+            left 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+          .aboutImg {
+            .imgWrapper {
+              transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+              position: relative;
+              top: 0;
+              transform: scale(1) translateY(0%);
+              .aboutImageBackground {
+                transition: border-radius 0.3s
+                    cubic-bezier(0.47, 0, 0.745, 0.715),
+                  background-color 0.4s 0.2s cubic-bezier(0.39, 0.575, 0.565, 1),
+                  box-shadow 0.3s
+                  cubic-bezier(0.47, 0, 0.745, 0.715);
+                border-radius: 10%;
+                box-shadow: 0px 0px 8px -1px #ffffff72;
+                width: 250px;
+                height: 250px;
+                position: relative;
+                background-image: url("../../../../assets/images/jonathan_daniel_facebook.jpeg");
+                background-repeat: no-repeat;
+                background-position: 50% 10%;
+                background-size: 180% 180%;
+                background-blend-mode: multiply;
+                animation: aboutImageAnimate 20s ease-in-out infinite;
+                @keyframes aboutImageAnimate {
+                  0% {
+                    background-size: 180% 180%;
+                  }
+                  25% {
+                    background-position: 50% 20%;
+                    background-size: 172% 172%;
+                  }
+                  50% {
+                    background-position: 50% 10%;
+                    background-size: 160% 160%;
+                  }
+                  75% {
+                    background-position: 50% 15%;
+                    background-size: 175% 175%;
+                  }
+                  100% {
+                    background-position: 50% 10%;
+                    background-size: 180% 180%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .componentContent {
+      font-weight: 300;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      .aboutContent {
+        padding: 0 0 25px 0;
+        position: relative;
+        transition: top 0.2s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
+        top: 0;
+        &:hover {
+          .aboutText {
+            .aboutSummery {
+              p {
+                color: #ecfdfb;
+              }
+            }
+          }
+        }
+        .aboutText {
+          position: relative;
+          width: 100%;
+          margin: auto 0 0 18%;
+          .aboutSummery {
+            width: 55%;
+            p {
+              transition: color 0.15s cubic-bezier(0.47, 0, 0.745, 0.715);
+              font-weight: 200;
+              width: 75%;
+              @media screen and (max-width: 992px) {
+                font-size: smaller;
+              }
+              &:hover {
+                color: #02fef6;
+              }
+              &:not(:hover) {
+                color: #ecfdfb;
+              }
+            }
+          }
+        }
+        .portfolioBtn {
+          transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+          position: relative;
+          left: 0;
+          top: 15px;
+          width: 65%;
+          button {
+            opacity: 0;
+            cursor: pointer;
+            padding: 10px;
+            font-size: large;
+            border-radius: 0.3em;
+            border: none;
+            width: 20%;
+            background-color: transparent;
+            color: #02fef6;
+            border: 1px solid #02fef6;
+            font-weight: 100;
+            transition: all 0.215s cubic-bezier(0.47, 0, 0.745, 0.715) !important;
+            &:hover {
+              color: #160426;
+              border-color: #02fef653;
+              background-color: #fffadedb;
+              box-shadow: 0 2px 25px -2px #02fef6a9;
+            }
+            @media screen and (max-width: 992px) {
+              font-size: smaller;
+            }
+          }
+        }
+      }
+    }
+    .externalLinksDiv {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      transform: translateY(65%);
+      @media screen and (max-width: 992px) {
+        touch-action: auto;
+        transform: translateY(20%) scale(0.8);
+      }
+    }
+  }
+}

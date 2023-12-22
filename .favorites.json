@@ -1,0 +1,18 @@
+[
+    {
+        "type": "Group",
+        "name": "current_services",
+        "parent_id": null,
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "63CUEzZ5Qdv9Xqxa"
+    },
+    {
+        "type": "File",
+        "name": "/Volumes/Media Drive/Development/Projects/wewebs/Angular/src/app/core/services/api.service.ts",
+        "parent_id": "63CUEzZ5Qdv9Xqxa",
+        "workspaceRoot": "/Volumes/Media Drive/Development/Projects/wewebs/Angular",
+        "workspacePath": "src/app/core/services/api.service.ts",
+        "id": "Ru7IsbGX3D1Zop6a"
+    }
+]

@@ -1,0 +1,651 @@
+.aboutResponssiveComponent {
+  /* ABOUT DESKTOP || ABOUT DESKTOP || ABOUT DESKTOP || ABOUT DESKTOP */
+  .inComponentWrapper {
+    &:hover {
+      .componentHeader:not(:hover) {
+        .headerWrapper {
+          .aboutTitle {
+            left: 5%;
+            .textCarouselWrapper {
+              left: 26%;
+              @media screen and (max-width: 1600px) {
+                left: 30%;
+                @media screen and (max-width: 1440px) {
+                  left: 36%;
+                  @media screen and (max-width: 1366px) {
+                    @media screen and (max-width: 1280px) {
+                      @media screen and (max-width: 992px) {
+                        @media screen and (max-width: 768px) {
+                          @media screen and (max-width: 544px) {
+                            @media screen and (max-width: 460px) {
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              @media screen and (min-width: 1920px) {
+                left: 28%;
+                @media screen and (min-width: 2560px) {
+                  left: 26%;
+                }
+              }
+              .staticTextDiv {
+                @media screen and (max-width: 1600px) {
+                  @media screen and (max-width: 1440px) {
+                    top: 2vh;
+                    @media screen and (max-width: 1366px) {
+                      @media screen and (max-width: 1280px) {
+                        @media screen and (max-width: 992px) {
+                          @media screen and (max-width: 768px) {
+                            @media screen and (max-width: 544px) {
+                              @media screen and (max-width: 460px) {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  @media screen and (min-width: 1920px) {
+                    top: -2vh;
+                    @media screen and (min-width: 2560px) {
+                      top: -3vh;
+                    }
+                  }
+                }
+                .textWrapper {
+                  // style of changing carousel text box >>
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .componentHeader {
+      .headerWrapper {
+        .aboutTitle {
+          position: absolute;
+          top: 0;
+          left: 5%;
+          .staticTitle {
+            left: 28%;
+            @media screen and (min-width: 1920px) {
+              h1 {
+                font-size: 3.2rem;
+              }
+              top: 12vh;
+            }
+            @media screen and (max-width: 1920px) {
+              h1 {
+                font-size: 2.8rem;
+              }
+              left: 28%;
+              top: 10vh;
+              @media screen and (max-width: 1600px) {
+                h1 {
+                  font-size: 2.6rem;
+                }
+                left: 30%;
+                top: 15vh;
+                @media screen and (max-width: 1440px) {
+                  h1 {
+                    font-size: 2.4rem;
+                  }
+                  left: 36%;
+                  top: 16vh;
+                  @media screen and (max-width: 1366px) {
+                    h1 {
+                      font-size: 2.2rem;
+                    }
+                    left: 38%;
+                    @media screen and (max-width: 1280px) {
+                      h1 {
+                        font-size: 2rem;
+                      }
+                      left: 40%;
+                      top: 8vh;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .textCarouselWrapper {
+            opacity: 0;
+            bottom: 0;
+            left: 25%;
+            .staticTextDiv {
+              @media screen and (max-width: 1920px) {
+                @media screen and (max-width: 1600px) {
+                  @media screen and (max-width: 1440px) {
+                    top: 2vh;
+                    @media screen and (max-width: 1366px) {
+                      @media screen and (max-width: 1280px) {
+                      }
+                    }
+                  }
+                }
+              }
+              @media screen and (min-width: 1920px) {
+                top: -2vh;
+                @media screen and (min-width: 2560px) {
+                  top: -3vh;
+                }
+              }
+              h1 {
+                @media screen and (min-width: 1920px) {
+                  font-size: 2.6rem;
+                  @media screen and (min-width: 2560px) {
+                  }
+                }
+                @media screen and (max-width: 1920px) {
+                  font-size: 2.4rem;
+                  @media screen and (max-width: 1600px) {
+                    @media screen and (max-width: 1440px) {
+                      font-size: 2.2rem;
+                      @media screen and (max-width: 1366px) {
+                        font-size: 2rem;
+                        @media screen and (max-width: 1280px) {
+                          font-size: 1.8rem;
+                          @media screen and (max-width: 992px) {
+                            font-size: 1.6rem;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .textWrapper {
+              .carouselText {
+                height: 1vh;
+                padding: 10px 0;
+                .animateHeader {
+                  h1:nth-child(n) {
+                    font-size: 3rem;
+                    font-weight: 100;
+                  }
+                }
+                @media screen and (max-width: 1920px) {
+                  height: 2vh;
+                  .animateHeader {
+                    h1:nth-child(n) {
+                      font-size: 2.8rem;
+                    }
+                  }
+                  @media screen and (max-width: 1600px) {
+                    height: 3vh;
+                    .animateHeader {
+                      h1:nth-child(n) {
+                        font-weight: 600;
+                        font-size: 2.6rem;
+                      }
+                    }
+                    @media screen and (max-width: 1440px) {
+                      height: 4vh;
+                      .animateHeader {
+                        h1:nth-child(n) {
+                          font-size: 2.4rem;
+                        }
+                      }
+                      @media screen and (max-width: 1366px) {
+                        height: 5vh;
+                        .animateHeader {
+                          h1:nth-child(n) {
+                            font-size: 2.2rem;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                @media screen and (min-width: 1920px) {
+                  font-size: 1.2rem;
+                  @media screen and (min-width: 2560px) {
+                    font-size: 1.4rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .headerOverlay {
+        .aboutImg {
+          .imgWrapper {
+            .aboutImageBackground {
+              width: 185px;
+              height: 185px;
+              @media screen and (min-width: 1366px) {
+                width: 200px;
+                height: 200px;
+                @media screen and (min-width: 1600px) {
+                  width: 220px;
+                  height: 220px;
+                  @media screen and (min-width: 1921px) {
+                    height: 250px;
+                    width: 250px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .componentContent {
+      .aboutContent {
+        .aboutText {
+          .aboutSummery {
+            p {
+              @media screen and (max-width: 1920px) {
+                width: 80%;
+                font-size: 1.1rem;
+                @media screen and (max-width: 1600px) {
+                  @media screen and (max-width: 1440px) {
+                    width: 95%;
+                    @media screen and (max-width: 1366px) {
+                      font-size: 1rem;
+                      @media screen and (max-width: 1280px) {
+                        @media screen and (max-width: 992px) {
+                          @media screen and (max-width: 768px) {
+                            @media screen and (max-width: 544px) {
+                              @media screen and (max-width: 460px) {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              @media screen and (min-width: 1920px) {
+                font-size: 1.2rem;
+                @media screen and (min-width: 2560px) {
+                  font-size: 1.4rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* ABOUT MOBILE || ABOUT MOBILE || ABOUT MOBILE || ABOUT MOBILE */
+}
+
+.portfolioResponssiveComponent {
+  /* PORTFOLIO DESKTOP || PORTFOLIO DESKTOP || PORTFOLIO DESKTOP || PORTFOLIO DESKTOP */
+  .inComponentWrapper {
+    .componentHeader {
+      @media screen and (max-width: 1440px) {
+        right: 5%;
+      }
+      @media screen and (max-width: 1366px) {
+        height: 22% !important;
+      }
+      .topPortfolioTitle {
+        @media screen and (max-width: 1600px) {
+          h1 {
+            font-size: 3.2rem !important;
+          }
+          h3 {
+            font-size: 0.8rem !important;
+          }
+          @media screen and (max-width: 1366px) {
+            h1 {
+              font-size: 3rem !important;
+            }
+            h3 {
+              font-size: 0.7rem !important;
+            }
+            @media screen and (max-width: 1024px) {
+              h1 {
+                font-size: 2.8rem !important;
+              }
+              h3 {
+                font-size: 0.5rem !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    .componentContent {
+      @media screen and (max-width: 1440px) {
+        right: 5%;
+      }
+      .portfolioBlock {
+        .portfolioCardsWrapper {
+          .mat-card {
+            mat-card-title {
+              @media screen and (max-width: 1600px) {
+                h1 {
+                  font-size: 90%;
+                }
+                span {
+                  font-size: 70%;
+                }
+                @media screen and (max-width: 1366px) {
+                  h1 {
+                    font-size: 95%;
+                  }
+                  span {
+                    font-size: 75%;
+                  }
+                  @media screen and (max-width: 1024px) {
+                    h1 {
+                      font-size: 95%;
+                    }
+                    span {
+                      font-size: 75%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .contentWrapper {
+            .rightContent,
+            .leftContent {
+              .cardText {
+                .textContainer {
+                  width: 95%;
+                  .desc {
+                    p {
+                      font-size: 115%;
+                      @media screen and (max-width: 1600px) {
+                        font-size: 100%;
+                      }
+                    }
+                  }
+                  @media screen and (max-width: 1600px) {
+                    width: 85%;
+                    @media screen and (max-width: 1440px) {
+                      @media screen and (max-width: 1366px) {
+                        @media screen and (max-width: 1280px) {
+                          @media screen and (max-width: 992px) {
+                            @media screen and (max-width: 768px) {
+                              @media screen and (max-width: 544px) {
+                                @media screen and (max-width: 460px) {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              .cardImage {
+                .imageOverlay {
+                  width: 100%;
+                  flex-grow: 1;
+                  aspect-ratio: 16/9;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+                .imageWrap {
+                  width: 100%;
+                  img {
+                    width: 560px;
+                    flex-grow: 1;
+                    aspect-ratio: 16/9;
+                    border-radius: 1em;
+                    @media screen and (max-width: 1600px) {
+                      width: 460px;
+                      @media screen and (max-width: 1440px) {
+                        width: 350px;
+                        @media screen and (max-width: 1366px) {
+                          @media screen and (max-width: 1280px) {
+                            width: 380px;
+                            @media screen and (max-width: 992px) {
+                              @media screen and (max-width: 768px) {
+                                @media screen and (max-width: 544px) {
+                                  @media screen and (max-width: 460px) {
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /* PORTFOLIO MOBILE || PORTFOLIO MOBILE || PORTFOLIO MOBILE || PORTFOLIO MOBILE */
+}
+
+.experienceResponssiveComponent {
+  /* EXPERIENCE DESKTOP || EXPERIENCE DESKTOP || EXPERIENCE DESKTOP || EXPERIENCE DESKTOP */
+  .inComponentWrapper {
+    .componentHeader {
+      .workTitle {
+        @media screen and (min-width: 1920px) {
+          h1 {
+            font-size: 3.2rem;
+          }
+          @media screen and (min-width: 2560px) {
+            h1 {
+              font-size: 3.8rem;
+            }
+          }
+        }
+        @media screen and (max-width: 1920px) {
+          h1 {
+            font-size: 2.8rem;
+          }
+          h3 {
+          }
+          @media screen and (max-width: 1600px) {
+            @media screen and (max-width: 1440px) {
+              @media screen and (max-width: 1366px) {
+                @media screen and (max-width: 1280px) {
+                  @media screen and (max-width: 992px) {
+                    @media screen and (max-width: 768px) {
+                      @media screen and (max-width: 544px) {
+                        @media screen and (max-width: 460px) {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .leftSideWorkComponent {
+      .componentHeader {
+        .workTitle {
+          @media screen and (min-width: 1601px) {
+            top: 60%;
+          }
+          @media screen and (max-width: 1600px) {
+            @media screen and (max-width: 1440px) {
+              top: 55%;
+              height: 20%;
+              left: 8.5vw;
+              h1 {
+                font-size: 2.6rem;
+              }
+              h3 {
+                font-size: .8rem;
+              }
+              @media screen and (max-width: 1366px) {
+                h1 {
+                  font-size: 2.4rem;
+                }
+                h3 {
+                  font-size: .8rem;
+                }
+                @media screen and (max-width: 1280px) {
+                  @media screen and (max-width: 992px) {
+                    @media screen and (max-width: 768px) {
+                      @media screen and (max-width: 544px) {
+                        @media screen and (max-width: 460px) {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .componentContent {
+        .workDiv {
+          position: relative;
+          @media screen and (max-width: 1600px) {
+            position: relative;
+            left: 9vw;
+            @media screen and (max-width: 1440px) {
+              left: 6.5vw;
+              @media screen and (max-width: 1366px) {
+                @media screen and (max-width: 1280px) {
+                  @media screen and (max-width: 992px) {
+                    @media screen and (max-width: 768px) {
+                      @media screen and (max-width: 544px) {
+                        @media screen and (max-width: 460px) {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+
+          ::ng-deep mat-accordion {
+            @media screen and (max-width: 1600px) {
+              margin: 0;
+              width: 45%;
+             .mat-expansion-panel {
+                width: 65%;
+              }
+              @media screen and (max-width: 1440px) {
+                width: 35%;
+                .mat-expansion-panel {
+                  width: 85%;
+                  &:not(.mat-expanded) {
+                  }
+                  .logoWrapper {
+                    img {
+                    }
+                  }
+                  .mat-expanded {
+                    .mat-expansion-indicator {
+                    }
+                  }
+                }
+                @media screen and (max-width: 1366px) {
+                  @media screen and (max-width: 1280px) {
+                    @media screen and (max-width: 992px) {
+                      @media screen and (max-width: 768px) {
+                        @media screen and (max-width: 544px) {
+                          @media screen and (max-width: 460px) {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .rightSideWorkComponent {
+      @media screen and (min-width: 1601px) {
+        right: 15%;
+      }
+      @media screen and (max-width: 1600px) {
+        right: 10%;
+        @media screen and (max-width: 1440px) {
+          @media screen and (max-width: 1366px) {
+            @media screen and (max-width: 1280px) {
+              @media screen and (max-width: 992px) {
+                @media screen and (max-width: 768px) {
+                  @media screen and (max-width: 544px) {
+                    @media screen and (max-width: 460px) {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .workExperienceChart {
+        .chartsContainer {
+          // width: 85%;
+        }
+      }
+    }
+  }
+
+  // @media screen and (min-width: 1024px) {
+  //   background-color: aqua;
+  //   .aboutComponent {
+  //     background-color: chartreuse;
+  //   }
+  // }
+}
+
+.contactResponssiveComponent {
+  @media screen and (min-width: 1024px) {
+    background-color: aqua;
+    .aboutComponent {
+      background-color: chartreuse;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    background-color: red;
+  }
+}
+
+//! READY FOR USE BREAKPOINTS
+// @media screen and (min-width: 1240px) {
+//   @media screen and (min-width: 1366px) {
+//     @media screen and (min-width: 1440px) {
+//       @media screen and (min-width: 1600px) {
+//         @media screen and (min-width: 1800px) {
+//           @media screen and (min-width: 1920px) {
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 1024px) {
+//   @media screen and (max-width: 992px) {
+//     @media screen and (max-width: 768px) {
+//       @media screen and (max-width: 544px) {
+//         @media screen and (max-width: 460px) {
+//         }
+//       }
+//     }
+//   }
+// }
+//! READY FOR USE BREAKPOINTS

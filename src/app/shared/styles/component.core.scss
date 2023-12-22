@@ -1,0 +1,26 @@
+@import "./animations.core.scss";
+@import "./breakpoints.core.scss";
+
+.componentContainer {
+  width: 100%;
+  overflow-x: hidden;
+  cursor: default;
+  @media screen and (max-width: 1440px) {
+    position: relative;
+    // align-items: center;
+    @media screen and (max-width: 1336px) {
+    }
+  }
+
+
+  .inComponentWrapper{
+    max-height: 100%;
+  }
+  ::ng-deep .mat-expansion-indicator {
+    padding: 0;
+    color: #1c052d5b;
+    &::after {
+      padding: 4px;
+    }
+  }
+}

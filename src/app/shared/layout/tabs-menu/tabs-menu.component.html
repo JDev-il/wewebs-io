@@ -1,0 +1,83 @@
+<div class="navigator-top" [ngClass]="isNavigatorsFxEnd ? '' : 'initNavigatorsFx'">
+  <button
+    (click)="nextPreviousTab('prev')"
+    [disabled]="changeCurrentTab === 0"
+    [ngClass]="{ 'tab-block': changeCurrentTab === 3 }"
+  >
+    &lsaquo;
+  </button>
+</div>
+<div class="navigator-bottom" [ngClass]="isNavigatorsFxEnd ? '' : 'initNavigatorsFx'">
+  <button
+    (click)="nextPreviousTab('next')"
+    [disabled]="changeCurrentTab === 3"
+    [ngClass]="{ 'tab-block': changeCurrentTab === 0 }"
+  >
+    &rsaquo;
+  </button>
+</div>
+<div
+  class="mainContentWrapper"
+  [ngClass]="isSideBarFxEnd ? '' : 'initSidebarFx'"
+  Animations
+  [pageName]="'sidebar'"
+>
+  <div
+    class="socialLinks"
+    [ngClass]="!isSideBarFxEnd ? 'incominglLinksFx' : ''"
+  >
+    <a target="_blank" href="https://linkedin.com/in/jonathan-daniel">
+      <img src="https://bit.ly/3jmPuoM" alt="LinkedIn" title="LinkedIn" />
+    </a>
+    <a target="_blank" href="https://github.com/jdev-il">
+      <img src="https://bit.ly/3WzbM5b" alt="GitHub" title="GitHub" />
+    </a>
+    <a target="_blank" href="https://facebook.com/yonatan.daniel.1">
+      <img src="https://bit.ly/3v8pa4I" alt="Facebook" title="Facebook" />
+    </a>
+  </div>
+  <div
+    class="jdev-logo"
+    [ngClass]="!isSideBarFxEnd ? 'incominglLogoFx' : ''"
+  ></div>
+  <div class="resumeBtn" [ngClass]="!isSideBarFxEnd ? 'downloadButtonFx' : ''">
+    <button
+      matButton
+      (click)="downloadFile()"
+      [disabled]="isDownloaded ? true : null"
+      [ngClass]="isDownloaded ? 'disabled' : ''"
+    >
+      Resume
+    </button>
+  </div>
+  <mat-tab-group
+    [selectedIndex]="changeCurrentTab"
+    (selectedTabChange)="changeTab($event)"
+    #tabGroup
+  >
+    <mat-tab label="About">
+      <ng-template matTabContent>
+        <About (changeTab)="setTabChange($event)"></About>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Portfolio" #matTabHeader>
+      <ng-template matTabContent
+        ><Portfolio [currentTabIndex]="tabIndex"></Portfolio
+      ></ng-template>
+    </mat-tab>
+    <mat-tab label="Experience">
+      <ng-template matTabContent><Experience></Experience></ng-template>
+    </mat-tab>
+    <mat-tab label="Contact">
+      <ng-template matTabContent><Contact></Contact></ng-template>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="rightSideText">
+    <div
+      class="verticalFloatingDiv"
+      [ngClass]="!isSideBarFxEnd ? 'incominglLinksFx' : ''"
+    >
+      <a href="mailto:jdwork2021@gmail.com">jdwork2021@gmail.com</a>
+    </div>
+  </div>
+</div>

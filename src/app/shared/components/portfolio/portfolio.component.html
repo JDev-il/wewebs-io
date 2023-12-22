@@ -1,0 +1,67 @@
+<div
+  class="portfolioComponent portfolioResponssiveComponent componentContainer simpleFadeIn"
+  Animations
+  [pageName]="'portfolio'"
+>
+  <div class="inComponentWrapper">
+    <div class="componentHeader">
+      <div class="topPortfolioTitle">
+        <h1>PORTFOLIO</h1>
+        <h3>Projects & Features</h3>
+      </div>
+    </div>
+    <div class="componentContent">
+      <div class="portfolioBlock" cdkScrollable #scrollElement>
+        <div class="portfolioCardsWrapper">
+          <div *ngFor="let project of projects; let i = index">
+            <mat-card>
+              <mat-card-title>
+                  <div class="company-info">
+                    <div class="img-protector">
+                      <img src='{{project.logo}}' alt="">
+                      <div class="mask"></div>
+                    </div>
+                    <h1>{{ project.company }}</h1>
+                  </div>
+              </mat-card-title>
+              <div *ngFor="let projectData of project.projects; let j = index">
+                <mat-card-content>
+                  <div class="contentWrapper">
+                    <div
+                      [ngClass]="j % 2 == 0 ? 'rightContent' : 'leftContent'"
+                    >
+                      <div class="cardText">
+                        <div class="textContainer">
+                          <div class="title">
+                            <h1>{{ projectData.title }}</h1>
+                          </div>
+                          <div class="desc">
+                            <p>{{ projectData.desc.join(" ") }}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardImage">
+                        <div class="imageOverlay"></div>
+                        <div class="imageWrap">
+                          <img
+                            mat-card-image
+                            src="{{ projectData.image }}"
+                            alt="{{ projectData.company | lowercase }}"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cardIcons"></div>
+                </mat-card-content>
+                <div class="lineBreak">
+                  <div class="border"></div>
+                </div>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+.initSidebarFx {
+  ::ng-deep .mat-tab-group {
+    .mat-tab-header {
+      animation: initSidebar both 1.6s 4.8s
+        cubic-bezier(0.785, 0.135, 0.15, 0.96);
+
+      @keyframes initSidebar {
+        0% {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+      }
+    }
+  }
+}
+
+.initNavigatorsFx {
+  animation: initNavigators 1.8s 4.8s
+    cubic-bezier(0.785, 0.135, 0.15, 0.96);
+    transform: translateY(-110px);
+    opacity: 0;
+  @keyframes initNavigators {
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+.incominglLogoFx  {
+  animation: logoInFx 1.2s 5.2s both ease-in-out;
+  transform: translateX(-85%);
+  @keyframes logoInFx {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+}
+.downloadButtonFx  {
+  animation: downloadButton 1.4s 4.8s both cubic-bezier(0.215, 0.610, 0.355, 1);
+  transform: translateX(50%);
+  @keyframes downloadButton {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+}
+.incominglLinksFx {
+  animation: moveInLinksFx 2.2s 4s both ease-in-out;
+  opacity: 0;
+  @keyframes moveInLinksFx {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(85%);
+    }
+    75% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}
+
+

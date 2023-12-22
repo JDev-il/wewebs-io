@@ -1,0 +1,105 @@
+<div
+  class="aboutComponent aboutResponssiveComponent componentContainer"
+  Animations
+  [pageName]="'about'"
+>
+  <div
+    class="inComponentWrapper"
+    [ngClass]="{ componentWrapperFx: !isAboutTitleFxEnd }"
+  >
+    <div class="componentHeader">
+      <div class="headerWrapper">
+        <div
+          class="headerOverlay"
+          [ngClass]="
+            isAboutTitleFxEnd ? 'headerOverlayAfterFx' : 'overlayAnimation'
+          "
+        >
+          <div
+            class="aboutImg"
+            [ngClass]="isAboutTitleFxEnd ? 'postAboutImgFx' : ''"
+          >
+            <div class="imgWrapper">
+              <div class="aboutImageBackground"></div>
+            </div>
+          </div>
+        </div>
+        <div class="aboutTitle">
+          <div
+            class="staticTitle"
+            [ngClass]="
+              !isAboutTitleFxEnd ? 'staticTitleFx' : 'postStaticTitleFx'
+            "
+          >
+            <h1>Jonathan Daniel</h1>
+            <div [ngClass]="
+            !isAboutTitleFxEnd ? 'awaiting-title' : ''">
+              <span>Software Developer</span>
+            </div>
+          </div>
+          <div
+            [ngClass]="isAboutTitleFxEnd ? 'postAboutTitleFx' : 'moveTitleFx'"
+            *ngIf="!isAboutTitleFxEnd; else textcarousel"
+          >
+            <h1 [ngClass]="isAboutTitleFxEnd ? '' : 'showUpFx'">Hi!</h1>
+            <h2 [ngClass]="isAboutTitleFxEnd ? '' : 'showUpFx2'">
+              My name is Jonathan,
+            </h2>
+            <h3 [ngClass]="isAboutTitleFxEnd ? '' : 'showUpFx3'">
+              welcome to...
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="componentContent">
+      <div
+        class="aboutContent"
+        [ngClass]="isAboutTitleFxEnd ? 'postAboutContentFx' : 'moveInTextFx'"
+        (mouseenter)="fillHeader = true"
+        (mouseleave)="fillHeader = false"
+      >
+        <div class="aboutText">
+          <div class="aboutSummery" *ngFor="let summery of aboutData?.summery">
+            <p>
+              {{ summery }}
+            </p>
+            <br />
+          </div>
+
+          <div class="portfolioBtn">
+            <button (click)="viewPortfolio()">View Portfolio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #textcarousel>
+  <div class="textCarouselWrapper">
+    <div class="staticTextDiv">
+      <h1>I write</h1>
+      <div class="textWrapper">
+        <div class="carouselText">
+          <div class="animateHeader">
+            <div class="delay1">
+              <h1>efficient</h1>
+            </div>
+            <div class="delay2">
+              <h1>responsive</h1>
+            </div>
+            <div class="delay3">
+              <h1>readable</h1>
+            </div>
+            <div class="delay4">
+              <h1>clean</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1>code.</h1>
+    </div>
+  </div>
+</ng-template>

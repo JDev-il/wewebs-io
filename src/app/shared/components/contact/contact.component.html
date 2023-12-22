@@ -1,0 +1,101 @@
+<div class="componentContainer contactComponent simpleFadeIn">
+  <div class="inComponentWrapper">
+    <div class="leftWrapper">
+      <div class="contactWelcome">
+        <div class="contactDiv">
+          <div class="contactTitle">
+            <h1>LET'S TALK</h1>
+            <img src="../../../../assets/images/icons/talk-icon.svg" alt="" />
+          </div>
+          <div class="contactText">
+            <p>I really look forward having a conversation with you</p>
+            <p>so here are several ways you can reach me:</p>
+          </div>
+          <div class="contactOptionsDiv">
+            <div class="contactOption">
+              <div class="horizontalLine"></div>
+              <div class="optionDetails">
+                <a target="_blank" href="mailto:jdwork2021@gmail.com"
+                  >via Email (dm) <mat-icon>email</mat-icon></a
+                >
+              </div>
+            </div>
+            <div class="contactOption">
+              <div class="horizontalLine"></div>
+              <div class="optionDetails">
+                <a target="_blank" href="tel:0504424000"
+                  >via Phone<mat-icon>smartphone</mat-icon></a
+                >
+              </div>
+            </div>
+            <div class="contactOption">
+              <div class="horizontalLine"></div>
+              <div class="optionDetails">
+                <a
+                  target="_blank"
+                  href="https://api.whatsapp.com/send/?phone=%2B972504424000&text&type=phone_number&app_absent=0"
+                  >via WhatsApp (dm)<mat-icon
+                    ><img
+                      src="../../../../assets/images/icons/whatsapp-icon.svg"
+                      alt="" /></mat-icon
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rightWrapper">
+      <div class="contactActions">
+        <div class="contactForm">
+          <div class="formContainer">
+            <div class="formOverlay"></div>
+            <div class="innerFormContainer">
+              <div class="introMessage">
+                <h3>Or send me a message <mat-icon>mail</mat-icon></h3>
+              </div>
+              <form
+                [formGroup]="messageForm"
+                (ngSubmit)="sendForm(messageForm.value)"
+              >
+                <mat-form-field appearance="standard" hideRequiredMarker>
+                  <mat-label>To whom shall I reply to?</mat-label>
+                  <input
+                    autocomplete="off"
+                    matInput
+                    placeholder="Your name maybe..?"
+                    type="text"
+                    formControlName="name"
+                  />
+                </mat-form-field>
+                <mat-form-field appearance="standard" hideRequiredMarker>
+                  <mat-label>How can I reach you back?</mat-label>
+                  <input
+                    autocomplete="off"
+                    matInput
+                    placeholder="An email sounds awesome.. :)"
+                    type="email"
+                    formControlName="email"
+                  />
+                </mat-form-field>
+                <mat-form-field class="textAreaFormField">
+                  <mat-label>A comment, a feedback, anything really..</mat-label>
+                  <textarea matInput></textarea>
+                </mat-form-field>
+                <div class="btnDiv">
+                  <button
+                    type="submit"
+                    class="matBtn"
+                    [disabled]="!messageForm.valid"
+                  >
+                    Send Messages
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

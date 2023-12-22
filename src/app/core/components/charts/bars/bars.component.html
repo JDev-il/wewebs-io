@@ -1,0 +1,16 @@
+<div class="barChartContainer">
+  <div class="upperDiv">
+    <h1>{{ currentBarCompany }}</h1>
+  </div>
+  <div class="lowerDiv">
+    <div class="barChart">
+      <p-chart #imgEl
+        type="bar"
+        [data]="basicData"
+        [options]="basicOptions"
+        height="30vh"
+        width="35vw"
+      ></p-chart>
+    </div>
+  </div>
+</div>
