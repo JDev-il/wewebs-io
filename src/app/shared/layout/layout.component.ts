@@ -1,25 +1,20 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-container',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
 
-  @ViewChild('pages') pages!: ElementRef;
+  constructor(){}
 
   next!: number;
-  initialDataSubscriber!: Subscription;
 
-  constructor(@Inject(DOCUMENT) public document: any) {}
-
-  ngOnInit(): void {}
-
-  pageNumber(num: any) {
-    return this.next = num
+  pageNumber(num: number) {
+    this.next = num;
   }
 
 }

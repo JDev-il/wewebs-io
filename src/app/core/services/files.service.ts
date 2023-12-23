@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -7,14 +7,17 @@ import { Injectable } from '@angular/core';
 
 export class FilesService {
 
-  constructor(private http: HttpClient) { }
+  private anchor!: HTMLAnchorElement;
 
-  downloadFile() {
-    let link: HTMLAnchorElement = document.createElement('a');
-    link.setAttribute('type', 'hidden');
+  constructor(@Inject(DOCUMENT) public document: Document) {
+    const link: HTMLAnchorElement = this.document.createElement('a');
     link.href = 'https://firebasestorage.googleapis.com/v0/b/jdev-il.appspot.com/o/files%2Fjonathan-daniel-cv.docx?alt=media&token=80a95472-58d9-4630-a790-162792fbca44';
-    link.click();
-    link.remove();
+    this.anchor = link;
+  }
+
+  public downloadFile() {
+    this.anchor.click();
+    this.anchor.remove()
   }
 
 }

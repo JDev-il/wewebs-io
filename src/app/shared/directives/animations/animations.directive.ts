@@ -20,7 +20,7 @@ export class AnimationsDirective {
       (animTime === 3.2 && !service.isAboutAnimationLoaded) ||
       (animTime === 2.8 && !service.isAboutAnimationLoaded) ||
       (animTime === 2.4 && !service.isAboutAnimationLoaded) ||
-      (animTime === 1.6 && !service.isSidbarAnimationLoaded || animTime === 1.8 && !service.isNavigatorsLoaded) ||
+      (animTime === 1.6 && !service.isSidebarAnimationLoaded || animTime === 1.8 && !service.isNavigatorsLoaded) ||
       (animTime === 1 && !service.isWorkAnimationLoaded) ||
       (animTime === .6 && !service.isWorkAnimationLoaded)
     ) {
@@ -34,7 +34,7 @@ export class AnimationsDirective {
       if (this.pageName === 'about') {
         service.isAboutAnimationLoaded = true;
       } else if (this.pageName === 'sidebar') {
-        service.isSidbarAnimationLoaded = true;
+        service.isSidebarAnimationLoaded = true;
         service.isNavigatorsLoaded = true;
       } else if (this.pageName === 'work') {
         service.isWorkAnimationLoaded = true;

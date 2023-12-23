@@ -5,11 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class AnimationsService {
   isNavigatorsLoaded: boolean = false;
-  isSidbarAnimationLoaded: boolean = false;
+  isSidebarAnimationLoaded: boolean = false;
   isAboutAnimationLoaded: boolean = false;
   isWorkAnimationLoaded: boolean = false;
   isPortfolioAnimationLoaded: boolean = false;
-
   constructor() {}
 
   setAnimationSession(pageName: string) {
@@ -18,8 +17,7 @@ export class AnimationsService {
     }
   }
   getAnimationState(pageName: string) {
-    let pageAnimation = sessionStorage.getItem(pageName);
-    if (pageAnimation === 'enabled') {
+    if (sessionStorage.getItem(pageName) === 'enabled') {
       return true;
     } else {
       return false;
@@ -28,7 +26,7 @@ export class AnimationsService {
 
   enableDisableAnimation(pageName: string) {
     if (pageName === 'sidebar') {
-      this.isSidbarAnimationLoaded = true;
+      this.isSidebarAnimationLoaded = true;
       this.isNavigatorsLoaded = true;
     } else if (pageName === 'about') {
       this.isAboutAnimationLoaded = true;

@@ -1,72 +1,77 @@
-import { AfterContentChecked, AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Inject, Injectable, Input, OnInit, Output, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { AnimationsService } from '../../services/animations.service';
-import { ApiService } from 'src/app/core/services/api.service';
 import { MatTabGroup } from '@angular/material/tabs';
-import { DOCUMENT } from '@angular/common';
 import { FilesService } from 'src/app/core/services/files.service';
-import { ChartsService } from '../../services/charts.service';
+import { Navigation } from 'src/app/core/enums/navigation.enum';
 
 @Component({
   selector: 'tabs-menu',
   templateUrl: './tabs-menu.component.html',
-  styleUrls: ['./tabs-menu.component.scss', '../../styles/main-layout.core.scss']
+  styleUrls: ['./tabs-menu.component.scss', '../../styles/main-layout.core.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TabsMenuComponent implements OnInit, AfterContentChecked {
+export class TabsMenuComponent implements AfterContentInit {
 
   @ViewChild('tabGroup', { static: false }) tab!: MatTabGroup;
   @ViewChild('matTabHeader') matTabHeader!: ElementRef;
 
-  @Output() nextPage = new EventEmitter;
-  @Input() changeCurrentTab: number = 0;
-  isSideBarFxEnd!: boolean;
-  isNavigatorsFxEnd!: boolean;
-  tabIndex!: number;
-  selectedIndex = this.changeCurrentTab;
-  isDownloaded!: boolean;
-  text = "changed";
+  @Output() nextPage = new EventEmitter<number>;
 
-  constructor(@Inject(DOCUMENT) public document: Document, private renderer: Renderer2, private animationService: AnimationsService, private apiService: ApiService,
-    private fileService: FilesService
-  ) { }
+  public changeCurrentTab!: number;
+  public tabIndex!: number;
+  public selectedIndex!: number;
+  public isDownloaded!: boolean;
+  public text = "changed";
 
-  ngOnInit() {}
-
-  nextPageEmmiter(index: number) {
-    return this.nextPage.emit(index);
+  constructor(
+    private animationService: AnimationsService,
+    private fileService: FilesService,
+    private cd: ChangeDetectorRef
+  ) {
+    this.changeCurrentTab = 0;
+    this.selectedIndex = this.changeCurrentTab;
   }
 
-  changeTab(tab: any) {
+
+  ngAfterContentInit(): void {
+    this.cd.detectChanges();
+  }
+
+  public get isSideBarFxEnd() {
+    return this.animationService.isSidebarAnimationLoaded;
+  }
+  public get isNavigatorsFxEnd() {
+    return this.animationService.isNavigatorsLoaded;
+  }
+
+  public changeTab(tab: {index: number}) {
     if (tab.index === undefined) {
       this.changeCurrentTab = 0;
     }
-    tab.index === 1 ? this.renderer.addClass(this.tab._elementRef.nativeElement.children[0], 'animateTabsHeader')
-      : this.renderer.removeClass(this.tab._elementRef.nativeElement.children[0], 'animateTabsHeader')
     this.changeCurrentTab = tab.index;
     this.nextPageEmmiter(this.changeCurrentTab)
   }
 
-  setTabChange(index: string) {
-    this.changeCurrentTab = +index; // back to number
+  public setTabChange(currentTab: string) {
+    this.changeCurrentTab = +currentTab;
   }
 
-  nextPreviousTab(type: string){
-    if(type === 'prev' && this.changeCurrentTab > 0){
+  public nextPreviousTab(type: string) {
+    if (type === Navigation.prev && this.changeCurrentTab > 0) {
       this.changeCurrentTab--
     }
-    if(type === 'next' && this.changeCurrentTab < 3) {
+    if (type === Navigation.next && this.changeCurrentTab < 3) {
       this.changeCurrentTab++
     }
   }
 
-  downloadFile() {
+  public downloadFile() {
     this.fileService.downloadFile();
     this.isDownloaded = true;
   }
 
-  ngAfterContentChecked(): void {
-    if (this.animationService.isSidbarAnimationLoaded) {
-      this.isSideBarFxEnd = this.animationService.isSidbarAnimationLoaded;
-      this.isNavigatorsFxEnd = this.animationService.isNavigatorsLoaded;
-    }
+  private nextPageEmmiter(index: number) {
+    this.nextPage.emit(index);
   }
+
 }

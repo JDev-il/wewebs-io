@@ -342,7 +342,8 @@
     //^ HEADER ANIMATION:
     /* upon loading Portfolio page, the following class [animateTabsHeader] is added and can be
         animated and customized, accordingly */
-    .animateTabsHeader {
+ /*    .animateTabsHeader {
+      background-color: red;
       .mat-tab-label-container {
         animation: moveTabsContainer 0.8s forwards
           cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -373,7 +374,7 @@
         }
       }
     }
-
+ */
     .mat-tab-body-wrapper {
       z-index: 11;
       width: 100%;

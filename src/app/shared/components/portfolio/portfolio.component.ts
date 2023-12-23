@@ -38,10 +38,6 @@ export class PortfolioComponent implements OnInit, OnDestroy {
     })
   }
 
-  downloadFile() {
-    this.fileService.downloadFile();
-  }
-
   ngOnDestroy(): void {
     this.portfolioSubscription.unsubscribe()
   }
