@@ -39,6 +39,7 @@
   <div
     class="jdev-logo"
     [ngClass]="!isSideBarFxEnd ? 'incominglLogoFx' : ''"
+    (click)="changeCurrentTab = 0"
   ></div>
   <div class="resumeBtn" [ngClass]="!isSideBarFxEnd ? 'downloadButtonFx' : ''">
     <button

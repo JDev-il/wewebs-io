@@ -1,6 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
+import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-container',

@@ -1,27 +1,129 @@
-.mainContentWrapper { // Tabs Menu
+.mainContentWrapper {
+  /* TABS MENU || TABS MENU || TABS MENU || TABS MENU */
   ::ng-deep .mat-tab-group {
-      .mat-tab-header {
-        width: 10%;
-        @media screen and (max-width: 1440px) {
-          width: 15%;
-          @media screen and (max-width: 1200px) {
-            width: 20%;
+    .mat-tab-header {
+      width: 10%;
+      @media screen and (max-width: 1440px) {
+        width: 15%;
+        @media screen and (max-width: 1200px) {
+          width: 20%;
+          @media screen and (max-width: 992px) {
+            position: unset;
+            height: unset;
+            clip-path: ellipse(75% 150% at 50% -50%);
+            width: 100%;
+          }
+        }
+      }
+      .mat-tab-label-container {
+        .mat-tab-list {
+          @media screen and (max-width: 992px) {
+            width: 100%;
+          }
+          .mat-tab-labels {
             @media screen and (max-width: 992px) {
-              position: unset !important;
-              height: unset !important;
-              clip-path: ellipse(75% 150% at 50% -50%) !important;
-              width: 100% !important;
+              width: 85%;
+              font-size: 1rem;
+              justify-content: center;
+              align-items: center;
+              margin: 0 auto;
+              .mat-tab-label:hover:not(.mat-tab-label-active) {
+                opacity: unset;
+                color: inherit;
+                &:hover {
+                  color: transparent;
+                }
+              }
+            }
+            .mat-tab-label {
+              @media screen and (max-width: 1600px) {
+                &.mat-tab-label-active {
+                  &::after {
+                    right: 0.8vw;
+                  }
+                  ::before {
+                    left: 0.8vw;
+                  }
+                }
+                &:hover {
+                  &::after {
+                    right: 0.8vw;
+                  }
+                  ::before {
+                    left: 0.8vw;
+                  }
+                }
+                @media screen and (max-width: 1200px) {
+                  &.mat-tab-label-active {
+                    &::after {
+                      right: 3vw;
+                    }
+                    ::before {
+                      left: 3vw;
+                    }
+                  }
+
+                  @media screen and (max-width: 992px) {
+                    transition: none;
+                    position: sticky;
+                    display: inline-flex;
+                    top: 0;
+                    left: 0;
+                    font-size: 1rem;
+                    &:hover {
+                      color: var(--primary-text) !important;
+                    }
+                    &.mat-tab-label-active {
+                      font-size: inherit;
+                      left: 0;
+                      right: 0;
+                      &::after,
+                      ::before {
+                        display: none;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
+    }
   }
   .socialLinks {
     @media screen and (max-width: 1440px) {
-      left: 6.5vw !important
+      left: 6vw;
+      @media screen and (max-width: 1200px) {
+        left: 8vw;
+        @media screen and (max-width: 992px) {
+          left: 3vw;
+        }
+      }
     }
   }
+  .resumeBtn {
+    @media screen and (max-width: 992px) {
+      right: 3%;
+      top: 8%;
+    }
+  }
+  .jdev-logo {
+    @media screen and (max-width: 1440px) {
+      left: 5.5vw;
+      @media screen and (max-width: 1200px) {
+        left: 3%;
+        @media screen and (max-width: 992px) {
+          height: 45px;
+          width: 45px;
+          top: 7%;
+        }
+      }
+    }
+  }
+  /* TABS MENU || TABS MENU || TABS MENU || TABS MENU */
 }
+
 .aboutResponssiveComponent {
   /* ABOUT DESKTOP || ABOUT DESKTOP || ABOUT DESKTOP || ABOUT DESKTOP */
   .inComponentWrapper {
@@ -301,7 +403,6 @@
       }
     }
   }
-
   /* ABOUT MOBILE || ABOUT MOBILE || ABOUT MOBILE || ABOUT MOBILE */
 }
 
@@ -311,10 +412,16 @@
     .componentHeader {
       @media screen and (max-width: 1440px) {
         right: 5%;
+        @media screen and (max-width: 1366px) {
+          height: 22% !important;
+          @media screen and (max-width: 1200px) {
+            right: 0%;
+            display: flex;
+            width: 100%;
+          }
+        }
       }
-      @media screen and (max-width: 1366px) {
-        height: 22% !important;
-      }
+
       .topPortfolioTitle {
         @media screen and (max-width: 1600px) {
           h1 {
@@ -330,12 +437,23 @@
             h3 {
               font-size: 0.7rem !important;
             }
-            @media screen and (max-width: 1024px) {
-              h1 {
-                font-size: 2.8rem !important;
-              }
-              h3 {
-                font-size: 0.5rem !important;
+            @media screen and (max-width: 1200px) {
+              position: absolute;
+              top: 0 !important;
+              left: 0 !important;
+              align-items: center;
+              justify-content: center;
+              height: 100% !important;
+              display: flex !important;
+              flex-flow: column !important;
+              width: 100%;
+              @media screen and (max-width: 1024px) {
+                h1 {
+                  font-size: 2.8rem !important;
+                }
+                h3 {
+                  font-size: 0.5rem !important;
+                }
               }
             }
           }
@@ -343,7 +461,8 @@
       }
     }
     .componentContent {
-      @media screen and (max-width: 1440px) {
+      @media screen and (min-width: 1200px) {
+        width: 100%;
         right: 5%;
       }
       .portfolioBlock {
@@ -352,21 +471,18 @@
             mat-card-title {
               @media screen and (max-width: 1600px) {
                 h1 {
-                  font-size: 90%;
+                  font-size: larger;
                 }
                 span {
                   font-size: 70%;
                 }
                 @media screen and (max-width: 1366px) {
-                  h1 {
-                    font-size: 95%;
-                  }
                   span {
                     font-size: 75%;
                   }
                   @media screen and (max-width: 1024px) {
                     h1 {
-                      font-size: 95%;
+                      font-size: x-large;
                     }
                     span {
                       font-size: 75%;
@@ -375,10 +491,42 @@
                 }
               }
             }
+            .company-info {
+              img {
+                @media screen and (max-width: 1600px) {
+                  @media screen and (max-width: 1440px) {
+                    @media screen and (max-width: 1280px) {
+                      @media screen and (max-width: 1200px) {
+                        width: 25px !important;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            @media screen and (max-width: 1200px) {
+              padding: 0;
+            }
           }
+
           .contentWrapper {
+            @media screen and (max-width: 1200px) {
+              :nth-child(n) {
+                box-shadow: none;
+                opacity: 1;
+                margin: auto;
+              }
+            }
             .rightContent,
             .leftContent {
+              @media screen and (max-width: 1200px) {
+                :nth-child(n) {
+                  transition: none !important;
+                  box-shadow: none;
+                  backdrop-filter: unset;
+                  justify-content: center;
+                }
+              }
               .cardText {
                 .textContainer {
                   width: 95%;
@@ -433,6 +581,7 @@
                           @media screen and (max-width: 1280px) {
                             width: 380px;
                             @media screen and (max-width: 992px) {
+                              width: 250px;
                               @media screen and (max-width: 768px) {
                                 @media screen and (max-width: 544px) {
                                   @media screen and (max-width: 460px) {
@@ -444,6 +593,62 @@
                         }
                       }
                     }
+                  }
+                }
+                @media screen and (max-width: 1200px) {
+                  :nth-child(n) {
+                  }
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 1200px) {
+            top: 25% !important;
+            .contentWrapper {
+              width: 100% !important;
+              .rightContent,
+              .leftContent {
+                width: 100%;
+                display: flex;
+                flex-flow: column;
+                .textContainer {
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  .title {
+                    font-size: 1rem;
+                    top: 0;
+                    color: var(--secondary-text);
+                    padding: 0 0 25px 0;
+                  }
+                  .desc {
+                    opacity: 1 !important;
+                    transition: none !important;
+                    color: var(--secondary-text);
+                  }
+                }
+                .cardImage {
+                  width: 100%;
+                  align-items: center;
+                  transition: none !important;
+                  transform: none;
+                  display: flex;
+                  align-items: center;
+                  margin: 0 auto;
+                  padding-top: 25px;
+                  .imageOverlay {
+                    transition: none;
+                    backdrop-filter: unset;
+                    box-shadow: none;
+                    aspect-ratio: unset !important;
+                  }
+                  .imageWrap {
+                    position: relative;
+                    width: 85%;
+                    display: flex;
+                    margin: 0 auto;
+                    background-color: var(--primary-bg-light);
                   }
                 }
               }
@@ -511,14 +716,14 @@
                 font-size: 2.6rem;
               }
               h3 {
-                font-size: .8rem;
+                font-size: 0.8rem;
               }
               @media screen and (max-width: 1366px) {
                 h1 {
                   font-size: 2.4rem;
                 }
                 h3 {
-                  font-size: .8rem;
+                  font-size: 0.8rem;
                 }
                 @media screen and (max-width: 1280px) {
                   @media screen and (max-width: 992px) {
@@ -557,13 +762,11 @@
               }
             }
           }
-
-
           ::ng-deep mat-accordion {
             @media screen and (max-width: 1600px) {
               margin: 0;
               width: 45%;
-             .mat-expansion-panel {
+              .mat-expansion-panel {
                 width: 65%;
               }
               @media screen and (max-width: 1440px) {
@@ -578,9 +781,9 @@
                           font-size: 1.2rem;
                         }
                       }
-                      .mat-expansion-panel-header-description{
+                      .mat-expansion-panel-header-description {
                         h5 {
-                          font-size: .8rem;
+                          font-size: 0.8rem;
                         }
                       }
                       @media screen and (max-width: 1280px) {
@@ -589,13 +792,12 @@
                             font-size: 1.1rem;
                           }
                         }
-                        .mat-expansion-panel-header-description{
+                        .mat-expansion-panel-header-description {
                           h5 {
-                            font-size: .7rem;
+                            font-size: 0.7rem;
                           }
                         }
                       }
-
                     }
                   }
                   &:not(.mat-expanded) {
@@ -648,23 +850,13 @@
           }
         }
       }
-      .workExperienceChart {
-        .chartsContainer {
-          // width: 85%;
-        }
-      }
     }
   }
-
-  // @media screen and (min-width: 1024px) {
-  //   background-color: aqua;
-  //   .aboutComponent {
-  //     background-color: chartreuse;
-  //   }
-  // }
+  /* EXPERIENCE DESKTOP || EXPERIENCE DESKTOP || EXPERIENCE DESKTOP || EXPERIENCE DESKTOP */
 }
 
 .contactResponssiveComponent {
+  /* CONTACT || CONTACT || CONTACT || CONTACT */
   @media screen and (min-width: 1024px) {
     background-color: aqua;
     .aboutComponent {
@@ -674,30 +866,6 @@
   @media screen and (max-width: 1024px) {
     background-color: red;
   }
+
+  /* CONTACT || CONTACT || CONTACT || CONTACT */
 }
-
-//! READY FOR USE BREAKPOINTS
-// @media screen and (min-width: 1240px) {
-//   @media screen and (min-width: 1366px) {
-//     @media screen and (min-width: 1440px) {
-//       @media screen and (min-width: 1600px) {
-//         @media screen and (min-width: 1800px) {
-//           @media screen and (min-width: 1920px) {
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 1024px) {
-//   @media screen and (max-width: 992px) {
-//     @media screen and (max-width: 768px) {
-//       @media screen and (max-width: 544px) {
-//         @media screen and (max-width: 460px) {
-//         }
-//       }
-//     }
-//   }
-// }
-//! READY FOR USE BREAKPOINTS

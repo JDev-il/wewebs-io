@@ -1,5 +1,4 @@
 @import "./animations.core.scss";
-@import "./breakpoints.core.scss";
 
 .componentContainer {
   width: 100%;
@@ -7,9 +6,6 @@
   cursor: default;
   @media screen and (max-width: 1440px) {
     position: relative;
-    // align-items: center;
-    @media screen and (max-width: 1336px) {
-    }
   }
 
 
@@ -24,3 +20,5 @@
     }
   }
 }
+
+@import "./breakpoints.core.scss";

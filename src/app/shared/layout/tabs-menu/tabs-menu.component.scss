@@ -1,5 +1,3 @@
-@import '../../styles/breakpoints.core.scss';
-
 .navigator-top, .navigator-bottom {
   position: fixed;
   z-index: 888;
@@ -123,9 +121,10 @@
     background-size: contain;
     height: 50px;
     width: 50px;
-    left: 3%;
-    top: 5%;
+    left: 3.5vw;
+    top: 5vh;
     z-index: 888;
+    cursor: pointer;
   }
   .resumeBtn {
     position: fixed;
@@ -339,42 +338,6 @@
       }
     }
 
-    //^ HEADER ANIMATION:
-    /* upon loading Portfolio page, the following class [animateTabsHeader] is added and can be
-        animated and customized, accordingly */
- /*    .animateTabsHeader {
-      background-color: red;
-      .mat-tab-label-container {
-        animation: moveTabsContainer 0.8s forwards
-          cubic-bezier(0.445, 0.05, 0.55, 0.95);
-        .mat-tab-list {
-          // color: #fec262;
-          .mat-tab-labels {
-            .mat-tab-label {
-              &::after {
-                // background-color: #fec262;
-              }
-            }
-          }
-          @keyframes moveTabsContainer {
-            0% {
-            }
-            100% {
-              // background-color: #2a0944;
-            }
-          }
-          // @keyframes animateTabsList {
-          //   0% {
-          //     color: #2a0944;
-          //   }
-          //   100% {
-          //     color: #fec262;
-          //   }
-          // }
-        }
-      }
-    }
- */
     .mat-tab-body-wrapper {
       z-index: 11;
       width: 100%;
@@ -470,3 +433,4 @@
     }
   }
 }
+@import '../../styles/breakpoints.core.scss';
