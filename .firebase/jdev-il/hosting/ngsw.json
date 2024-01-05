@@ -1,0 +1,153 @@
+{
+  "configVersion": 1,
+  "timestamp": 1704459908824,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/583.e1f8f1568f58c939.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.5fcbf158403db66d.js",
+        "/manifest.webmanifest",
+        "/polyfills.313656e91ed71955.js",
+        "/runtime.7b0920e983ff770d.js",
+        "/styles.ff8bc863dc979375.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/arrow-down-circle.svg",
+        "/assets/images/download_svg.svg",
+        "/assets/images/icons/chevron-left.png",
+        "/assets/images/icons/chevron-right.png",
+        "/assets/images/icons/code-tag.svg",
+        "/assets/images/icons/coding-icon.svg",
+        "/assets/images/icons/facebook.svg",
+        "/assets/images/icons/github.svg",
+        "/assets/images/icons/greater-than.svg",
+        "/assets/images/icons/js-icon.svg",
+        "/assets/images/icons/left-chevron.svg",
+        "/assets/images/icons/less-than.svg",
+        "/assets/images/icons/linkedin.svg",
+        "/assets/images/icons/right-chevron.svg",
+        "/assets/images/icons/talk-icon.svg",
+        "/assets/images/icons/whatsapp-icon.svg",
+        "/assets/images/jdev.svg",
+        "/assets/images/jonathan_daniel_about.jpg",
+        "/assets/images/jonathan_daniel_facebook.jpeg",
+        "/assets/images/jonathan_daniel_git.jpeg",
+        "/assets/images/jonathan_daniel_linkedin.jpeg",
+        "/assets/images/left-arrow-thin.svg",
+        "/assets/images/logo.svg",
+        "/assets/images/logo_blue.png",
+        "/assets/images/logos/bg-logo.png",
+        "/assets/images/logos/kmg-logo.png",
+        "/assets/images/logos/odg-logo.png",
+        "/assets/images/logos/pc-logo.png",
+        "/assets/images/logos/wz-logo.png",
+        "/assets/images/rewind-svgrepo-com.svg",
+        "/assets/images/right-arrow-svgrepo-com.svg",
+        "/assets/images/right-arrow-thin.svg",
+        "/assets/images/shape.svg",
+        "/jonathan_daniel_facebook.c16833c821756c11.jpeg",
+        "/logo.7ec6c397bf473f14.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/583.e1f8f1568f58c939.js": "69f8f219d47ea94772a3dc139ed776a02e25842b",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/arrow-down-circle.svg": "13fc2552de1fe7e9edf20857dd488ce5298c0b64",
+    "/assets/images/download_svg.svg": "95ab1ebf68411aeeeb06bacdf8a3bbce103cc52f",
+    "/assets/images/icons/chevron-left.png": "7abc6426df58eb487e6fc36aef8ee95b60f113df",
+    "/assets/images/icons/chevron-right.png": "2f6410c1c71c46e37ab96fa7b60db93343a5ffab",
+    "/assets/images/icons/code-tag.svg": "e34960306178a90b693eceb2d8cdfa255206bc9a",
+    "/assets/images/icons/coding-icon.svg": "7b1de2c38cf84a8ec207591d0ddff86aba149a55",
+    "/assets/images/icons/facebook.svg": "b93740909facca9daa4e75c98c938c66462bfb0f",
+    "/assets/images/icons/github.svg": "2107470d3ca5f76d3c0ef170f19990e523d70496",
+    "/assets/images/icons/greater-than.svg": "25caf9daf65fee94ecf1ac60672845f44851fe93",
+    "/assets/images/icons/js-icon.svg": "0c5b14799dbf824b9deba81e1245867da8c07d71",
+    "/assets/images/icons/left-chevron.svg": "9a9b2ccf1ea23d0b2259d0de4cb468c41cedbad3",
+    "/assets/images/icons/less-than.svg": "260749510f122537b868226c55b71e9e96a60f4a",
+    "/assets/images/icons/linkedin.svg": "11787f373cf29dedab9619af12ae24496ee64c9c",
+    "/assets/images/icons/right-chevron.svg": "7569b7e5ad8f0b741e5ecebb66620573de7a5167",
+    "/assets/images/icons/talk-icon.svg": "0c6d5d2d25225c7f7686d569b57a343c482a649a",
+    "/assets/images/icons/whatsapp-icon.svg": "96d0027edb41d94d94f4ed3f99796de0d6b175c5",
+    "/assets/images/jdev.svg": "db178e9922700799fe3da3695c66de06876a1973",
+    "/assets/images/jonathan_daniel_about.jpg": "34de48ea3133a0083d623f2d82c95dce68331b9d",
+    "/assets/images/jonathan_daniel_facebook.jpeg": "8513ccbbbb9620b983b6b954edea458e53536ef7",
+    "/assets/images/jonathan_daniel_git.jpeg": "b328d26349f1da2e3a55a415173ff282e89ffebc",
+    "/assets/images/jonathan_daniel_linkedin.jpeg": "e738d737becfb505ecc4beef0a69d68485bd9100",
+    "/assets/images/left-arrow-thin.svg": "b98d7fce5b603ea518ab6875c09fb14507686e3a",
+    "/assets/images/logo.svg": "2c4bc2fb433ae0afee8c147b33ec8c59ef8617d3",
+    "/assets/images/logo_blue.png": "607eda866555768c4b463c85207cb254ad6775de",
+    "/assets/images/logos/bg-logo.png": "607eda866555768c4b463c85207cb254ad6775de",
+    "/assets/images/logos/kmg-logo.png": "34501b0c0451938a539793bfce046d8a224106e3",
+    "/assets/images/logos/odg-logo.png": "9210531a5d99d78accb1600714d1d3017b37ad5f",
+    "/assets/images/logos/pc-logo.png": "f84228539de4956713803866909c84a31fa24929",
+    "/assets/images/logos/wz-logo.png": "40603c776576229ceda5b7b758f9d4459ea081e1",
+    "/assets/images/rewind-svgrepo-com.svg": "9828e5475da72706f5635110bf2ebee10cf6c10b",
+    "/assets/images/right-arrow-svgrepo-com.svg": "4457d83d3a726da6e01d4a1ab692ed2d53d959ed",
+    "/assets/images/right-arrow-thin.svg": "9d41f007b73dde56b1346d88a9eae3701a4d6a97",
+    "/assets/images/shape.svg": "e090b275fe42fba8a6bd2866e3233b74f8bbcf9d",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "d21e6c7ce791d8b6d6296f0b9d413f15e56299c6",
+    "/jonathan_daniel_facebook.c16833c821756c11.jpeg": "8513ccbbbb9620b983b6b954edea458e53536ef7",
+    "/logo.7ec6c397bf473f14.svg": "2c4bc2fb433ae0afee8c147b33ec8c59ef8617d3",
+    "/main.5fcbf158403db66d.js": "33b25baee261ab43df8ab0647e458650a778f4fe",
+    "/manifest.webmanifest": "3c14df217fe1b42bcc6380192b08e6b0f92e09b6",
+    "/polyfills.313656e91ed71955.js": "1a380c5d10f38984bf44b3cd67d5723000960178",
+    "/runtime.7b0920e983ff770d.js": "3983cc1a4cb76d42ac4b0c9e5b0094ed8fe1ee13",
+    "/styles.ff8bc863dc979375.css": "4a2bc739e4b17b3e481c74886551fa17ed53d760"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
