@@ -7,7 +7,7 @@ import { FilesService } from '../../../core/services/files.service';
 
 @Component({
   selector: 'Portfolio',
-  templateUrl: './Portfolio.component.html',
+  templateUrl: './portfolio.component.html',
   styleUrls: [
     '../../styles/component.core.scss',
     './portfolio.component.scss',
