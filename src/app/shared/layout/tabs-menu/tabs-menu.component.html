@@ -1,4 +1,7 @@
-<div class="navigator-top" [ngClass]="isNavigatorsFxEnd ? '' : 'initNavigatorsFx'">
+<div
+  class="navigator-top"
+  [ngClass]="isNavigatorsFxEnd ? '' : 'initNavigatorsFx'"
+>
   <button
     (click)="nextPreviousTab('prev')"
     [disabled]="changeCurrentTab === 0"
@@ -7,7 +10,10 @@
     &lsaquo;
   </button>
 </div>
-<div class="navigator-bottom" [ngClass]="isNavigatorsFxEnd ? '' : 'initNavigatorsFx'">
+<div
+  class="navigator-bottom"
+  [ngClass]="isNavigatorsFxEnd ? '' : 'initNavigatorsFx'"
+>
   <button
     (click)="nextPreviousTab('next')"
     [disabled]="changeCurrentTab === 3"
@@ -62,9 +68,9 @@
       </ng-template>
     </mat-tab>
     <mat-tab label="Portfolio" #matTabHeader>
-      <ng-template matTabContent
-        ><Portfolio [currentTabIndex]="tabIndex"></Portfolio
-      ></ng-template>
+      <ng-template matTabContent>
+        <Portfolio [currentTabIndex]="tabIndex"></Portfolio>
+      </ng-template>
     </mat-tab>
     <mat-tab label="Experience">
       <ng-template matTabContent><Experience></Experience></ng-template>

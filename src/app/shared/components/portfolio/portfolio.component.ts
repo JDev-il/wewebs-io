@@ -1,5 +1,5 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Observable, Subscription, of } from 'rxjs';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Company } from 'src/app/core/interfaces/Company.interface';
 import { ProjectModel } from 'src/app/core/interfaces/Project.interface';
 import { ApiService } from 'src/app/core/services/api.service';
