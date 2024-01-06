@@ -274,7 +274,7 @@
                 mask-size: cover;
                 background-color: #02fef6;
                 position: absolute;
-                left: -1.8vw;
+                left: -1.5vw;
                 width: 21px;
                 height: 21px;
                 bottom: 14px;
@@ -292,12 +292,12 @@
                 mask-size: cover;
                 background-color: #02fef6;
                 position: absolute;
-                right: -1.8vw;
+                right: -2vw;
                 width: 19px;
                 height: 19px;
                 bottom: 14px;
                 transform: rotateY(-180deg);
-                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                transition: all 0.45s cubic-bezier(0.075, 0.82, 0.165, 1);
                 @keyframes fadeArrow {
                   0% {
                     opacity: 0;

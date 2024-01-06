@@ -8,8 +8,7 @@
         @media screen and (max-width: 1200px) {
           width: 20%;
           @media screen and (max-width: 992px) {
-            position: unset;
-            height: unset;
+            height: auto;
             clip-path: ellipse(75% 150% at 50% -50%);
             width: 100%;
           }
@@ -23,28 +22,17 @@
           .mat-tab-labels {
             @media screen and (max-width: 992px) {
               width: 85%;
-              font-size: 1rem;
               justify-content: center;
               align-items: center;
               margin: 0 auto;
               .mat-tab-label:hover:not(.mat-tab-label-active) {
                 opacity: unset;
                 color: inherit;
-                &:hover {
-                  color: transparent;
-                }
               }
             }
             .mat-tab-label {
               @media screen and (max-width: 1600px) {
-                &.mat-tab-label-active {
-                  &::after {
-                    right: 0.8vw;
-                  }
-                  ::before {
-                    left: 0.8vw;
-                  }
-                }
+                &.mat-tab-label-active,
                 &:hover {
                   &::after {
                     right: 0.8vw;
@@ -64,17 +52,17 @@
                   }
 
                   @media screen and (max-width: 992px) {
-                    transition: none;
+                    transition: font-size 0.12s
+                      cubic-bezier(0.215, 0.61, 0.355, 1);
                     position: sticky;
                     display: inline-flex;
                     top: 0;
                     left: 0;
-                    font-size: 1rem;
+                    font-size: 0.8rem !important;
                     &:hover {
-                      color: var(--primary-text) !important;
+                      color: inherit !important;
                     }
                     &.mat-tab-label-active {
-                      font-size: inherit;
                       left: 0;
                       right: 0;
                       &::after,
@@ -418,6 +406,9 @@
             right: 0%;
             display: flex;
             width: 100%;
+            @media screen and (max-width: 992px) {
+              height: 23% !important;
+            }
           }
         }
       }
@@ -447,12 +438,13 @@
               display: flex !important;
               flex-flow: column !important;
               width: 100%;
-              @media screen and (max-width: 1024px) {
+              @media screen and (max-width: 992px) {
+                top: 30% !important;
                 h1 {
                   font-size: 2.8rem !important;
                 }
                 h3 {
-                  font-size: 0.5rem !important;
+                  font-size: 0.8rem !important;
                 }
               }
             }
@@ -595,10 +587,6 @@
                     }
                   }
                 }
-                @media screen and (max-width: 1200px) {
-                  :nth-child(n) {
-                  }
-                }
               }
             }
           }
@@ -665,6 +653,11 @@
   /* EXPERIENCE DESKTOP || EXPERIENCE DESKTOP || EXPERIENCE DESKTOP || EXPERIENCE DESKTOP */
   .inComponentWrapper {
     .componentHeader {
+      @media screen and (max-width: 992px) {
+        width: 100%;
+        height: 20%;
+        padding-top: 35px;
+      }
       .workTitle {
         @media screen and (min-width: 1920px) {
           h1 {
@@ -680,13 +673,14 @@
           h1 {
             font-size: 2.8rem;
           }
-          h3 {
-          }
           @media screen and (max-width: 1600px) {
             @media screen and (max-width: 1440px) {
               @media screen and (max-width: 1366px) {
                 @media screen and (max-width: 1280px) {
                   @media screen and (max-width: 992px) {
+                    top: 60% !important;
+                    text-align: center !important;
+                    left: unset !important;
                     @media screen and (max-width: 768px) {
                       @media screen and (max-width: 544px) {
                         @media screen and (max-width: 460px) {
@@ -702,14 +696,14 @@
       }
     }
     .leftSideWorkComponent {
+      @media screen and (max-width: 992px) {
+        width: 100%;
+      }
       .componentHeader {
         .workTitle {
-          @media screen and (min-width: 1601px) {
-            top: 60%;
-          }
+          top: 55%;
           @media screen and (max-width: 1600px) {
             @media screen and (max-width: 1440px) {
-              top: 55%;
               height: 20%;
               left: 8.5vw;
               h1 {
@@ -727,6 +721,9 @@
                 }
                 @media screen and (max-width: 1280px) {
                   @media screen and (max-width: 992px) {
+                    top: 0;
+                    height: auto;
+                    left: 0;
                     @media screen and (max-width: 768px) {
                       @media screen and (max-width: 544px) {
                         @media screen and (max-width: 460px) {
@@ -741,6 +738,11 @@
         }
       }
       .componentContent {
+        @media screen and (max-width: 992px) {
+          position: initial;
+          display: flex;
+          justify-content: center;
+        }
         .workDiv {
           position: relative;
           @media screen and (max-width: 1600px) {
@@ -751,6 +753,7 @@
               @media screen and (max-width: 1366px) {
                 @media screen and (max-width: 1280px) {
                   @media screen and (max-width: 992px) {
+                    padding-top: 50px;
                     @media screen and (max-width: 768px) {
                       @media screen and (max-width: 544px) {
                         @media screen and (max-width: 460px) {
@@ -771,6 +774,10 @@
               }
               @media screen and (max-width: 1440px) {
                 width: 35%;
+                @media screen and (max-width: 992px) {
+                  width: 85%;
+                  passing-bottom: 0;
+                }
                 .mat-expansion-panel {
                   width: 85%;
                   .mat-expansion-panel-header {
@@ -795,6 +802,20 @@
                         .mat-expansion-panel-header-description {
                           h5 {
                             font-size: 0.7rem;
+                          }
+                        }
+                      }
+                    }
+                  }
+                  .mat-expansion-panel-content {
+                    .mat-expansion-panel-body {
+                      @media screen and (max-width: 992px) {
+                        .overFlowBlock {
+                          p:nth-child(n) {
+                            font-size: 0.9rem;
+                          }
+                          img:nth-child(n) {
+                            width: 15px;
                           }
                         }
                       }
@@ -839,6 +860,7 @@
           @media screen and (max-width: 1366px) {
             @media screen and (max-width: 1280px) {
               @media screen and (max-width: 992px) {
+                display: none;
                 @media screen and (max-width: 768px) {
                   @media screen and (max-width: 544px) {
                     @media screen and (max-width: 460px) {
@@ -857,14 +879,46 @@
 
 .contactResponssiveComponent {
   /* CONTACT || CONTACT || CONTACT || CONTACT */
-  @media screen and (min-width: 1024px) {
-    background-color: aqua;
-    .aboutComponent {
-      background-color: chartreuse;
+  @media screen and (max-width: 1501px) {
+
+    @media screen and (max-width: 992px) {
+      .inComponentWrapper {
+        display: flex;
+        flex-flow: column;
+        .leftWrapper {
+          width: 100%;
+          .contactWelcome {
+            left: unset;
+            width: 100%;
+            height: 100%;
+            top: 10%;
+            .contactDiv {
+              left: unset;
+              position: static;
+            }
+          }
+        }
+        .rightWrapper {
+          width: 100%;
+          .contactActions {
+            left: auto;
+            height: unset;
+            .contactForm {
+              display: flex;
+              justify-content: center;
+              .formContainer {
+                @media screen and (max-width: 992px) {
+                  width: 55%;
+                  @media screen and (max-width: 768px) {
+                    width: 60%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
-  }
-  @media screen and (max-width: 1024px) {
-    background-color: red;
   }
 
   /* CONTACT || CONTACT || CONTACT || CONTACT */
