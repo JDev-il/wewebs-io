@@ -18,3 +18,5 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JDEV_IL }}'
           channelId: live
           projectId: jdev-il
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
