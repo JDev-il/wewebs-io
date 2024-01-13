@@ -44,18 +44,12 @@
   }
 }
 
-//!Titles/
+//! Titles
 .moveTitleFx {
   position: relative;
-  left: 28%;
-  bottom: 15px;
-  @media screen and (max-width: 1600px) {
-    left: 40%;
-    @media screen and (max-width: 1280px) {
-      bottom: -18px;
-    }
-  }
-  animation: moveInTitleFx forwards 2.6s 4.8s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 100%;
+  left: 18%;
+  animation: moveInTitleFx forwards 2s 4.8s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 1;
   @keyframes moveInTitleFx {
     75% {
@@ -65,68 +59,72 @@
       opacity: 0;
     }
   }
-}
 
-.showUpFx {
-  animation: showfx both 3.5s 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  @keyframes showfx {
-    0% {
-      transform: translateY(100px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-}
-.showUpFx2 {
-  animation: showfx2 both 3.7s 1.6s cubic-bezier(0.23, 1, 0.32, 1);
-  z-index: 5;
-  @keyframes showfx2 {
-    0% {
-      transform: translateY(120px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-}
-.showUpFx3 {
-  position: absolute;
-  animation: showfx3 both 2.5s 1.8s cubic-bezier(0.23, 1, 0.32, 1);
-  transform: translateY(-115px);
-  opacity: 0;
-  @keyframes showfx3 {
-    0% {
-      z-index: -1;
-      opacity: 0;
-    }
-    50% {
-      transform: translateY(-35px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      z-index: 5;
-      opacity: 1;
-    }
-  }
-}
-@media screen and (max-width: 1600px) {
-  .showUpFx,
-  .showUpFx2,
-  .showUpFx3 {
-    font-size: 175% !important;
-  }
-  @media screen and (max-width: 1280px) {
+  @media screen and (min-width: 992px) {
     .showUpFx,
     .showUpFx2,
     .showUpFx3 {
-      font-size: 150% !important;
+      font-size: 2.5rem;
     }
+  }
+  .showUpFx {
+    animation: showfx both 3.5s 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    @keyframes showfx {
+      0% {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+  .showUpFx2 {
+    animation: showfx2 both 3.7s 1.6s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 5;
+    @keyframes showfx2 {
+      0% {
+        transform: translateY(120px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+  .showUpFx3 {
+    animation: showfx3 both 2.5s 1.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(-115px);
+    opacity: 0;
+    @keyframes showfx3 {
+      0% {
+        z-index: -1;
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(-35px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        z-index: 5;
+        opacity: 1;
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .showUpFx,
+  .showUpFx2,
+  .showUpFx3 {
+    position: absolute;
+    width: 100%;
+    font-size: 1rem !important;
+    left: 0;
+    display: flex;
+    justify-content: center;
   }
 }
 .staticTitleFx {
@@ -156,22 +154,9 @@
 }
 .postStaticTitleFx {
   opacity: 1;
-  // top: 8%;
 }
 
-.postAboutTitleFx {
-  //* POST Animation about me text origin
-  transform: translateX(260px);
-  // transform: translateX(150px);
-  // top: 290px;
-  transition: color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  color: #fec260;
-  @media screen and (max-width: 992px) {
-    transform: translateY(0%);
-  }
-}
-
-//*Header & images*/
+//* Header & images */
 .componentWrapperFx {
   pointer-events: none;
 }
@@ -204,11 +189,11 @@
   }
 }
 
-//^Content/
+//^ Content
 .moveInTextFx {
   animation: moveInTextFx both 2s 5.3s cubic-bezier(0.23, 1, 0.32, 1);
   bottom: 0;
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 992px) {
     @keyframes moveInTextFx {
       0% {
         transform: translateY(80%);
@@ -216,11 +201,11 @@
       }
       100% {
         opacity: 1;
-        transform: translateY(25%);
+        transform: translateY(0%);
       }
     }
   }
-  @media screen and (min-width: 1240px) {
+  @media screen and (min-width: 992px) {
     @keyframes moveInTextFx {
       0% {
         transform: translateY(60%);
@@ -230,37 +215,6 @@
         opacity: 1;
         transform: translateY(0);
       }
-    }
-    @media screen and (min-width: 1920) {
-      @keyframes moveInTextFx {
-        0% {
-          transform: translateY(60%);
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(80%);
-        }
-      }
-    }
-  }
-}
-.postAboutContentFx {
-  position: relative;
-  bottom: 0;
-  padding: 0 0 25px 0;
-  // transform: translateY(-60%);
-  @media screen and (max-width: 1336px) {
-    // transform: translateY(-30%);
-    .aboutText {
-      font-size: smaller;
-    }
-    // transform: translateY(-120%);
-    @media screen and (max-width: 992px) {
-      position: relative !important;
-      padding: 0 !important;
-      width: 85% !important;
-      transform: translateY(-15%);
     }
   }
 }

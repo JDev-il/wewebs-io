@@ -288,10 +288,16 @@
       font-size: 1.25rem;
       line-height: 1.5;
       .aboutContent {
-        padding: 0 0 25px 0;
+        @media screen and (max-width: 992px) {
+          transform: translateY(33%);
+        }
+
+
+        //! Continue from here >>
+
+        padding: 0;
         position: relative;
         transition: top 0.2s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
-        top: 0;
         &:hover {
           .aboutText {
             .aboutSummery {

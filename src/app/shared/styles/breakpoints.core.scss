@@ -222,6 +222,17 @@
                       }
                       left: 40%;
                       top: 8vh;
+
+                      @media screen and (max-width: 992px) {
+                        h1 {
+                          font-size: 1.9rem;
+                        }
+                        width: 100%;
+                        position: fixed;
+                        text-align: center;
+                        left: 0;
+                        top: 16vh;
+                      }
                     }
                   }
                 }
@@ -330,8 +341,19 @@
         }
       }
       .headerOverlay {
+        @media screen and (max-width: 992px) {
+          left: 0 !important;
+          display: flex;
+          justify-content: center;
+          top: 18vh !important;
+        }
         .aboutImg {
           .imgWrapper {
+            @media screen and (max-width: 992px) {
+              display: flex;
+              justify-content: center;
+              align-items: flex-end;
+            }
             .aboutImageBackground {
               width: 185px;
               height: 185px;
@@ -386,6 +408,26 @@
                 }
               }
             }
+          }
+          @media screen and (max-width: 992px) {
+            padding: 0;
+            display: flex;
+            flex-flow: column;
+            @media screen and (max-width: 768px) {
+              padding: 0;
+              margin: 0;
+              display: flex;
+              flex-flow: column;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+        @media screen and (max-width: 992px) {
+          padding: 0;
+          width: 100%;
+          p {
+            max-width: 85%;
           }
         }
       }
