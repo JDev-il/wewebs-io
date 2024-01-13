@@ -1,20 +1,20 @@
 import {
-  AfterContentChecked,
+  AfterContentInit,
   Component,
   Input,
-  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
 import {
   MatExpansionPanel,
-  MatExpansionPanelDefaultOptions,
 } from '@angular/material/expansion';
-import { Subscription } from 'rxjs';
+import { Subscription, takeUntil } from 'rxjs';
 import { WorkModel } from 'src/app/core/interfaces/Work.interface';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AnimationsService } from '../../services/animations.service';
 import { ChartsService } from '../../services/charts.service';
+import { PageName } from 'src/app/core/enums/pages.enum';
+import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 
 @Component({
   selector: 'Experience',
@@ -25,11 +25,11 @@ import { ChartsService } from '../../services/charts.service';
     '../../styles/component.core.scss',
   ]
 })
-export class ExperienceComponent implements OnInit, AfterContentChecked, OnDestroy {
+export class ExperienceComponent extends UnSubscriber implements OnInit, AfterContentInit {
 
   @Input() currentBarCompany!: string
 
-  pageName: string = "work";
+  pageName: string = PageName.Work;
 
   step = 0;
   isWorkFxEnd: boolean = false;
@@ -47,11 +47,13 @@ export class ExperienceComponent implements OnInit, AfterContentChecked, OnDestr
     private animationService: AnimationsService,
     private apiService: ApiService,
     private chartsService: ChartsService
-  ) { }
+  ) {
+    super()
+  }
 
   ngOnInit(): void {
     this.apiService.cacheVerifier(this.pageName);
-    this.workExperienceSubscribe = this.apiService.work$.subscribe(work => {
+    this.apiService.work$.pipe(takeUntil(this.unsubscribe$)).subscribe(work => {
       this.workExperienceData = work;
     })
   }
@@ -60,17 +62,14 @@ export class ExperienceComponent implements OnInit, AfterContentChecked, OnDestr
     this.chartsService.setChartsData(data)
   }
 
-  sendCurrentCompany(name: string){
+  sendCurrentCompany(name: string) {
     this.currentBarCompany = name
   }
 
-  ngAfterContentChecked(): void {
+  ngAfterContentInit(): void {
     if (this.animationService.isWorkAnimationLoaded) {
       this.isWorkFxEnd = this.animationService.isWorkAnimationLoaded;
     }
   }
 
-  ngOnDestroy(): void {
-    this.workExperienceSubscribe.unsubscribe()
-  }
 }

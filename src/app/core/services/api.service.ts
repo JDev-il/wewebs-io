@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireAction, FirebaseOperation, SnapshotAction } from '@angular/fire/compat/database/interfaces';
-import { DocumentReference ,AngularFirestore, AngularFirestoreDocument, fromCollectionRef, QueryDocumentSnapshot, QuerySnapshot, SnapshotOptions } from '@angular/fire/compat/firestore';
+import { DocumentReference, AngularFirestore, AngularFirestoreDocument, fromCollectionRef, QueryDocumentSnapshot, QuerySnapshot, SnapshotOptions } from '@angular/fire/compat/firestore';
 
 import {
   BehaviorSubject,
@@ -16,24 +16,20 @@ import { WorkModel } from '../interfaces/Work.interface';
   providedIn: 'root',
 })
 export class ApiService {
-  aboutCachedData!: AboutModel;
-  portfolioCahchedData: ProjectModel[] = [];
-  workCachedData: WorkModel[] = [];
+  private aboutCachedData!: AboutModel;
+  private portfolioCahchedData: ProjectModel[] = [];
+  private workCachedData: WorkModel[] = [];
 
-  private readonly aboutSource: BehaviorSubject<AboutModel> = new BehaviorSubject(<AboutModel>{});
-  private readonly portfolioSource: BehaviorSubject<ProjectModel[]> = new BehaviorSubject(<ProjectModel[]>[]);
-  private readonly workSource: BehaviorSubject<WorkModel[]> = new BehaviorSubject(<WorkModel[]>[]);
+  private isFormSent$: Subject<void> = new Subject();
+  private aboutSource: BehaviorSubject<AboutModel> = new BehaviorSubject(<AboutModel>{});
+  private portfolioSource: BehaviorSubject<ProjectModel[]> = new BehaviorSubject(<ProjectModel[]>[]);
+  private workSource: BehaviorSubject<WorkModel[]> = new BehaviorSubject(<WorkModel[]>[]);
 
-  readonly about$ = this.aboutSource.asObservable();
-  readonly portfolio$ = this.portfolioSource.asObservable();
-  readonly work$ = this.workSource.asObservable();
+  public readonly about$ = this.aboutSource.asObservable();
+  public readonly portfolio$ = this.portfolioSource.asObservable();
+  public readonly work$ = this.workSource.asObservable();
 
-  isFormSent$: Subject<boolean> = new Subject();
-
-
-  constructor(private http: HttpClient, private fs: AngularFirestore) {
-  }
-
+  constructor(private http: HttpClient, private fs: AngularFirestore) { }
 
   async fetchAboutData() {
     if (!this.aboutSource.getValue().summery) {
@@ -86,9 +82,9 @@ export class ApiService {
     }
   }
 
-  responseConfirmation(dataToSend: any){
-    this.http.post('http://localhost:3000', dataToSend).pipe(map(data=>data)).subscribe(console.log)
-    this.isFormSent$.next(false);
+  responseConfirmation(dataToSend: any) {
+    this.http.post('http://localhost:3000', dataToSend).pipe(map(data => data)).subscribe(console.log)
+    this.isFormSent$.next();
   }
 
 }

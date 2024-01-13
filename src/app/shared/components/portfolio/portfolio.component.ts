@@ -1,9 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { takeUntil } from 'rxjs';
 import { Company } from 'src/app/core/interfaces/Company.interface';
 import { ProjectModel } from 'src/app/core/interfaces/Project.interface';
 import { ApiService } from 'src/app/core/services/api.service';
 import { FilesService } from '../../../core/services/files.service';
+import { PageName } from 'src/app/core/enums/pages.enum';
+import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 
 @Component({
   selector: 'Portfolio',
@@ -15,30 +17,23 @@ import { FilesService } from '../../../core/services/files.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class PortfolioComponent implements OnInit, OnDestroy {
+export class PortfolioComponent extends UnSubscriber implements OnInit {
 
   @ViewChild('scrollElement') scrollElement!: ElementRef;
   @ViewChild('bottomScroll') bottomScroll!: ElementRef;
   @ViewChild('card') card!: ElementRef;
   @Input() currentTabIndex?: number;
 
-
-  portfolioSubscription!: Subscription;
-  mouseEventSubscription!: Subscription;
-  pageName: string = 'portfolio';
+  pageName: string = PageName.Portfolio;
   projects: ProjectModel[] = [];
   companies: Company['name'][] = [];
 
-  constructor(private apiService: ApiService, private fileService: FilesService, private renderer: Renderer2) { }
+  constructor(private apiService: ApiService, private fileService: FilesService, private renderer: Renderer2) { super() }
 
   ngOnInit(): void {
     this.apiService.cacheVerifier(this.pageName);
-    this.portfolioSubscription = this.apiService.portfolio$.subscribe(projects => {
+    this.apiService.portfolio$.pipe(takeUntil(this.unsubscribe$)).subscribe(projects => {
       this.projects = projects;
     })
-  }
-
-  ngOnDestroy(): void {
-    this.portfolioSubscription.unsubscribe()
   }
 }

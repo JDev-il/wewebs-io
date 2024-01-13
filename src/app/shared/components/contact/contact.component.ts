@@ -12,18 +12,15 @@ export class ContactComponent implements OnInit {
   isSent!: boolean;
 
   messageForm: FormGroup = this.fb.group({
-    name: ['',[Validators.required]],
+    name: ['', [Validators.required]],
     email: ['', [Validators.email, Validators.required]]
   })
 
   constructor(public fb: FormBuilder, private apiService: ApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
 
-  }
-
-
-  sendForm(formData: any){
+  sendForm(formData: any) {
     this.apiService.responseConfirmation(formData);
   }
 }

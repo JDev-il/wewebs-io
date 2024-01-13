@@ -1,32 +1,34 @@
 import { AfterContentChecked, Component, EventEmitter, OnDestroy, OnInit, Output, Renderer2 } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, takeUntil } from 'rxjs';
 import { AboutModel } from 'src/app/core/interfaces/About.interface';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AnimationsService } from '../../services/animations.service';
+import { PageName } from 'src/app/core/enums/pages.enum';
+import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 
 @Component({
   selector: 'About',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss', '../../styles/component.core.scss'],
 })
-export class AboutComponent implements OnInit, AfterContentChecked, OnDestroy {
+export class AboutComponent extends UnSubscriber implements OnInit, AfterContentChecked, OnDestroy {
 
   @Output() changeTab = new EventEmitter;
 
-  pageName: string = "about"
+  pageName: string = PageName.About
   fillHeader: boolean = false;
   isStaticTitleReady: boolean = false;
   isAboutTitleFxEnd!: boolean;
 
-  aboutSubscription!: Subscription;
   aboutData!: AboutModel;
 
   constructor(private animationService: AnimationsService, private apiService: ApiService, public renderer: Renderer2) {
+    super();
   }
 
   ngOnInit() {
     this.apiService.cacheVerifier(this.pageName);
-    this.aboutSubscription = this.apiService.about$.subscribe(about => {
+    this.apiService.about$.pipe(takeUntil(this.unsubscribe$)).subscribe(about => {
       this.aboutData = about;
     });
   }
@@ -43,9 +45,4 @@ export class AboutComponent implements OnInit, AfterContentChecked, OnDestroy {
       this.isStaticTitleReady = true
     }
   }
-
-  ngOnDestroy(): void {
-    this.aboutSubscription.unsubscribe()
-  }
-
 }
