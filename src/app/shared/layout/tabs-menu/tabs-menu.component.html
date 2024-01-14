@@ -62,20 +62,20 @@
     (selectedTabChange)="changeTab($event)"
     #tabGroup
   >
-    <mat-tab [label]="pageName.About | uppercase">
+    <mat-tab [label]="pageName.About">
       <ng-template matTabContent>
         <About (changeTab)="setTabChange($event)"></About>
       </ng-template>
     </mat-tab>
-    <mat-tab [label]="pageName.Portfolio | uppercase" #matTabHeader>
+    <mat-tab [label]="pageName.Portfolio" #matTabHeader>
       <ng-template matTabContent>
         <Portfolio [currentTabIndex]="tabIndex"></Portfolio>
       </ng-template>
     </mat-tab>
-    <mat-tab [label]="pageName.Experience | uppercase">
+    <mat-tab [label]="pageName.Experience">
       <ng-template matTabContent><Experience></Experience></ng-template>
     </mat-tab>
-    <mat-tab [label]="pageName.Contact | uppercase">
+    <mat-tab [label]="pageName.Contact">
       <ng-template matTabContent><Contact></Contact></ng-template>
     </mat-tab>
   </mat-tab-group>
