@@ -32,8 +32,7 @@
             "
           >
             <h1>Jonathan Daniel</h1>
-            <div [ngClass]="
-            !isAboutTitleFxEnd ? 'awaiting-title' : ''">
+            <div [ngClass]="!isAboutTitleFxEnd ? 'awaiting-title' : ''">
               <span>Software Developer</span>
             </div>
           </div>
@@ -61,13 +60,12 @@
         (mouseleave)="fillHeader = false"
       >
         <div class="aboutText">
-          <div class="aboutSummery" *ngFor="let summery of aboutData?.summery">
+          <div class="aboutSummery" *ngFor="let summery of aboutData.summery">
             <p>
               {{ summery }}
             </p>
             <br />
           </div>
-
           <div class="portfolioBtn">
             <button (click)="viewPortfolio()">View Portfolio</button>
           </div>

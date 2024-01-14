@@ -5,7 +5,6 @@ import {
   HttpEvent,
   HttpInterceptor,
   HttpResponse,
-  HttpClient,
 } from '@angular/common/http';
 import { Observable, of, share, tap } from 'rxjs';
 
@@ -17,17 +16,5 @@ export class HttpInterceptorService implements HttpInterceptor {
       return next.handle(req)
     }
     return next.handle(req);
-    // const cachedResponse: HttpResponse<any> | undefined = this.cache.get(req)
-    // if (cachedResponse) {
-    //   return of(cachedResponse.clone())
-    // } else {
-    //   return next.handle(req).pipe(
-    //     tap(res=>{
-    //       if(res instanceof HttpResponse){
-    //         this.cache.set(req, res.clone().body)
-    //       }
-    //     })
-    //   )
-    // }
   }
 }

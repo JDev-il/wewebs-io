@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFireAction, FirebaseOperation, SnapshotAction } from '@angular/fire/compat/database/interfaces';
-import { DocumentReference, AngularFirestore, AngularFirestoreDocument, fromCollectionRef, QueryDocumentSnapshot, QuerySnapshot, SnapshotOptions } from '@angular/fire/compat/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import {
   BehaviorSubject,
@@ -11,6 +10,7 @@ import {
 import { AboutModel } from '../interfaces/About.interface';
 import { ProjectModel } from '../interfaces/Project.interface';
 import { WorkModel } from '../interfaces/Work.interface';
+import { PageName } from '../enums/pages.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -34,18 +34,19 @@ export class ApiService {
   async fetchAboutData() {
     if (!this.aboutSource.getValue().summery) {
       await this.fs
-        .collection('about')
+        .collection(PageName.About)
         .get().forEach(data => {
           data.docs.forEach(async (about: AboutModel | any) => {
             this.aboutCachedData = await about.data();
             this.aboutSource.next(this.aboutCachedData);
           })
-        })
+        }
+      )
     }
   }
 
   async fetchPortfolioData() {
-    await this.fs.collection('portfolio').get().forEach(async data => {
+    await this.fs.collection(PageName.Portfolio).get().forEach(async data => {
       const portfolioData = await data.query.orderBy('chronology').get();
       portfolioData.docs.forEach(async (doc: ProjectModel | any) => {
         this.portfolioCahchedData.push(doc.data());
@@ -54,9 +55,8 @@ export class ApiService {
     })
   }
 
-
   async fetchWorkExperienceData() {
-    await this.fs.collection('work').get().forEach(async data => {
+    await this.fs.collection(PageName.Work).get().forEach(async data => {
       const orderByDate = await data.query.orderBy('date', 'desc').get();
       orderByDate.docs.forEach((work: WorkModel | any) => {
         this.workCachedData.push(work.data());
@@ -65,19 +65,18 @@ export class ApiService {
     })
   }
 
-
   async getChartsData(chosenExperience: WorkModel) {
-    return (await this.fs.firestore.collection("charts").doc(chosenExperience.chart_ref).get()).data()
+    return (await this.fs.firestore.collection("charts").doc(chosenExperience.chart_ref).get()).data();
   }
 
   cacheVerifier(pageName: string) {
-    if (pageName === 'about' && !this.aboutCachedData) {
+    if (pageName === PageName.About && !this.aboutCachedData) {
       this.fetchAboutData();
     }
-    else if (pageName === 'portfolio' && !this.portfolioCahchedData.length) {
+    else if (pageName === PageName.Portfolio && !this.portfolioCahchedData.length) {
       this.fetchPortfolioData();
     }
-    else if (pageName === 'work' && !this.workCachedData.length) {
+    else if (pageName === PageName.Work && !this.workCachedData.length) {
       this.fetchWorkExperienceData();
     }
   }

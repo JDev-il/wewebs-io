@@ -3,6 +3,7 @@ import { AnimationsService } from '../../services/animations.service';
 import { MatTabGroup } from '@angular/material/tabs';
 import { FilesService } from 'src/app/core/services/files.service';
 import { Navigation } from 'src/app/core/enums/navigation.enum';
+import { PageName, Tabs } from 'src/app/core/enums/pages.enum';
 
 @Component({
   selector: 'tabs-menu',
@@ -17,6 +18,8 @@ export class TabsMenuComponent implements AfterContentInit {
 
   @Output() nextPage = new EventEmitter<number>;
 
+  public pageName = PageName;
+  public tabs = Tabs;
   public changeCurrentTab!: number;
   public tabIndex!: number;
   public selectedIndex!: number;

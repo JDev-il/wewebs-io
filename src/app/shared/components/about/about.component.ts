@@ -1,5 +1,5 @@
 import { AfterContentChecked, Component, EventEmitter, OnDestroy, OnInit, Output, Renderer2 } from '@angular/core';
-import { Subscription, takeUntil } from 'rxjs';
+import { Subscription, pipe, takeUntil } from 'rxjs';
 import { AboutModel } from 'src/app/core/interfaces/About.interface';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AnimationsService } from '../../services/animations.service';
@@ -14,13 +14,12 @@ import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 export class AboutComponent extends UnSubscriber implements OnInit, AfterContentChecked, OnDestroy {
 
   @Output() changeTab = new EventEmitter;
+  private pageName: string = PageName.About
+  public isStaticTitleReady: boolean = false;
+  public fillHeader: boolean = false;
+  public isAboutTitleFxEnd!: boolean;
 
-  pageName: string = PageName.About
-  fillHeader: boolean = false;
-  isStaticTitleReady: boolean = false;
-  isAboutTitleFxEnd!: boolean;
-
-  aboutData!: AboutModel;
+  public aboutData!: AboutModel;
 
   constructor(private animationService: AnimationsService, private apiService: ApiService, public renderer: Renderer2) {
     super();

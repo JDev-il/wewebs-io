@@ -11,7 +11,6 @@ export class AuthService {
  async decodeToken(){
     const token = localStorage.getItem('token') || "";
     const tokenPayload = decode(token);
-
   }
 
   isLoggedIn() {
