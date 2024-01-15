@@ -1,5 +1,7 @@
 import {
   AfterContentInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   Input,
   OnInit,
@@ -23,30 +25,22 @@ import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
     './experience.component.scss',
     '../../styles/animations.core.scss',
     '../../styles/component.core.scss',
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExperienceComponent extends UnSubscriber implements OnInit, AfterContentInit {
 
-  @Input() currentBarCompany!: string
-
   pageName: string = PageName.Work;
-
-  step = 0;
   isWorkFxEnd: boolean = false;
   panelOpenState: boolean = false;
   isTitleClicked: boolean = false;
-
-  workExperienceSubscribe!: Subscription
-  workExperienceData: WorkModel[] = [];
-
-  @ViewChild(MatExpansionPanel, { static: true })
-  matExpansionPanelElement!: MatExpansionPanel;
-  chosenPositionValue!: string;
+  workExperienceData!: WorkModel[];
 
   constructor(
     private animationService: AnimationsService,
     private apiService: ApiService,
-    private chartsService: ChartsService
+    private chartsService: ChartsService,
+    private cd: ChangeDetectorRef
   ) {
     super()
   }
@@ -62,14 +56,11 @@ export class ExperienceComponent extends UnSubscriber implements OnInit, AfterCo
     this.chartsService.setChartsData(data)
   }
 
-  sendCurrentCompany(name: string) {
-    this.currentBarCompany = name
-  }
-
   ngAfterContentInit(): void {
     if (this.animationService.isWorkAnimationLoaded) {
       this.isWorkFxEnd = this.animationService.isWorkAnimationLoaded;
     }
+    this.cd.detectChanges();
   }
 
 }

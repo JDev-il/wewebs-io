@@ -24,14 +24,13 @@ export class TabsMenuComponent implements AfterContentInit {
   public tabIndex!: number;
   public selectedIndex!: number;
   public isDownloaded!: boolean;
-  public text = "changed";
 
   constructor(
     private animationService: AnimationsService,
     private fileService: FilesService,
     private cd: ChangeDetectorRef
   ) {
-    this.changeCurrentTab = 0;
+    this.changeCurrentTab = Tabs.About;
     this.selectedIndex = this.changeCurrentTab;
   }
 
@@ -49,7 +48,7 @@ export class TabsMenuComponent implements AfterContentInit {
 
   public changeTab(tab: {index: number}) {
     if (tab.index === undefined) {
-      this.changeCurrentTab = 0;
+      this.changeCurrentTab = Tabs.About;
     }
     this.changeCurrentTab = tab.index;
     this.nextPageEmmiter(this.changeCurrentTab)
@@ -60,10 +59,10 @@ export class TabsMenuComponent implements AfterContentInit {
   }
 
   public nextPreviousTab(type: string) {
-    if (type === Navigation.prev && this.changeCurrentTab > 0) {
+    if (type === Navigation.prev && this.changeCurrentTab > Tabs.About) {
       this.changeCurrentTab--
     }
-    if (type === Navigation.next && this.changeCurrentTab < 3) {
+    if (type === Navigation.next && this.changeCurrentTab < Tabs.Contact) {
       this.changeCurrentTab++
     }
   }

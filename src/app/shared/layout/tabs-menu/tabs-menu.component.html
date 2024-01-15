@@ -1,37 +1,17 @@
-<div
-  class="navigator-top"
-  [ngClass]="isNavigatorsFxEnd ? '' : 'initNavigatorsFx'"
->
-  <button
-    (click)="nextPreviousTab('prev')"
-    [disabled]="changeCurrentTab === tabs.About"
-    [ngClass]="{ 'tab-block': changeCurrentTab === tabs.Contact}"
-  >
+<div class="navigator-top" [ngClass]="isNavigatorsFxEnd ? '' : 'initNavigatorsFx'">
+  <button (click)="nextPreviousTab('prev')" [disabled]="changeCurrentTab === tabs.About"
+    [ngClass]="{ 'tab-block': changeCurrentTab === tabs.Contact }">
     &lsaquo;
   </button>
 </div>
-<div
-  class="navigator-bottom"
-  [ngClass]="isNavigatorsFxEnd ? '' : 'initNavigatorsFx'"
->
-  <button
-    (click)="nextPreviousTab('next')"
-    [disabled]="changeCurrentTab === tabs.Contact"
-    [ngClass]="{ 'tab-block': changeCurrentTab === tabs.About}"
-  >
+<div class="navigator-bottom" [ngClass]="isNavigatorsFxEnd ? '' : 'initNavigatorsFx'">
+  <button (click)="nextPreviousTab('next')" [disabled]="changeCurrentTab === tabs.Contact"
+    [ngClass]="{ 'tab-block': changeCurrentTab === tabs.About }">
     &rsaquo;
   </button>
 </div>
-<div
-  class="mainContentWrapper"
-  [ngClass]="isSideBarFxEnd ? '' : 'initSidebarFx'"
-  Animations
-  [pageName]="'sidebar'"
->
-  <div
-    class="socialLinks"
-    [ngClass]="!isSideBarFxEnd ? 'incominglLinksFx' : ''"
-  >
+<div class="mainContentWrapper" [ngClass]="isSideBarFxEnd ? '' : 'initSidebarFx'" Animations [pageName]="'sidebar'">
+  <div class="socialLinks" [ngClass]="!isSideBarFxEnd ? 'incominglLinksFx' : ''">
     <a target="_blank" href="https://linkedin.com/in/jonathan-daniel">
       <img src="https://bit.ly/3jmPuoM" alt="LinkedIn" title="LinkedIn" />
     </a>
@@ -42,48 +22,38 @@
       <img src="https://bit.ly/3v8pa4I" alt="Facebook" title="Facebook" />
     </a>
   </div>
-  <div
-    class="jdev-logo"
-    [ngClass]="!isSideBarFxEnd ? 'incominglLogoFx' : ''"
-    (click)="changeCurrentTab = tabs.About"
-  ></div>
+  <div class="jdev-logo" [ngClass]="!isSideBarFxEnd ? 'incominglLogoFx' : ''" (click)="changeCurrentTab = tabs.About">
+  </div>
   <div class="resumeBtn" [ngClass]="!isSideBarFxEnd ? 'downloadButtonFx' : ''">
-    <button
-      matButton
-      (click)="downloadFile()"
-      [disabled]="isDownloaded ? true : null"
-      [ngClass]="isDownloaded ? 'disabled' : ''"
-    >
+    <button matButton (click)="downloadFile()" [disabled]="isDownloaded ? true : null"
+      [ngClass]="isDownloaded ? 'disabled' : ''">
       Resume
     </button>
   </div>
-  <mat-tab-group
-    [selectedIndex]="changeCurrentTab"
-    (selectedTabChange)="changeTab($event)"
-    #tabGroup
-  >
-    <mat-tab [label]="pageName.About | titlecase">
+  <mat-tab-group [selectedIndex]="changeCurrentTab" (selectedTabChange)="changeTab($event)" #tabGroup>
+    <mat-tab [label]="pageName.About | titlecase" #matTabHeader>
       <ng-template matTabContent>
         <About (changeTab)="setTabChange($event)"></About>
       </ng-template>
     </mat-tab>
     <mat-tab [label]="pageName.Portfolio | titlecase" #matTabHeader>
       <ng-template matTabContent>
-        <Portfolio [currentTabIndex]="tabIndex"></Portfolio>
+        <Portfolio></Portfolio>
       </ng-template>
     </mat-tab>
-    <mat-tab [label]="pageName.Experience | titlecase">
-      <ng-template matTabContent><Experience></Experience></ng-template>
+    <mat-tab [label]="pageName.Experience | titlecase" #matTabHeader>
+      <ng-template matTabContent>
+        <Experience></Experience>
+      </ng-template>
     </mat-tab>
-    <mat-tab [label]="pageName.Contact | titlecase">
-      <ng-template matTabContent><Contact></Contact></ng-template>
+    <mat-tab [label]="pageName.Contact | titlecase" #matTabHeader>
+      <ng-template matTabContent>
+        <Contact></Contact>
+      </ng-template>
     </mat-tab>
   </mat-tab-group>
   <div class="rightSideText">
-    <div
-      class="verticalFloatingDiv"
-      [ngClass]="!isSideBarFxEnd ? 'incominglLinksFx' : ''"
-    >
+    <div class="verticalFloatingDiv" [ngClass]="!isSideBarFxEnd ? 'incominglLinksFx' : ''">
       <a href="mailto:jdwork2021@gmail.com">jdwork2021@gmail.com</a>
     </div>
   </div>

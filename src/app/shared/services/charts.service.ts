@@ -27,9 +27,10 @@ export class ChartsService {
       return;
     } else {
       this.currentChartData = chartData;
-      const getData = await this.apiService.getChartsData(chartData);
-      const work = getData?.['work_percentage'];
-      const stacks = getData?.['stacks'];
+      const
+      getData = await this.apiService.getChartsData(chartData),
+      work = getData?.['work_percentage'],
+      stacks = getData?.['stacks'];
 
       this.barsSource.next([stacks, this.currentChartData.company]);
       this.piesSource.next([this.currentChartData.company, work]);
