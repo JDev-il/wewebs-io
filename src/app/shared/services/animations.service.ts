@@ -1,39 +1,65 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject, from, of } from 'rxjs';
 import { PageName } from 'src/app/core/enums/pages.enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AnimationsService {
-  isNavigatorsLoaded: boolean = false;
-  isSidebarAnimationLoaded: boolean = false;
-  isAboutAnimationLoaded: boolean = false;
-  isWorkAnimationLoaded: boolean = false;
-  isPortfolioAnimationLoaded: boolean = false;
 
-  setAnimationSession(pageName: string) {
+  private animationStateSource: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private sidebarAnimationSource: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private aboutAnimationSource: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private workAnimationSource: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private navAnimationSource: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private portfolioAnimationSource: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+  public isAnimationState$ = this.animationStateSource.asObservable();
+  public isAbout$ = this.aboutAnimationSource.asObservable();
+  public isSideBar$ = this.sidebarAnimationSource.asObservable();
+  public isNav$ = this.sidebarAnimationSource.asObservable();
+  public isWork$ = this.workAnimationSource.asObservable();
+  public isPortfolio$ = this.portfolioAnimationSource.asObservable();
+
+  get aboutAnimValue(): boolean {
+    return this.aboutAnimationSource.getValue();
+  }
+  get sideBarAnimValue(): boolean {
+    return this.sidebarAnimationSource.getValue();
+  }
+  get navAnimValue(): boolean {
+    return this.navAnimationSource.getValue();
+  }
+  get workAnimValue(): boolean {
+    return this.workAnimationSource.getValue();
+  }
+  get portfolioAnimValue(): boolean {
+    return this.portfolioAnimationSource.getValue();
+  }
+
+  public getAnimationSession(pageName: string) {
+    return sessionStorage.getItem(pageName) === 'enabled';
+  }
+
+  public setAnimationSession(pageName: string) {
     sessionStorage.setItem(pageName, 'enabled');
   }
 
-  getAnimationState(pageName: string): boolean {
-    return sessionStorage.getItem(pageName) === 'enabled'
-  }
-
-  enableDisableAnimation(pageName: string): void {
-    switch(pageName){
+  public enableDisableAnimation(pageName: string): void {
+    switch (pageName) {
       case PageName.Sidebar:
-        this.isSidebarAnimationLoaded = true;
-        this.isNavigatorsLoaded = true;
-        return;
+        this.navAnimationSource.next(true);
+        this.sidebarAnimationSource.next(true);
+        break;
       case PageName.About:
-        this.isAboutAnimationLoaded = true;
-        return;
+        this.aboutAnimationSource.next(true);
+        break;
       case PageName.Work:
-        this.isWorkAnimationLoaded = true;
-        return;
+        this.workAnimationSource.next(true);
+        break;
       case PageName.Portfolio:
-        this.isPortfolioAnimationLoaded = true;
-        return;
+        this.portfolioAnimationSource.next(true);
+        break;
     }
   }
 }

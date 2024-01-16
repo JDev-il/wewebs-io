@@ -5,12 +5,8 @@ import {
   Component,
   Input,
   OnInit,
-  ViewChild,
 } from '@angular/core';
-import {
-  MatExpansionPanel,
-} from '@angular/material/expansion';
-import { Subscription, takeUntil } from 'rxjs';
+import { takeUntil } from 'rxjs';
 import { WorkModel } from 'src/app/core/interfaces/Work.interface';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AnimationsService } from '../../services/animations.service';
@@ -30,11 +26,10 @@ import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 })
 export class ExperienceComponent extends UnSubscriber implements OnInit, AfterContentInit {
 
-  pageName: string = PageName.Work;
-  isWorkFxEnd: boolean = false;
-  panelOpenState: boolean = false;
-  isTitleClicked: boolean = false;
-  workExperienceData!: WorkModel[];
+  @Input() isWorkFxEnd: boolean = false;
+
+  public pageName: string = PageName.Work;
+  public workExperienceData!: WorkModel[];
 
   constructor(
     private animationService: AnimationsService,
@@ -50,6 +45,10 @@ export class ExperienceComponent extends UnSubscriber implements OnInit, AfterCo
     this.apiService.work$.pipe(takeUntil(this.unsubscribe$)).subscribe(work => {
       this.workExperienceData = work;
     })
+    // this.animationService.isWork$.pipe(takeUntil(this.unsubscribe$)).subscribe(res=>{
+    //   this.isWorkFxEnd = res
+    // });
+    this.cd.detectChanges();
   }
 
   passDataToDataService(data: any) {
@@ -57,10 +56,7 @@ export class ExperienceComponent extends UnSubscriber implements OnInit, AfterCo
   }
 
   ngAfterContentInit(): void {
-    if (this.animationService.isWorkAnimationLoaded) {
-      this.isWorkFxEnd = this.animationService.isWorkAnimationLoaded;
-    }
-    this.cd.detectChanges();
+
   }
 
 }

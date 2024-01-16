@@ -9,8 +9,7 @@ import { BarChart, PieChart } from 'src/app/core/interfaces/Chart.interface';
 })
 export class ChartsService {
 
-  currentChartData!: WorkModel
-  cachedBarChart: BarChart[] = []
+  private currentChartData!: WorkModel
 
   private piesSource: BehaviorSubject<PieChart[]> = new BehaviorSubject(<PieChart[]>[])
   readonly pies$ = this.piesSource.asObservable();

@@ -1,9 +1,7 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { takeUntil } from 'rxjs';
-import { Company } from 'src/app/core/interfaces/Company.interface';
 import { ProjectModel } from 'src/app/core/interfaces/Project.interface';
 import { ApiService } from 'src/app/core/services/api.service';
-import { FilesService } from '../../../core/services/files.service';
 import { PageName } from 'src/app/core/enums/pages.enum';
 import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 
@@ -20,14 +18,12 @@ import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 export class PortfolioComponent extends UnSubscriber implements OnInit {
 
   @ViewChild('scrollElement') scrollElement!: ElementRef;
-  @ViewChild('bottomScroll') bottomScroll!: ElementRef;
-  @ViewChild('card') card!: ElementRef;
 
-  pageName: string = PageName.Portfolio;
-  projects: ProjectModel[] = [];
-  companies: Company['name'][] = [];
+  public pageName: string = PageName.Portfolio;
+  public projects: ProjectModel[] = [];
 
-  constructor(private apiService: ApiService, private fileService: FilesService, private renderer: Renderer2, private cd: ChangeDetectorRef) { super() }
+  constructor(private apiService: ApiService, private cd: ChangeDetectorRef) {
+    super() }
 
   ngOnInit(): void {
     this.apiService.cacheVerifier(this.pageName);

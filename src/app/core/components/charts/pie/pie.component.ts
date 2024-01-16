@@ -1,6 +1,5 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { BarController, Chart, ChartConfiguration, ChartOptions, Color } from 'chart.js';
-import { map, mergeMap, Subscription } from 'rxjs';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ChartsService } from 'src/app/shared/services/charts.service';
 import { PieChart } from '../../../interfaces/Chart.interface';
 import { WorkModel } from '../../../interfaces/Work.interface';

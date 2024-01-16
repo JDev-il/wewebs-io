@@ -33,7 +33,7 @@
   <mat-tab-group [selectedIndex]="changeCurrentTab" (selectedTabChange)="changeTab($event)" #tabGroup>
     <mat-tab [label]="pageName.About | titlecase" #matTabHeader>
       <ng-template matTabContent>
-        <About (changeTab)="setTabChange($event)"></About>
+        <About (changeTab)="setTabChange($event)" [isAboutTitleFxEnd]="about"></About>
       </ng-template>
     </mat-tab>
     <mat-tab [label]="pageName.Portfolio | titlecase" #matTabHeader>
@@ -43,7 +43,7 @@
     </mat-tab>
     <mat-tab [label]="pageName.Experience | titlecase" #matTabHeader>
       <ng-template matTabContent>
-        <Experience></Experience>
+        <Experience [isWorkFxEnd]="work"></Experience>
       </ng-template>
     </mat-tab>
     <mat-tab [label]="pageName.Contact | titlecase" #matTabHeader>

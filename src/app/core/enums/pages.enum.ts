@@ -1,10 +1,10 @@
 export enum PageName {
-  Sidebar = "sidebar",
-  About = "about",
-  Portfolio = "portfolio",
-  Work = "work",
-  Contact = "contact",
-  Experience = "experience"
+  Sidebar = 'sidebar',
+  About = 'about',
+  Portfolio = 'portfolio',
+  Work = 'work',
+  Contact = 'contact',
+  Experience = 'experience'
 }
 
 export enum Tabs {
