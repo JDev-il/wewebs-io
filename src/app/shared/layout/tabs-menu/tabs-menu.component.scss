@@ -1,11 +1,12 @@
-.navigator-top, .navigator-bottom {
+.navigator-top,
+.navigator-bottom {
   position: fixed;
   z-index: 888;
   margin: 0 0 0 1%;
   bottom: 50%;
   > button {
     transform: scale(1);
-    transition: all .085s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: all 0.085s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     position: relative;
     cursor: pointer;
     margin: 0;
@@ -23,13 +24,13 @@
     &:disabled {
       pointer-events: none;
       color: #02fef6a7;
-      opacity: .4;
+      opacity: 0.4;
     }
     @media screen and (max-width: 1200px) {
       font-size: 5rem;
     }
     &:active {
-      transform: scale(.85);
+      transform: scale(0.85);
     }
   }
   .tab-block {
@@ -127,6 +128,7 @@
     z-index: 888;
     button {
       display: inline-flex;
+      align-items: center;
       justify-content: center;
       cursor: pointer;
       padding: 10px 15px;
@@ -139,6 +141,10 @@
       border: 1px solid #02fef6;
       font-weight: 100;
       transition: all 0.215s cubic-bezier(0.47, 0, 0.745, 0.715) !important;
+      span {
+        font-size: 1rem;
+        padding-right: 5px;
+      }
       &:hover {
         color: #160426;
         border-color: #02fef653;
@@ -147,6 +153,9 @@
       }
       @media screen and (max-width: 992px) {
         font-size: smaller;
+        span {
+          font-size: .8rem;
+        }
       }
     }
     .disabled {
@@ -425,4 +434,4 @@
     }
   }
 }
-@import '../../styles/breakpoints.core.scss';
+@import "../../styles/breakpoints.core.scss";

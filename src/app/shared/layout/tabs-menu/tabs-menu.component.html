@@ -27,6 +27,7 @@
   <div class="resumeBtn" [ngClass]="!isSideBarFxEnd ? 'downloadButtonFx' : ''">
     <button matButton (click)="downloadFile()" [disabled]="isDownloaded ? true : null"
       [ngClass]="isDownloaded ? 'disabled' : ''">
+      <span>&#8595;</span>
       Resume
     </button>
   </div>

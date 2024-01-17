@@ -45,6 +45,7 @@ export class TabsMenuComponent extends UnSubscriber implements AfterContentInit 
     private cd: ChangeDetectorRef
   ) {
     super();
+    super.ngOnDestroy();
 
     this.changeCurrentTab = Tabs.About;
     this.selectedIndex = this.changeCurrentTab;
