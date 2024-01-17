@@ -287,26 +287,20 @@
       font-weight: 300;
       font-size: 1.25rem;
       line-height: 1.5;
+      @media screen and (max-width: 992px) {
+        position: relative;
+        height: 48%;
+        overflow: auto;
+        top: 20%;
+      }
       .aboutContent {
         @media screen and (max-width: 992px) {
-          transform: translateY(33%);
+          // transform: translateY(20vh);
+          transform: translateY(0);
         }
-
-
-        //! Continue from here >>
-
         padding: 0;
         position: relative;
         transition: top 0.2s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
-        &:hover {
-          .aboutText {
-            .aboutSummery {
-              p {
-                color: #ecfdfb;
-              }
-            }
-          }
-        }
         .aboutText {
           position: relative;
           width: 100%;
@@ -317,14 +311,16 @@
               transition: color 0.15s cubic-bezier(0.47, 0, 0.745, 0.715);
               font-weight: 200;
               width: 75%;
-              @media screen and (max-width: 992px) {
-                font-size: smaller;
-              }
               &:hover {
                 color: #02fef6;
               }
               &:not(:hover) {
                 color: #ecfdfb;
+              }
+              @media screen and (max-width: 992px) {
+                &:hover {
+                  color:#ecfdfb;
+                }
               }
             }
           }

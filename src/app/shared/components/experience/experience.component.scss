@@ -185,6 +185,10 @@
                           right: 65px;
                         }
                       }
+                      @media screen and (max-width: 992px) {
+                        padding: 0 5px;
+                        font-size: 0.7rem;
+                      }
                     }
                   }
                   .mat-expansion-panel-header-description {
@@ -269,10 +273,25 @@
                           right: 0;
                         }
                       }
+                      @media screen and (max-width: 992px) {
+                        @keyframes yrsAppear {
+                          0% {
+                            opacity: 0;
+                            right: 40px;
+                          }
+                          100% {
+                            opacity: 1;
+                            right: 0;
+                          }
+                        }
+                      }
                     }
                     h5 {
                       font-size: 0.8rem;
                       color: var(--secondary-text-lighter);
+                      @media screen and (max-width: 992px) {
+                        font-size: 0.5rem;
+                      }
                     }
                   }
                 }
