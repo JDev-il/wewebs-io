@@ -17,8 +17,6 @@ export class ChartsService {
   private barsSource: BehaviorSubject<BarChart[]> = new BehaviorSubject(<BarChart[]>[])
   readonly bars$ = this.barsSource.asObservable();
 
-
-
   constructor(private apiService: ApiService) { }
 
   async setChartsData(chartData: WorkModel) {

@@ -4,7 +4,7 @@ import { MatTabGroup } from '@angular/material/tabs';
 import { FilesService } from 'src/app/core/services/files.service';
 import { Navigation } from 'src/app/core/enums/navigation.enum';
 import { PageName, Tabs } from 'src/app/core/enums/pages.enum';
-import { combineLatest, takeUntil, map, Observable, Subject, Subscription } from 'rxjs';
+import { combineLatest, takeUntil, map, Subscription } from 'rxjs';
 import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 
 @Component({
@@ -20,6 +20,7 @@ export class TabsMenuComponent extends UnSubscriber implements AfterContentInit 
 
   @Output() nextPage = new EventEmitter<number>;
 
+  private subscriptions: Subscription = new Subscription()
 
   public pageName = PageName;
   public tabs = Tabs;
@@ -34,10 +35,6 @@ export class TabsMenuComponent extends UnSubscriber implements AfterContentInit 
 
   public isSideBarFxEnds: boolean = false;
   public isNavigatorsFxEnds: boolean = false;
-
-  count: number = 0;
-
-  subscriptions: Subscription = new Subscription()
 
   constructor(
     private animationService: AnimationsService,
@@ -59,7 +56,7 @@ export class TabsMenuComponent extends UnSubscriber implements AfterContentInit 
         about: a,
         sidebar: b,
         nav: c,
-        work: d
+        work: d,
       }))
     ).subscribe(subs=>{
         this.about = subs.about;

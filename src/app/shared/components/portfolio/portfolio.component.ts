@@ -23,7 +23,9 @@ export class PortfolioComponent extends UnSubscriber implements OnInit {
   public projects: ProjectModel[] = [];
 
   constructor(private apiService: ApiService, private cd: ChangeDetectorRef) {
-    super() }
+    super();
+    super.ngOnDestroy();
+  }
 
   ngOnInit(): void {
     this.apiService.cacheVerifier(this.pageName);
