@@ -2,14 +2,25 @@
   ::ng-deep .mat-tab-group {
     .mat-tab-header {
       animation: initSidebar both 1.6s 4.8s
-        cubic-bezier(0.785, 0.135, 0.15, 0.96);
-
+      cubic-bezier(0.785, 0.135, 0.15, 0.96);
       @keyframes initSidebar {
         0% {
           opacity: 0;
           transform: translateX(-100%);
         }
       }
+      @media screen and (max-width: 1024px) {
+        @keyframes initSidebar {
+          0% {
+            opacity: 0;
+            transform: translateX(0);
+            transform: translateY(-100px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+      };
     }
   }
 }

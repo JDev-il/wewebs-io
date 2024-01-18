@@ -10,16 +10,15 @@ import { BarChart, PieChart } from 'src/app/core/interfaces/Chart.interface';
 export class ChartsService {
 
   private currentChartData!: WorkModel
-
   private piesSource: BehaviorSubject<PieChart[]> = new BehaviorSubject(<PieChart[]>[])
-  readonly pies$ = this.piesSource.asObservable();
-
   private barsSource: BehaviorSubject<BarChart[]> = new BehaviorSubject(<BarChart[]>[])
-  readonly bars$ = this.barsSource.asObservable();
+
+  public readonly bars$ = this.barsSource.asObservable();
+  public readonly pies$ = this.piesSource.asObservable();
 
   constructor(private apiService: ApiService) { }
 
-  async setChartsData(chartData: WorkModel) {
+  public async setChartsData(chartData: WorkModel) {
     if (this.currentChartData?.company === chartData.company) {
       return;
     } else {

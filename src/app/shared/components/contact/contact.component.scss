@@ -7,7 +7,7 @@
   overflow: hidden;
   margin: 0 auto;
   .leftWrapper {
-    width: 50%;
+    width: 48%;
     height: 100%;
     .contactWelcome {
       width: 100%;
@@ -37,9 +37,10 @@
           }
           img {
             @media screen and (min-width: 1240px) {
-              animation: iconUpDown .8s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+              animation: iconUpDown 0.8s infinite alternate
+                cubic-bezier(0.455, 0.03, 0.515, 0.955);
               @keyframes iconUpDown {
-                0%{
+                0% {
                   bottom: 0;
                 }
                 100% {
@@ -75,7 +76,7 @@
               }
               .optionDetails {
                 a {
-                  transition: color .2s ease-in-out;
+                  transition: color 0.2s ease-in-out;
                   color: var(--alt-text1);
                 }
               }
@@ -84,7 +85,7 @@
               height: 1px;
               width: 5%;
               background-color: var(--primary-text);
-              transition: width 0.4s 0.08s cubic-bezier(0.215, 0.610, 0.355, 1);
+              transition: width 0.4s 0.08s cubic-bezier(0.215, 0.61, 0.355, 1);
             }
             .optionDetails {
               width: max-content;
@@ -93,7 +94,7 @@
               left: 3%;
               padding: 5px 0;
               a {
-                transition: color .2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+                transition: color 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
                 display: flex;
                 font-size: 1rem;
                 text-decoration: none;
@@ -108,7 +109,7 @@
                   padding: 0;
                   margin: 0;
                   color: #02fef6;
-                  img{
+                  img {
                     padding: 0;
                     margin: 0;
                   }
@@ -139,7 +140,7 @@
           width: 50%;
           height: 50%;
           display: flex;
-          padding: 0 5% 0;
+          padding: 0px 25px;
           justify-content: center;
           align-items: flex-start;
           border-radius: 0.6em;
@@ -165,8 +166,36 @@
           .innerFormContainer {
             z-index: 888;
             width: 100%;
-            padding: 50px 0;
+            height: 100%;
+            padding: 0;
             margin: 0;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            .thank-you-note {
+              color: #02fef6;
+              display: flex;
+              flex-flow: column;
+              height: 35vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              h1 {
+                font-size: large;
+              }
+              h2 {
+                font-size: small;
+              }
+              @media screen and (max-width: 992px) {
+                h1 {
+                  font-size: medium;
+                }
+                h2 {
+                  font-size: smaller;
+                }
+              }
+            }
             .introMessage {
               padding-bottom: 1em;
               h3 {
@@ -223,6 +252,30 @@
                 padding-top: 13px;
               }
               .btnDiv {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                .clear-form-btn {
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  bottom: 0;
+                  left: 70%;
+                  display: flex;
+                  align-items: center;
+                  background-color: transparent;
+                  color: #02fef6;
+                  padding: 0;
+                  margin: 0;
+                  height: 0;
+                  border: none;
+                  cursor: pointer;
+                  margin: auto;
+                  &:active {
+                    color: #02fef653;
+                  }
+                }
                 .matBtn {
                   cursor: pointer;
                   padding: 15px;
@@ -244,7 +297,7 @@
                   }
                   @media screen and (max-width: 992px) {
                     font-size: smaller;
-                    padding: 10px;
+                    padding: 8px;
                   }
                 }
                 :disabled {

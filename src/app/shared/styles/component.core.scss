@@ -2,12 +2,9 @@
 
 .componentContainer {
   width: 100%;
+  height: 100%;
   overflow-x: hidden;
   cursor: default;
-  @media screen and (max-width: 1440px) {
-    position: relative;
-  }
-
   .inComponentWrapper{
     max-height: 100%;
   }

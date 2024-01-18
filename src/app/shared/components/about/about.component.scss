@@ -289,9 +289,9 @@
       line-height: 1.5;
       @media screen and (max-width: 992px) {
         position: relative;
-        height: 48%;
+        max-height: 40%;
         overflow: auto;
-        top: 20%;
+        top: 22%;
       }
       .aboutContent {
         @media screen and (max-width: 992px) {

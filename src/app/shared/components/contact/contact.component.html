@@ -1,4 +1,6 @@
-<div class="componentContainer contactResponssiveComponent contactComponent simpleFadeIn">
+<div
+  class="contactComponent componentContainer contactResponssiveComponent simpleFadeIn"
+>
   <div class="inComponentWrapper">
     <div class="leftWrapper">
       <div class="contactWelcome">
@@ -51,47 +53,51 @@
           <div class="formContainer">
             <div class="formOverlay"></div>
             <div class="innerFormContainer">
-              <div class="introMessage">
-                <h3>Or send me a message <mat-icon>mail</mat-icon></h3>
-              </div>
-              <form
-                [formGroup]="messageForm"
-                (ngSubmit)="sendForm(messageForm.value)"
-              >
-                <mat-form-field appearance="standard" hideRequiredMarker>
-                  <mat-label>To whom shall I reply to?</mat-label>
-                  <input
-                    autocomplete="off"
-                    matInput
-                    placeholder="Your name maybe..?"
-                    type="text"
-                    formControlName="name"
-                  />
-                </mat-form-field>
-                <mat-form-field appearance="standard" hideRequiredMarker>
-                  <mat-label>How can I reach you back?</mat-label>
-                  <input
-                    autocomplete="off"
-                    matInput
-                    placeholder="An email sounds awesome.. :)"
-                    type="email"
-                    formControlName="email"
-                  />
-                </mat-form-field>
-                <mat-form-field class="textAreaFormField">
-                  <mat-label>A comment, a feedback, anything really..</mat-label>
-                  <textarea matInput></textarea>
-                </mat-form-field>
-                <div class="btnDiv">
-                  <button
-                    type="submit"
-                    class="matBtn"
-                    [disabled]="!messageForm.valid"
-                  >
-                    Send Messages
-                  </button>
+              <ng-container *ngIf="!isFormValid; else formSent">
+                <div class="introMessage">
+                  <h3>Or send me a message <mat-icon>mail</mat-icon></h3>
                 </div>
-              </form>
+                <form [formGroup]="contactForm" (ngSubmit)="sendForm(contactForm.value)">
+                  <mat-form-field appearance="standard" hideRequiredMarker>
+                    <mat-label>To whom shall I reply to?</mat-label>
+                    <input
+                      autocomplete="off"
+                      matInput
+                      placeholder="Your name maybe..?"
+                      type="text"
+                      formControlName="name"
+                    />
+                  </mat-form-field>
+                  <mat-form-field appearance="standard" hideRequiredMarker>
+                    <mat-label>How can I reach you back?</mat-label>
+                    <input
+                      autocomplete="off"
+                      matInput
+                      placeholder="An email sounds awesome.. :)"
+                      type="email"
+                      formControlName="email"
+                    />
+                  </mat-form-field>
+                  <mat-form-field class="textAreaFormField">
+                    <mat-label
+                      >A comment, a feedback, anything really..</mat-label
+                    >
+                    <textarea matInput formControlName="extra"></textarea>
+                  </mat-form-field>
+                  <div class="btnDiv">
+                    <button
+                      type="submit"
+                      class="matBtn"
+                      [disabled]="contactForm.invalid"
+                    >
+                      Send Messages
+                    </button>
+                    <button class="clear-form-btn" type="reset">
+                      Clear form
+                    </button>
+                  </div>
+                </form>
+              </ng-container>
             </div>
           </div>
         </div>
@@ -99,3 +105,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #formSent>
+  <div class="thank-you-note">
+    <h1>Thanks for leaving a message!</h1>
+    <h2>I'll get back to you as soon as I can :)</h2>
+  </div>
+</ng-template>

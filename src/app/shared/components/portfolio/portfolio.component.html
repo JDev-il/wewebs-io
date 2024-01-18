@@ -1,8 +1,4 @@
-<div
-  class="portfolioComponent portfolioResponssiveComponent componentContainer simpleFadeIn"
-  Animations
-  [pageName]="'portfolio'"
->
+<div class="portfolioComponent componentContainer portfolioResponssiveComponent simpleFadeIn" Animations [pageName]="'portfolio'">
   <div class="inComponentWrapper">
     <div class="componentHeader">
       <div class="topPortfolioTitle">
@@ -16,13 +12,13 @@
           <div *ngFor="let project of projects; let i = index">
             <mat-card>
               <mat-card-title>
-                  <div class="company-info">
-                    <div class="img-protector">
-                      <img src='{{project.logo}}' alt="">
-                      <div class="mask"></div>
-                    </div>
-                    <h1>{{ project.company }}</h1>
+                <div class="company-info">
+                  <div class="img-protector">
+                    <img src="{{ project.logo }}" alt="" />
+                    <div class="mask"></div>
                   </div>
+                  <h1>{{ project.company }}</h1>
+                </div>
               </mat-card-title>
               <div *ngFor="let projectData of project.projects; let j = index">
                 <mat-card-content>

@@ -3,10 +3,9 @@ import {
   ChangeDetectorRef,
   Component,
   Input,
-  OnInit,
-  SimpleChanges,
+  OnInit
 } from '@angular/core';
-import { Observable, Subject, take, takeLast, takeUntil, takeWhile } from 'rxjs';
+import { takeUntil } from 'rxjs';
 import { WorkModel } from 'src/app/core/interfaces/Work.interface';
 import { ApiService } from 'src/app/core/services/api.service';
 import { ChartsService } from '../../services/charts.service';

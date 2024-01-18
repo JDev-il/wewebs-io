@@ -4,13 +4,13 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import {
   BehaviorSubject,
-  Subject,
-  map,
+  Subject
 } from 'rxjs';
 import { AboutModel } from '../interfaces/About.interface';
 import { ProjectModel } from '../interfaces/Project.interface';
 import { WorkModel } from '../interfaces/Work.interface';
 import { PageName } from '../enums/pages.enum';
+import { UserDetailsModel } from '../interfaces/Users.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -31,7 +31,7 @@ export class ApiService {
 
   constructor(private http: HttpClient, private fs: AngularFirestore) { }
 
-  async fetchAboutData() {
+  public async fetchAboutData() {
     if (!this.aboutSource.getValue().summery) {
       await this.fs
         .collection(PageName.About)
@@ -45,7 +45,7 @@ export class ApiService {
     }
   }
 
-  async fetchPortfolioData() {
+  public async fetchPortfolioData() {
     await this.fs.collection(PageName.Portfolio).get().forEach(async data => {
       const portfolioData = await data.query.orderBy('chronology').get();
       portfolioData.docs.forEach(async (doc: ProjectModel | any) => {
@@ -55,7 +55,7 @@ export class ApiService {
     })
   }
 
-  async fetchWorkExperienceData() {
+  public async fetchWorkExperienceData() {
     await this.fs.collection(PageName.Work).get().forEach(async data => {
       const orderByDate = await data.query.orderBy('date', 'desc').get();
       orderByDate.docs.forEach((work: WorkModel | any) => {
@@ -65,11 +65,11 @@ export class ApiService {
     })
   }
 
-  async getChartsData(chosenExperience: WorkModel) {
+  public async getChartsData(chosenExperience: WorkModel) {
     return (await this.fs.firestore.collection("charts").doc(chosenExperience.chart_ref).get()).data();
   }
 
-  cacheVerifier(pageName: string) {
+  public cacheVerifier(pageName: string) {
     if (pageName === PageName.About && !this.aboutCachedData) {
       this.fetchAboutData();
     }
@@ -81,9 +81,11 @@ export class ApiService {
     }
   }
 
-  responseConfirmation(dataToSend: any) {
-    this.http.post('http://localhost:3000', dataToSend).pipe(map(data => data)).subscribe(console.log)
-    this.isFormSent$.next();
+  public responseConfirmation(userData: UserDetailsModel): string {
+    //Todo: reach api endpoint (firebase db >> godaddy domain > update microsoft365 account)
+    // this.http.post('http://localhost:3000', userData).pipe(map(data => data)).subscribe(console.log)
+    // this.isFormSent$.next();
+    return 'Ok for now';
   }
 
 }

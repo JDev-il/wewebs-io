@@ -1,22 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
+import { ContactForm } from 'src/app/core/interfaces/Forms.interface';
+import { UserDetailsModel } from 'src/app/core/interfaces/Users.interface';
 import { ApiService } from 'src/app/core/services/api.service';
+import { FormUtilsService } from 'src/app/core/services/formutils.service';
+
 
 @Component({
   selector: 'Contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss', '../../styles/component.core.scss']
+  styleUrls: ['./contact.component.scss', '../../styles/component.core.scss'],
 })
-export class ContactComponent {
+export class ContactComponent extends UnSubscriber {
 
-  public messageForm: FormGroup = this.fb.group({
-    name: ['', [Validators.required]],
-    email: ['', [Validators.email, Validators.required]]
-  })
+  public isFormValid: boolean = false;
 
-  constructor(public fb: FormBuilder, private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private formUtilsService: FormUtilsService) {
+    super();
+    super.ngOnDestroy();
+  }
 
-  public sendForm(formData: any) {
+  get contactForm(): ContactForm{
+    return this.formUtilsService.getForm
+  }
+
+  public sendForm(formData: UserDetailsModel) {
+    this.isFormValid = true;
+    this.formUtilsService.updateFormStatus(formData);
     this.apiService.responseConfirmation(formData);
   }
 }
