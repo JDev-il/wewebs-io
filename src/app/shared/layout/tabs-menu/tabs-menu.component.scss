@@ -408,6 +408,11 @@
       bottom: 0;
       right: 0;
       backdrop-filter: blur(8px);
+      @media screen and (max-width: 992px) {
+        position: relative;
+        right: 2px;
+        backdrop-filter: unset;
+      }
       a {
         position: relative;
         font-size: small;

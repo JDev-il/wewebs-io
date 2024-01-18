@@ -12,8 +12,8 @@
         @media screen and (max-width: 1200px) {
           width: 20%;
           @media screen and (max-width: 992px) {
-            height: auto;
-            clip-path: ellipse(75% 150% at 50% -50%);
+            height: 10vh;
+            clip-path: ellipse(100% 100% at 50% -15%);
             width: 100%;
           }
         }
@@ -885,7 +885,7 @@
                     left: 0;
                     top: 10%;
                     position: fixed;
-                    max-height: 90%;
+                    max-height: 88%;
                     @media screen and (max-width: 768px) {
                       @media screen and (max-width: 544px) {
                         @media screen and (max-width: 460px) {
