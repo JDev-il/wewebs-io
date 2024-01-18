@@ -1,7 +1,8 @@
 .mainContentWrapper {
   @media screen and (max-width: 992px) {
-    position: fixed;
+    position: absolute;
     bottom: 0;
+    display: block;
   }
   /* TABS MENU || TABS MENU || TABS MENU || TABS MENU */
   ::ng-deep .mat-tab-group {
@@ -12,13 +13,22 @@
         @media screen and (max-width: 1200px) {
           width: 20%;
           @media screen and (max-width: 992px) {
+            position: fixed;
+            top: 0;
             height: 10vh;
             clip-path: ellipse(100% 100% at 50% -15%);
             width: 100%;
+            z-index: 99999;
+            backdrop-filter: none !important;
           }
         }
       }
       .mat-tab-label-container {
+        @media screen and (max-width: 992px) {
+          display: block;
+          overflow: auto;
+          z-index: 1;
+        }
         .mat-tab-list {
           @media screen and (max-width: 992px) {
             width: 100%;
