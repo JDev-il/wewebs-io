@@ -1,4 +1,4 @@
-import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { AnimationsService } from '../../services/animations.service';
 import { MatTabGroup } from '@angular/material/tabs';
 import { FilesService } from 'src/app/core/services/files.service';
@@ -6,6 +6,10 @@ import { Navigation } from 'src/app/core/enums/navigation.enum';
 import { PageName, Tabs } from 'src/app/core/enums/pages.enum';
 import { combineLatest, takeUntil, map, Subscription } from 'rxjs';
 import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
+import { ApiService } from 'src/app/core/services/api.service';
+import { AboutModel } from 'src/app/core/interfaces/About.interface';
+import { ProjectModel } from 'src/app/core/interfaces/Project.interface';
+import { WorkModel } from 'src/app/core/interfaces/Work.interface';
 
 @Component({
   selector: 'tabs-menu',
@@ -24,22 +28,26 @@ export class TabsMenuComponent extends UnSubscriber implements AfterContentInit 
 
   public pageName = PageName;
   public tabs = Tabs;
+
+  public aboutData!: AboutModel;
+  public portfolioData!: ProjectModel[];
+  public workData!: WorkModel[];
+
   public changeCurrentTab!: number;
   public tabIndex!: number;
   public selectedIndex!: number;
   public isDownloaded!: boolean;
-
   public about!: boolean;
   public work!: boolean;
   public portfolio!: boolean;
-
   public isSideBarFxEnds: boolean = false;
   public isNavigatorsFxEnds: boolean = false;
 
   constructor(
     private animationService: AnimationsService,
     private fileService: FilesService,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private apiService: ApiService
   ) {
     super();
     super.ngOnDestroy();
@@ -52,18 +60,33 @@ export class TabsMenuComponent extends UnSubscriber implements AfterContentInit 
       this.animationService.isSideBar$,
       this.animationService.isNav$,
       this.animationService.isWork$,
-    ]).pipe(takeUntil(this.unsubscribe$),map(([a, b, c, d]) => ({
-        about: a,
-        sidebar: b,
-        nav: c,
-        work: d,
-      }))
-    ).subscribe(subs=>{
-        this.about = subs.about;
-        this.isNavigatorsFxEnds = subs.nav;
-        this.isSideBarFxEnds = subs.sidebar;
-        this.work = subs.work;
-    }));
+    ]).pipe(takeUntil(this.unsubscribe$), map(([a, b, c, d]) => ({
+      about: a,
+      sidebar: b,
+      nav: c,
+      work: d,
+    }))
+    ).subscribe(animation => {
+      this.about = animation.about;
+      this.isNavigatorsFxEnds = animation.nav;
+      this.isSideBarFxEnds = animation.sidebar;
+      this.work = animation.work;
+    }).add(
+      combineLatest([this.apiService.about$, this.apiService.portfolio$, this.apiService.work$])
+        .pipe(
+          takeUntil(this.unsubscribe$),
+          map(([a, b, c]) => ({
+            about: a,
+            portfolio: b,
+            work: c
+          }))
+        )
+        .subscribe(stream => {
+        this.aboutData = stream.about;
+        this.portfolioData = stream.portfolio;
+        this.workData = stream.work;
+      })
+    ))
   }
 
   ngAfterContentInit(): void {
@@ -77,7 +100,7 @@ export class TabsMenuComponent extends UnSubscriber implements AfterContentInit 
     return this.isNavigatorsFxEnds;
   }
 
-  public changeTab(tab: {index: number}) {
+  public changeTab(tab: { index: number }) {
     if (tab.index === undefined) {
       this.changeCurrentTab = Tabs.About;
     }

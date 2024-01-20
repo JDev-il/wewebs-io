@@ -22,7 +22,7 @@ export class ContactComponent extends UnSubscriber {
   }
 
   get contactForm(): ContactForm{
-    return this.formUtilsService.getForm
+    return this.formUtilsService.getForm;
   }
 
   public sendForm(formData: UserDetailsModel) {

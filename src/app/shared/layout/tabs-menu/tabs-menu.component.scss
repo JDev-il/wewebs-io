@@ -142,8 +142,9 @@
       font-weight: 100;
       transition: all 0.215s cubic-bezier(0.47, 0, 0.745, 0.715) !important;
       span {
-        font-size: 1rem;
+        font-size: .9rem;
         padding-right: 5px;
+        padding-top: 1px;
       }
       &:hover {
         color: #160426;
@@ -154,7 +155,8 @@
       @media screen and (max-width: 992px) {
         font-size: smaller;
         span {
-          font-size: .8rem;
+          font-size: .5rem;
+          padding-right: 2px;
         }
       }
     }
