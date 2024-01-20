@@ -25,13 +25,12 @@ import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 export class ExperienceComponent extends UnSubscriber implements OnInit {
 
   @Input() isWorkFxEnd: boolean = false;
+  @Input() workExperienceData!: WorkModel[];
 
   public pageName: string = PageName.Work;
-  public workExperienceData!: WorkModel[];
   public isStep: boolean = false;
 
   constructor(
-    private apiService: ApiService,
     private chartsService: ChartsService,
     private cd: ChangeDetectorRef
   ) {
@@ -40,12 +39,7 @@ export class ExperienceComponent extends UnSubscriber implements OnInit {
   }
 
   ngOnInit(): void {
-    this.apiService.cacheVerifier(this.pageName);
-    this.apiService.work$.pipe(takeUntil(this.unsubscribe$)).subscribe(work => {
-      this.isStep = true;
-      this.workExperienceData = work;
-    })
-
+    this.workExperienceData.length ? this.isStep = true : '';
     this.cd.detectChanges();
   }
 

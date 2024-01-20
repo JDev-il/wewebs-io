@@ -1,7 +1,7 @@
 <div class="portfolioComponent componentContainer portfolioResponssiveComponent simpleFadeIn" Animations [pageName]="'portfolio'">
   <div class="inComponentWrapper">
     <div class="componentHeader">
-      <div class="topPortfolioTitle">
+      <div class="portfolioTitle">
         <h1>PORTFOLIO</h1>
         <h3>Projects & Features</h3>
       </div>
@@ -14,7 +14,7 @@
               <mat-card-title>
                 <div class="company-info">
                   <div class="img-protector">
-                    <img src="{{ project.logo }}" alt="" />
+                    <img src="{{ project.logo }}" alt="{{ project.company | lowercase }}" />
                     <div class="mask"></div>
                   </div>
                   <h1>{{ project.company }}</h1>
