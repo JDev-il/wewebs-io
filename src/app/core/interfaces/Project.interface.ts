@@ -1,7 +1,6 @@
 export interface ProjectModel {
   company: string,
   logo: string,
-  logo_name: string,
   projects: [
     {
       title: string,

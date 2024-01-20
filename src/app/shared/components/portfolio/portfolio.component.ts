@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { takeUntil } from 'rxjs';
 import { ProjectModel } from 'src/app/core/interfaces/Project.interface';
 import { ApiService } from 'src/app/core/services/api.service';
@@ -17,19 +17,21 @@ import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 
 export class PortfolioComponent extends UnSubscriber implements OnInit {
 
-  @Input() projects!: ProjectModel[];
-
   @ViewChild('scrollElement') scrollElement!: ElementRef;
 
   public pageName: string = PageName.Portfolio;
+  public projects: ProjectModel[] = [];
 
-
-  constructor(private cd: ChangeDetectorRef) {
+  constructor(private apiService: ApiService, private cd: ChangeDetectorRef) {
     super();
     super.ngOnDestroy();
   }
 
   ngOnInit(): void {
+    this.apiService.cacheVerifier(this.pageName);
+    this.apiService.portfolio$.pipe(takeUntil(this.unsubscribe$)).subscribe(projects => {
+      this.projects = projects;
+    })
     this.cd.detectChanges();
   }
 }

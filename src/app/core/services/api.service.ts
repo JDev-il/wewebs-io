@@ -4,9 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import {
   BehaviorSubject,
-  Observable,
-  Subject,
-  map
+  Subject
 } from 'rxjs';
 import { AboutModel } from '../interfaces/About.interface';
 import { ProjectModel } from '../interfaces/Project.interface';
@@ -31,11 +29,7 @@ export class ApiService {
   public readonly portfolio$ = this.portfolioSource.asObservable();
   public readonly work$ = this.workSource.asObservable();
 
-  constructor(private http: HttpClient, private fs: AngularFirestore) {
-    this.fetchAboutData();
-    this.fetchPortfolioData();
-    this.fetchWorkExperienceData();
-  }
+  constructor(private http: HttpClient, private fs: AngularFirestore) { }
 
   public async fetchAboutData() {
     if (!this.aboutSource.getValue().summery) {
@@ -73,6 +67,18 @@ export class ApiService {
 
   public async getChartsData(chosenExperience: WorkModel) {
     return (await this.fs.firestore.collection("charts").doc(chosenExperience.chart_ref).get()).data();
+  }
+
+  public cacheVerifier(pageName: string) {
+    if (pageName === PageName.About && !this.aboutCachedData) {
+      this.fetchAboutData();
+    }
+    else if (pageName === PageName.Portfolio && !this.portfolioCahchedData.length) {
+      this.fetchPortfolioData();
+    }
+    else if (pageName === PageName.Work && !this.workCachedData.length) {
+      this.fetchWorkExperienceData();
+    }
   }
 
   public responseConfirmation(userData: UserDetailsModel): string {

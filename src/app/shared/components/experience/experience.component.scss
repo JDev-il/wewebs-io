@@ -8,12 +8,13 @@
     background: var(--secondary-bg);
     .componentHeader {
       position: fixed;
+      top: 0;
       background-color: #271d3a43;
       backdrop-filter: blur(11px);
       -webkit-backdrop-filter: blur(11px);
+      height: 20%;
       width: 50%;
       z-index: 888;
-      padding-top: 10vh;
       .workTitle {
         position: relative;
         top: 50%;
@@ -32,6 +33,14 @@
           font-weight: 300;
           color: var(--secondary-text);
         }
+        @media screen and (max-width: 1440px) {
+          top: 15%;
+          @media screen and (max-width: 992px) {
+            top: 20%;
+          }
+        }
+        @media screen and (min-width: 1445px) {
+        }
       }
     }
     .leftSideWorkComponent {
@@ -47,14 +56,17 @@
         top: 0;
         .workDiv {
           width: 100%;
+          // position: fixed;
+          // max-height: 80%;
           bottom: 0;
+          left: 5vw;
           overflow-y: auto;
           overflow-x: hidden;
           padding-top: 20vh;
           scroll-behavior: smooth;
           ::ng-deep mat-accordion {
             color: var(--secondary-text-lighter);
-            width: 100%;
+            width: 50%;
             display: flex;
             flex-flow: column;
             align-items: center;
@@ -76,8 +88,8 @@
               display: flex;
               flex-flow: column;
               width: 50%;
-              height: 100%;
               box-shadow: 0 2px 12px -1px #a6fffc;
+              height: 100%;
               margin: 2% 0;
               transition: box-shadow 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
               &:not(.mat-expanded) {
@@ -292,30 +304,30 @@
         }
       }
     }
-    .rightSideWorkComponent {
-      position: fixed;
-      right: 0;
-      top: 0;
-      // height: 100%;
-      .workExperienceChart {
-        width: 100%;
+  }
+  .rightSideWorkComponent {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    .workExperienceChart {
+      width: 100%;
+      height: 100%;
+      .chartsContainer {
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: column;
         height: 100%;
-        .chartsContainer {
+        width: 100%;
+        top: 19vh;
+        .pieChart {
           position: relative;
-          box-sizing: border-box;
-          display: flex;
-          flex-flow: column;
-          height: 100%;
           width: 100%;
-          top: 19vh;
-          .pieChart {
-            position: relative;
-            width: 100%;
-          }
-          .barChart {
-            position: relative;
-            width: 100%;
-          }
+        }
+        .barChart {
+          position: relative;
+          width: 100%;
         }
       }
     }
