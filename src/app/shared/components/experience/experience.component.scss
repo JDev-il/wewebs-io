@@ -8,6 +8,9 @@
       position: absolute;
       top: 0;
       left: 0;
+      @media screen and (max-width: 992px) {
+        position: fixed;
+      }
       .componentContent {
         transition: all 1s ease-in-out;
         width: 100%;
