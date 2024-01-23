@@ -774,9 +774,9 @@
             p {
               transition: all 0.15s ease-in-out;
               cursor: default;
-              @media screen and (min-width: 1200px) {
-                // color: #1c052d5b;
-              }
+            }
+            @media screen and (max-width: 768px) {
+              padding: 5px 10px 7px !important;
             }
           }
         }
@@ -839,7 +839,7 @@
             }
 
             @media screen and (max-width: 1024px) {
-              padding-top: 15vh;
+              padding-top: 16vh;
               text-align: center;
               @media screen and (max-width: 992px) {
               }
@@ -1067,6 +1067,9 @@
                 top: 10%;
                 @media screen and (max-width: 992px) {
                   top: 18%;
+                  @media screen and (max-width: 768px) {
+                    top: 10%;
+                  }
                 }
                 .contactDiv {
                   left: unset;

@@ -77,8 +77,8 @@
               padding: 0;
               width: 85%;
               margin: 0 auto;
-              top: 12vh;
-              height: 75vh;
+              top: 13vh;
+              height: 73vh;
               position: relative;
             }
 
@@ -141,9 +141,6 @@
                     p {
                       transition: all 0.15s ease-in-out;
                       cursor: default;
-                      @media screen and (min-width: 1200px) {
-                        // color: #1c052d5b;
-                      }
                     }
                   }
                 }

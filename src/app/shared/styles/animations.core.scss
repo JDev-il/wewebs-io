@@ -65,8 +65,19 @@
     .showUpFx2,
     .showUpFx3 {
       position: relative;
-      font-size: 1.2rem !important;
+      font-size: 2rem !important;
       top: 25vh;
+      right: 12vw;
+      @media screen and (max-width: 768px) {
+        font-size: 1.8rem !important;
+        right: 8vw;
+        @media screen and (max-width: 540px) {
+          top: 30vh;
+          font-size: 1.4rem !important;
+          right: 6vw;
+        }
+      }
+
     }
   }
 
