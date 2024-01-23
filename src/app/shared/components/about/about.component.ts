@@ -1,6 +1,5 @@
-import { AfterContentChecked, AfterContentInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AboutModel } from 'src/app/core/interfaces/About.interface';
-import { ApiService } from 'src/app/core/services/api.service';
 import { PageName, Tabs } from 'src/app/core/enums/pages.enum';
 import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 
@@ -8,6 +7,7 @@ import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
   selector: 'About',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss', '../../styles/component.core.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutComponent extends UnSubscriber implements OnInit, AfterContentInit {
 
@@ -19,7 +19,7 @@ export class AboutComponent extends UnSubscriber implements OnInit, AfterContent
   @Input() aboutData!: AboutModel;
   public fillHeader: boolean = false;
 
-  constructor(public apiService: ApiService) {
+  constructor(private cd: ChangeDetectorRef) {
     super();
     super.ngOnDestroy();
   }

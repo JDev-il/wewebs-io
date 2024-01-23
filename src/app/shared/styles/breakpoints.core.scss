@@ -134,6 +134,8 @@
   /* ABOUT || ABOUT || ABOUT || ABOUT */
   .inComponentWrapper {
     @media screen and (max-width: 992px) {
+      overflow-x: hidden;
+      overflow-y: auto;
       position: fixed;
       top: 0;
     }
@@ -147,7 +149,7 @@
               @media screen and (max-width: 1600px) {
                 left: 30%;
                 @media screen and (max-width: 1440px) {
-                  left: 36%;
+                  left: 33%;
                   @media screen and (max-width: 1366px) {
                     @media screen and (max-width: 1280px) {
                       @media screen and (max-width: 992px) {
@@ -231,13 +233,12 @@
                   h1 {
                     font-size: 2.4rem;
                   }
-                  left: 36%;
+                  left: 33%;
                   top: 16vh;
                   @media screen and (max-width: 1366px) {
                     h1 {
                       font-size: 2.2rem;
                     }
-                    left: 38%;
                     @media screen and (max-width: 1280px) {
                       h1 {
                         font-size: 2rem;
@@ -364,7 +365,6 @@
       }
       .headerOverlay {
         @media screen and (max-width: 992px) {
-          left: 0 !important;
           display: flex;
           justify-content: center;
           top: 18vh !important;
@@ -477,12 +477,13 @@
       @media screen and (max-width: 1440px) {
         right: 5%;
         @media screen and (max-width: 1366px) {
-          height: 22% !important;
           @media screen and (max-width: 1200px) {
             right: 0%;
             display: flex;
             width: 100%;
             @media screen and (max-width: 1024px) {
+              left: 0;
+              width: 100%;
               padding-top: 0 !important;
               @media screen and (max-width: 992px) {
               }
@@ -510,7 +511,6 @@
               width: 100%;
               @media screen and (max-width: 992px) {
                 position: absolute !important;
-                left: 0 !important;
                 bottom: 0 !important;
                 text-align: center;
                 padding-bottom: 5px;
@@ -528,9 +528,8 @@
       }
     }
     .componentContent {
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: 992px) {
         width: 100%;
-        right: 5%;
       }
       .portfolioBlock {
         .portfolioCardsWrapper {
@@ -759,67 +758,7 @@
     @media screen and (max-width: 1024px) {
       max-height: none;
     }
-    .componentHeader {
-      @media screen and (max-width: 1366px) {
-        height: 22% !important;
-        padding-top: 0;
-        @media screen and (max-width: 992px) {
-          width: 100%;
-        }
-      }
-      .workTitle {
-        @media screen and (max-width: 1024px) {
-          padding-top: 15vh;
-          text-align: center;
-        }
-        @media screen and (min-width: 1920px) {
-          h1 {
-            font-size: 3.2rem;
-          }
-          @media screen and (min-width: 2560px) {
-            h1 {
-              font-size: 3.8rem;
-            }
-          }
-        }
-        @media screen and (max-width: 1920px) {
-          h1 {
-            font-size: 2.8rem;
-          }
-          @media screen and (max-width: 1600px) {
-            @media screen and (max-width: 1440px) {
-              @media screen and (max-width: 1366px) {
-                @media screen and (max-width: 1280px) {
-                  @media screen and (max-width: 1024px) {
-                    @media screen and (max-width: 992px) {
-                      // text-align: center !important;
-                      // left: unset !important;
-                      h1 {
-                        font-size: 2rem !important;
-                      }
-                      h3 {
-                        font-size: 0.7rem !important;
-                      }
-                      @media screen and (max-width: 768px) {
-                        @media screen and (max-width: 544px) {
-                          @media screen and (max-width: 460px) {
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
     .leftSideWorkComponent {
-      @media screen and (min-width: 1024px) {
-        position: fixed;
-        overflow: auto;
-      }
       @media screen and (max-width: 992px) {
         width: 100%;
         .overFlowBlock {
@@ -843,67 +782,87 @@
           }
         }
       }
-      .componentHeader {
+      .componentContent {
+        @media screen and (max-width: 992px) {
+          position: initial;
+          display: flex;
+          justify-content: center;
+        }
         .workTitle {
-          top: 55%;
-          @media screen and (max-width: 1600px) {
-            @media screen and (max-width: 1440px) {
-              height: 20%;
-              left: 8.5vw;
+          @media screen and (min-width: 1920px) {
+            .inner-work-title-wrapper {
               h1 {
-                font-size: 2.6rem;
+                font-size: 3.2rem;
+              }
+            }
+            @media screen and (min-width: 2560px) {
+              .inner-work-title-wrapper {
+                h1 {
+                  font-size: 3.8rem;
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 1920px) {
+            .inner-work-title-wrapper {
+              h1 {
+                font-size: 2.8rem;
               }
               h3 {
                 font-size: 0.8rem;
               }
-              @media screen and (max-width: 1366px) {
+            }
+            @media screen and (max-width: 1440px) {
+              .inner-work-title-wrapper {
                 h1 {
-                  font-size: 2.4rem;
+                  font-size: 2.6rem;
                 }
                 h3 {
                   font-size: 0.8rem;
+                }
+              }
+              @media screen and (max-width: 1366px) {
+                .inner-work-title-wrapper {
+                  h1 {
+                    font-size: 2.4rem;
+                  }
                 }
                 @media screen and (max-width: 1280px) {
                   @media screen and (max-width: 992px) {
                     top: 0;
                     height: auto;
                     left: 0;
-                    @media screen and (max-width: 768px) {
-                      @media screen and (max-width: 544px) {
-                        @media screen and (max-width: 460px) {
-                        }
-                      }
+                    h1 {
+                      font-size: 2rem !important;
+                    }
+                    h3 {
+                      font-size: 0.7rem !important;
                     }
                   }
                 }
               }
             }
+
+            @media screen and (max-width: 1024px) {
+              padding-top: 15vh;
+              text-align: center;
+              @media screen and (max-width: 992px) {
+              }
+            }
           }
         }
-      }
-      .componentContent {
-        @media screen and (min-width: 1024px) {
-
-        }
-        @media screen and (max-width: 992px) {
-          position: initial;
-          display: flex;
-          justify-content: center;
-        }
         .workDiv {
-          position: relative;
           @media screen and (max-width: 1600px) {
-            position: relative;
             /* left: 9vw; */
             @media screen and (max-width: 1440px) {
               // left: 5vw;
               @media screen and (max-width: 1366px) {
                 @media screen and (max-width: 1280px) {
                   @media screen and (max-width: 992px) {
+                    position: fixed;
                     padding: 0;
                     left: 0;
                     top: 10%;
-                    position: fixed;
                     max-height: 88%;
                     @media screen and (max-width: 768px) {
                       @media screen and (max-width: 544px) {
@@ -919,108 +878,108 @@
           @media screen and (min-width: 1024px) {
             padding-left: 0;
           }
-          ::ng-deep mat-accordion {
-            @media screen and (min-width: 1366px) {
-              left: 5vw;
-            }
-            @media screen and (max-width: 1600px) {
-              margin: 0;
-              @media screen and (max-width: 1440px) {
-                // width: 35%;
-                @media screen and (max-width: 992px) {
-                  width: 85%;
-                  padding: 0;
-                  margin: 0 auto;
-                }
-                .mat-expansion-panel {
-                  @media screen and (min-width: 1024px) {
-                    width: 65%;
-                  }
-                  @media screen and (max-width: 1024px) {
+          .mat-accordion-wrapper {
+            ::ng-deep mat-accordion {
+              @media screen and (min-width: 1366px) {
+              }
+              @media screen and (max-width: 1600px) {
+                margin: 0;
+                @media screen and (max-width: 1440px) {
+                  // width: 35%;
+                  @media screen and (max-width: 992px) {
                     width: 85%;
-                    @media screen and (max-width: 992px) {
-                      margin: 10px 0;
-                    }
+                    padding: 0;
+                    margin: 0 auto;
                   }
-                  .mat-expansion-panel-header {
-                    padding: 35px;
-                    @media screen and (max-width: 992px) {
-                      padding: 20px;
+                  .mat-expansion-panel {
+                    @media screen and (min-width: 1024px) {
                     }
-                    .mat-content {
-                      .mat-expansion-panel-header-title {
-                        h1 {
-                          font-size: 1.2rem;
-                        }
-                        @media screen and (max-width: 992px) {
-                          h1 {
-                            font-size: 0.4rem;
-                          }
-                        }
+                    @media screen and (max-width: 1024px) {
+                      // width: 85%;
+                      @media screen and (max-width: 992px) {
+                        margin: 10px 0;
                       }
-                      .mat-expansion-panel-header-description {
-                        h5 {
-                          font-size: 0.8rem;
-                        }
+                    }
+                    .mat-expansion-panel-header {
+                      padding: 35px;
+                      @media screen and (max-width: 992px) {
+                        padding: 20px;
                       }
-                      @media screen and (max-width: 1280px) {
+                      .mat-content {
                         .mat-expansion-panel-header-title {
                           h1 {
-                            font-size: 1.1rem;
+                            font-size: 1.2rem;
+                          }
+                          @media screen and (max-width: 992px) {
+                            h1 {
+                              font-size: 0.4rem;
+                            }
                           }
                         }
                         .mat-expansion-panel-header-description {
                           h5 {
-                            font-size: 0.7rem;
+                            font-size: 0.8rem;
                           }
                         }
-                        @media screen and (max-width: 992px) {
+                        @media screen and (max-width: 1280px) {
                           .mat-expansion-panel-header-title {
                             h1 {
-                              font-size: 0.8rem;
+                              font-size: 1.1rem;
                             }
                           }
                           .mat-expansion-panel-header-description {
                             h5 {
-                              color: var(--primary-text) !important;
-                              transition: none !important;
-                              font-size: 0.6rem;
+                              font-size: 0.7rem;
+                            }
+                          }
+                          @media screen and (max-width: 992px) {
+                            .mat-expansion-panel-header-title {
+                              h1 {
+                                font-size: 0.8rem;
+                              }
+                            }
+                            .mat-expansion-panel-header-description {
+                              h5 {
+                                color: var(--primary-text) !important;
+                                transition: none !important;
+                                font-size: 0.6rem;
+                              }
                             }
                           }
                         }
                       }
                     }
-                  }
-                  .mat-expansion-panel-content {
-                    .mat-expansion-panel-body {
-                      @media screen and (max-width: 992px) {
-                        .overFlowBlock {
-                          p:nth-child(n) {
-                            font-size: 0.7rem;
-                          }
-                          img:nth-child(n) {
-                            width: 15px;
+                    .mat-expansion-panel-content {
+                      .mat-expansion-panel-body {
+                        @media screen and (max-width: 992px) {
+                          .overFlowBlock {
+                            p:nth-child(n) {
+                              font-size: 0.7rem;
+                            }
+                            img:nth-child(n) {
+                              width: 15px;
+                            }
                           }
                         }
                       }
                     }
-                  }
-                  &:not(.mat-expanded) {
-                  }
-                  @media screen and (max-width: 992px) {
-                    .logoWrapper {
-                      display: flex;
-                      justify-content: center;
-                      img {
-                        max-width: 120px;
-                        margin: 0 auto;
+                    &:not(.mat-expanded) {
+                    }
+                    @media screen and (max-width: 992px) {
+                      .logoWrapper {
+                        display: flex;
+                        justify-content: center;
+                        img {
+                          max-width: 120px;
+                          margin: 0 auto;
+                        }
                       }
                     }
-                  }
-                  .mat-expanded {
-                    .mat-expansion-indicator {
-                      @media screen and (max-width: 992px) {
-                        padding: 5px;
+                    .mat-expanded {
+                      .mat-expansion-indicator {
+                        @media screen and (max-width: 992px) {
+                          padding: 5px;
+                        }
                       }
                     }
                   }
@@ -1033,10 +992,8 @@
     }
     .rightSideWorkComponent {
       @media screen and (min-width: 1601px) {
-        right: 15%;
       }
       @media screen and (max-width: 1600px) {
-        right: 10%;
         @media screen and (max-width: 1440px) {
           @media screen and (max-width: 1366px) {
             @media screen and (max-width: 1280px) {

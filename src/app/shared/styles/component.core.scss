@@ -4,12 +4,24 @@
   width: 100%;
   height: 100%;
   cursor: default;
+  overflow-x: hidden !important;
   @media screen and (max-width: 992px) {
     position: fixed !important;
     top: 0 !important;
   }
   .inComponentWrapper{
-    max-height: 100%;
+    background: var(--secondary-bg);
+    min-height: 100%;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    @media screen and (max-width: 1600px) {
+      width: 85%;
+      @media screen and (max-width: 992px) {
+        left: 0;
+        width: 100%;
+      }
+    }
   }
   ::ng-deep .mat-expansion-indicator {
     padding: 0;

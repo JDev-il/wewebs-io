@@ -1,14 +1,13 @@
 .aboutComponent {
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   .inComponentWrapper {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     transform: scale(1);
+    width: 100% !important;
+    left: 8vw;
     @media screen and (min-width: 1366px) {
       &:hover {
         .componentHeader:not(:hover) {
@@ -158,6 +157,7 @@
           .staticTitle {
             //Jonathan Daniel....
             position: relative;
+            width: fit-content;
             transition: opacity 0.6s 0.4s
               cubic-bezier(0.455, 0.03, 0.515, 0.955);
             opacity: 1;
@@ -225,6 +225,7 @@
           position: relative;
           line-height: 1.5;
           left: 18%;
+          width: fit-content;
           padding: 45px 0;
           top: 0;
           z-index: 4;
@@ -233,6 +234,11 @@
             width 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
             transform 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
             left 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+          @media screen and (max-width: 992px) {
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
           .aboutImg {
             .imgWrapper {
               transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);

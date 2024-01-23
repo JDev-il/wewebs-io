@@ -354,13 +354,10 @@
           }
           @media screen and (max-width: 1440px) {
             font-size: 120%;
-            margin-left: 15%;
-            @media screen and (max-width: 1200px) {
-              margin-left: 20%;
+             @media screen and (max-width: 1200px) {
               font-size: 100%;
               @media screen and (max-width: 992px) {
                 width: 100%;
-                margin-left: 0;
                 position: relative;
               }
             }
@@ -369,7 +366,7 @@
       }
 
       .mat-tab-body-active {
-        animation: contentBodyActive 0.4s both 0.2s ease-in-out;
+        animation: contentBodyActive 0.5s both 0.2s ease-in-out;
         @keyframes contentBodyActive {
           0% {
             opacity: 0;

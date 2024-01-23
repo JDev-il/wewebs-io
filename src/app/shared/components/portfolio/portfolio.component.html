@@ -1,7 +1,7 @@
 <div class="portfolioComponent componentContainer portfolioResponssiveComponent simpleFadeIn" Animations [pageName]="'portfolio'">
   <div class="inComponentWrapper">
     <div class="componentHeader">
-      <div class="portfolioTitle">
+      <div class="portfolioTitle simpleFadeIn">
         <h1>PORTFOLIO</h1>
         <h3>Projects & Features</h3>
       </div>
@@ -32,7 +32,7 @@
                             <h1>{{ projectData.title }}</h1>
                           </div>
                           <div class="desc">
-                            <p>{{ projectData.desc.join(" ") }}</p>
+                            <p>{{ projectData.desc.join(" ").trimEnd() }}</p>
                           </div>
                         </div>
                       </div>

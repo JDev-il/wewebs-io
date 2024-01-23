@@ -1,45 +1,49 @@
 <div class="workComponent componentContainer experienceResponssiveComponent simpleFadeIn" Animations [pageName]="'work'">
   <div class="inComponentWrapper">
     <div class="leftSideWorkComponent">
-      <div class="componentHeader">
-        <div class="workTitle" [ngClass]="isWorkFxEnd ? '' : 'simpleFadeIn'">
-          <h1>WORK EXPERIENCE</h1>
-          <h3>Comapnies, In-Depth Details & Segmented Data</h3>
-        </div>
-      </div>
+      <!-- <div class="componentHeader"> -->
+     <!-- </div> -->
       <div class="componentContent">
+        <div class="workTitle simpleFadeIn">
+          <div class="inner-work-title-wrapper">
+            <h1>WORK EXPERIENCE</h1>
+            <h3>Comapnies, In-Depth Details & Segmented Data</h3>
+          </div>
+        </div>
         <div class="workDiv">
-          <mat-accordion>
-            <mat-expansion-panel
-              [ngClass]="!isWorkFxEnd ? 'translateFadeInFx' : ''"
-              *ngFor="let work of workExperienceData; let i = index"
-              [expanded]="i === 0 && isStep"
-              (opened)="i === 0 ? passDataToDataService(work) : null"
-            >
-              <mat-expansion-panel-header (click)="passDataToDataService(work)">
-                <mat-panel-title>
-                    <h1>{{ work.role }}</h1>
-                    <h2> // {{ +work.date.total_in_months | M2Y }}</h2>
-                </mat-panel-title>
-                <mat-panel-description>
-                  <h5>
-                    {{ work.company }}
-                  </h5>
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <div class="logoWrapper">
-                <img src="assets/images/logos/{{ work.logo }}" alt="" />
-              </div>
-              <div class="overFlowBlock">
-                <div *ngFor="let desc of work.desc">
-                  <div class="descriptionContainer">
-                    <img src="assets/images/icons/coding-icon.svg" alt="" />
-                    <p>{{ desc }}</p>
+          <section class="mat-accordion-wrapper">
+            <mat-accordion>
+              <mat-expansion-panel
+                [ngClass]="!isWorkFxEnd ? 'translateFadeInFx' : ''"
+                *ngFor="let work of workExperienceData; let i = index"
+                [expanded]="i === 0 && isStep"
+                (opened)="i === 0 ? passDataToDataService(work) : null"
+              >
+                <mat-expansion-panel-header (click)="passDataToDataService(work)">
+                  <mat-panel-title>
+                      <h1>{{ work.role }}</h1>
+                      <h2> // {{ +work.date.total_in_months | M2Y }}</h2>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <h5>
+                      {{ work.company }}
+                    </h5>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="logoWrapper">
+                  <img src="assets/images/logos/{{ work.logo }}" alt="" />
+                </div>
+                <div class="overFlowBlock">
+                  <div *ngFor="let desc of work.desc">
+                    <div class="descriptionContainer">
+                      <img src="assets/images/icons/coding-icon.svg" alt="" />
+                      <p>{{ desc }}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </section>
         </div>
       </div>
     </div>
