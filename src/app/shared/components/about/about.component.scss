@@ -15,7 +15,8 @@
             .aboutTitle {
               .staticTitle {
                 left: 25vw;
-                transition: all 0.6s 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+                transition: all 0.6s 0.4s
+                  cubic-bezier(0.455, 0.03, 0.515, 0.955);
                 opacity: 0;
               }
               transition: all 0.6s 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -91,9 +92,10 @@
                   transform: scale(0.99) translateY(0);
                   .aboutImageBackground {
                     transition: border-radius 0.3s
-                    cubic-bezier(0.47, 0, 0.745, 0.715),
-                  background-color 0.4s 0.2s cubic-bezier(0.39, 0.575, 0.565, 1),
-                  box-shadow 0.3s .2s cubic-bezier(0.23, 1, 0.320, 1);
+                        cubic-bezier(0.47, 0, 0.745, 0.715),
+                      background-color 0.4s 0.2s
+                        cubic-bezier(0.39, 0.575, 0.565, 1),
+                      box-shadow 0.3s 0.2s cubic-bezier(0.23, 1, 0.32, 1);
                     animation-play-state: paused;
                     background-color: #1d062e1f;
                     border-radius: 50%;
@@ -111,14 +113,14 @@
               transition: top 0.2s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
               top: 0;
               button {
-                transition: opacity 0.4s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
+                transition: opacity 0.4s 0.1s
+                  cubic-bezier(0.39, 0.575, 0.565, 1);
                 opacity: 1;
               }
             }
           }
         }
       }
-
     }
     .componentHeader {
       display: flex;
@@ -237,7 +239,8 @@
           @media screen and (max-width: 992px) {
             left: 0;
             right: 0;
-            margin: auto;
+            margin: 0 auto;
+            padding: 20px 0 !important;
           }
           .aboutImg {
             .imgWrapper {
@@ -249,8 +252,7 @@
                 transition: border-radius 0.3s
                     cubic-bezier(0.47, 0, 0.745, 0.715),
                   background-color 0.4s 0.2s cubic-bezier(0.39, 0.575, 0.565, 1),
-                  box-shadow 0.3s
-                  cubic-bezier(0.47, 0, 0.745, 0.715);
+                  box-shadow 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
                 border-radius: 10%;
                 box-shadow: 0px 0px 8px -1px #ffffff72;
                 width: 250px;
@@ -283,6 +285,10 @@
                     background-size: 180% 180%;
                   }
                 }
+                @media screen and (max-width: 992px) {
+                  width: 225px;
+                  height: 225px;
+                }
               }
             }
           }
@@ -295,9 +301,13 @@
       line-height: 1.5;
       @media screen and (max-width: 992px) {
         position: relative;
-        max-height: 40%;
+        max-height: 48%;
         overflow: auto;
-        top: 22%;
+        top: 18vh;
+        @media screen and (max-width: 375px) {
+          max-height: 40%;
+          top: 19vh;
+        }
       }
       .aboutContent {
         @media screen and (max-width: 992px) {
@@ -325,7 +335,7 @@
               }
               @media screen and (max-width: 992px) {
                 &:hover {
-                  color:#ecfdfb;
+                  color: #ecfdfb;
                 }
               }
             }

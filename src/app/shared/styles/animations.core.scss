@@ -168,26 +168,45 @@
   z-index: 0;
   animation: moveImgAfterDoneFx both 2s 5.5s
     cubic-bezier(0.645, 0.045, 0.355, 1);
-  @keyframes moveImgAfterDoneFx {
-    0% {
-      opacity: 0;
-      left: 0;
-    }
-    100% {
-      opacity: 1;
-      left: 18%;
+  @media screen and (max-width: 992px) {
+    @keyframes moveImgAfterDoneFx {
+      0% {
+        opacity: 0;
+        left: -25vw;
+      }
+      100% {
+        opacity: 1;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
     }
   }
+  @media screen and (min-width: 992px) {
+    @keyframes moveImgAfterDoneFx {
+      0% {
+        opacity: 0;
+        left: 0;
+      }
+      100% {
+        opacity: 1;
+        left: 18%;
+      }
+    }
+  }
+
+
 }
 
 .headerOverlayAfterFx {
   top: 200px;
   left: 18%;
   .postAboutImgFx {
-    @media screen and (max-width: 1440px) {
-      @media screen and (max-width: 992px) {
-        top: 75px;
-      }
+    @media screen and (max-width: 992px) {
+      top: 75px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
     }
   }
 }

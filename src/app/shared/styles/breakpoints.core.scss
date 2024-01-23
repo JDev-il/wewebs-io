@@ -495,17 +495,17 @@
       .portfolioTitle {
         @media screen and (max-width: 1600px) {
           h1 {
-            font-size: 3.2rem !important;
+            font-size: 2.6rem !important;
           }
           h3 {
             font-size: 0.8rem !important;
           }
           @media screen and (max-width: 1366px) {
             h1 {
-              font-size: 3rem !important;
+              font-size: 2.4rem !important;
             }
             h3 {
-              font-size: 0.7rem !important;
+              font-size: 0.6rem !important;
             }
             @media screen and (max-width: 1200px) {
               width: 100%;
@@ -514,7 +514,6 @@
                 bottom: 0 !important;
                 text-align: center;
                 padding-bottom: 5px;
-
                 h1 {
                   font-size: 2rem !important;
                 }
@@ -783,36 +782,32 @@
         }
       }
       .componentContent {
+        @media screen and (min-width: 1601px) {
+          left: 18vw;
+        }
         @media screen and (max-width: 992px) {
           position: initial;
           display: flex;
           justify-content: center;
         }
         .workTitle {
-          @media screen and (min-width: 1920px) {
-            .inner-work-title-wrapper {
+          .inner-work-title-wrapper {
+            @media screen and (min-width: 1920px) {
               h1 {
-                font-size: 3.2rem;
-              }
-            }
-            @media screen and (min-width: 2560px) {
-              .inner-work-title-wrapper {
-                h1 {
-                  font-size: 3.8rem;
-                }
+                font-size: 3.4rem;
               }
             }
           }
           @media screen and (max-width: 1920px) {
             .inner-work-title-wrapper {
               h1 {
-                font-size: 2.8rem;
+                font-size: 3.4rem;
               }
               h3 {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
               }
             }
-            @media screen and (max-width: 1440px) {
+            @media screen and (max-width: 1600px) {
               .inner-work-title-wrapper {
                 h1 {
                   font-size: 2.6rem;
@@ -1070,6 +1065,9 @@
                 width: 100%;
                 height: 100%;
                 top: 10%;
+                @media screen and (max-width: 992px) {
+                  top: 18%;
+                }
                 .contactDiv {
                   left: unset;
                   position: static;

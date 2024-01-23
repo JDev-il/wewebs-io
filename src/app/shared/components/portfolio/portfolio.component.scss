@@ -16,17 +16,18 @@
       backdrop-filter: blur(11px);
       -webkit-backdrop-filter: blur(11px);
       z-index: 888;
-      padding-top: 10vh;
+      padding-top: 12vh;
       @media screen and (max-width: 992px) {
         padding-top: 0;
-        height: 20%;
+        height: 23%;
         left: 0;
         right: 0;
         margin: 0 auto;
         width: 100%;
       }
-      @media screen and (min-width: 1921px) {
+      @media screen and (min-width: 1880px) {
         width: 100%;
+        padding-top: 12vh;
       }
       .portfolioTitle {
         position: relative;
