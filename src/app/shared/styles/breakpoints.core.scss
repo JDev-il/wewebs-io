@@ -1012,19 +1012,35 @@
 
 .contactResponssiveComponent {
   /* CONTACT || CONTACT || CONTACT || CONTACT */
-  @media screen and (min-width: 1600px) {
-    .inComponentWrapper {
-      .rightWrapper {
-        .contactActions {
-          .contactForm {
-            .formContainer {
+
+  .inComponentWrapper {
+    .rightWrapper {
+      .contactActions {
+        .contactForm {
+          .formContainer {
+            @media screen and (min-width: 1600px) {
               height: 50%;
               width: 60%;
+              padding-top: 15px;
               .innerFormContainer {
                 .matBtn {
                   padding: 5px;
                 }
-                .mat-form-field-infix {
+              }
+            }
+            @media screen and (max-width: 1600px) {
+              height: 50%;
+              width: 50%;
+              padding-top: 25px;
+              @media screen and (max-width: 1440px) {
+                @media screen and (max-width: 1366px) {
+                  height: 60%;
+                  width: 50%;
+                  .innerFormContainer {
+                    .matBtn {
+                      padding: 8px !important;
+                    }
+                  }
                 }
               }
             }
@@ -1033,90 +1049,65 @@
       }
     }
   }
-  @media screen and (max-width: 1599px) {
-    @media screen and (max-width: 1366px) {
-      .inComponentWrapper {
-        .rightWrapper {
-          .contactActions {
-            .contactForm {
-              .formContainer {
-                height: 60%;
-                width: 50%;
-                .innerFormContainer {
-                  .matBtn {
-                    padding: 8px !important;
-                  }
-                }
+  @media screen and (max-width: 992px) {
+    .inComponentWrapper {
+      display: flex;
+      flex-flow: column;
+      position: fixed;
+      .leftWrapper {
+        width: 100%;
+        .contactWelcome {
+          left: unset;
+          width: 100%;
+          height: 100%;
+          top: 18%;
+          @media screen and (max-width: 768px) {
+            top: 10%;
+          }
+          .contactDiv {
+            left: unset;
+            position: static;
+            .contactTitle {
+              justify-content: center;
+              h1 {
+                font-size: 1.4rem;
               }
+            }
+            img {
+              // padding-left: 5px;
+              bottom: 0;
+              position: relative;
             }
           }
         }
       }
-      @media screen and (max-width: 1280px) {
-        @media screen and (max-width: 992px) {
-          .inComponentWrapper {
+      .rightWrapper {
+        width: 100%;
+        .contactActions {
+          left: auto;
+          height: unset;
+          .contactForm {
             display: flex;
-            flex-flow: column;
-            position: fixed;
-            .leftWrapper {
-              width: 100%;
-              .contactWelcome {
-                left: unset;
-                width: 100%;
-                height: 100%;
-                top: 10%;
-                @media screen and (max-width: 992px) {
-                  top: 18%;
-                  @media screen and (max-width: 768px) {
-                    top: 10%;
-                  }
+            justify-content: center;
+            .formContainer {
+              font-size: small;
+              box-shadow: none;
+              width: 50%;
+              left: 0;
+              .innerFormContainer {
+                padding: 10px 0;
+                .matBtn {
+                  padding: 10px;
                 }
-                .contactDiv {
-                  left: unset;
-                  position: static;
-                  .contactTitle {
-                    justify-content: center;
-                    h1 {
-                      font-size: 1.4rem;
-                    }
-                  }
-                  img {
-                    // padding-left: 5px;
-                    bottom: 0;
-                    position: relative;
-                  }
+                .mat-form-field-infix {
+                  margin: 5px 0 !important;
+                }
+                textarea {
+                  background-color: #1d1330;
                 }
               }
-            }
-            .rightWrapper {
-              width: 100%;
-              .contactActions {
-                left: auto;
-                height: unset;
-                .contactForm {
-                  display: flex;
-                  justify-content: center;
-                  .formContainer {
-                    font-size: small;
-                    box-shadow: none;
-                    width: 50%;
-                    .innerFormContainer {
-                      padding: 10px 0;
-                      .matBtn {
-                        padding: 10px;
-                      }
-                      .mat-form-field-infix {
-                        margin: 5px 0 !important;
-                      }
-                      textarea {
-                        background-color: #1d1330;
-                      }
-                    }
-                    @media screen and (max-width: 768px) {
-                      width: 60%;
-                    }
-                  }
-                }
+              @media screen and (max-width: 768px) {
+                width: 60%;
               }
             }
           }

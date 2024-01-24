@@ -62,6 +62,7 @@
           width: 40%;
           scroll-behavior: smooth;
           top: 12vh;
+          height: 100%;
           position: fixed;
           @media screen and (min-width: 1024px) {
             top: 20vh;
@@ -72,7 +73,7 @@
           }
 
           .mat-accordion-wrapper{
-            height: 85vh;
+            max-height: 80vh;
             overflow-y: auto;
             overflow-x: hidden;
             width: 65%;
@@ -82,7 +83,7 @@
               width: 85%;
               margin: 0 auto;
               top: 13vh;
-              height: 73vh;
+              max-height: 70vh;
               position: relative;
             }
 
@@ -94,10 +95,6 @@
               scroll-behavior: smooth;
               padding-bottom: 5vh;
               position: relative;
-              @media screen and (max-width: 1440px) {
-                // width: 85%;
-                // margin: 0 auto;
-              }
               .mat-expansion-panel {
                 background-color: #160426;
                 border-radius: 0.6em;
@@ -337,7 +334,7 @@
           height: 100%;
           box-sizing: border-box;
           right: 10%;
-          top: 10%;
+          top: 12%;
           .pieChart {
             position: relative;
             width: 100%;

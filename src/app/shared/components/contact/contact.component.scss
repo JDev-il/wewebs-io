@@ -23,9 +23,15 @@
         position: absolute;
         top: 25%;
         right: 10%;
-        @media screen and (max-width: 992px) {
-          right: 0;
-          width: 85%;
+        @media screen and (max-width: 1600px) {
+          right: unset;
+          left: 25%;
+          @media screen and (max-width: 1366px) {
+            @media screen and (max-width: 992px) {
+              left: unset;
+              width: 85%;
+            }
+          }
         }
         .contactTitle {
           display: inline-flex;
@@ -150,9 +156,6 @@
           transition: box-shadow 0.15s ease-in-out,
             background-color 0.15s ease-in-out;
           background-color: #1d1330;
-          @media screen and (max-width: 992px) {
-            left: 0;
-          }
           &:hover {
             background-color: #1d13307f;
             box-shadow: 0 0px 4px -1px #02fef6b7;
@@ -261,8 +264,7 @@
                   position: absolute;
                   right: 0;
                   top: 0;
-                  bottom: 0;
-                  left: 70%;
+                  left: 0;
                   display: flex;
                   align-items: center;
                   background-color: transparent;
@@ -272,9 +274,12 @@
                   height: 0;
                   border: none;
                   cursor: pointer;
-                  margin: auto;
+                  transition: all 0.215s cubic-bezier(0.47, 0, 0.745, 0.715) !important;
                   &:active {
                     color: #02fef653;
+                  }
+                  @media screen and (max-width: 992px) {
+                    top: 5px;
                   }
                 }
                 .matBtn {
@@ -289,7 +294,7 @@
                   color: #02fef6;
                   border: 1px solid #02fef6;
                   transition: all 0.215s cubic-bezier(0.47, 0, 0.745, 0.715) !important;
-                  margin: 15px 0;
+                  margin: 20px 0 0;
                   &:hover {
                     color: #160426;
                     border-color: #02fef653;
@@ -297,8 +302,11 @@
                     box-shadow: 0 2px 25px -2px #02fef6a9;
                   }
                   @media screen and (max-width: 992px) {
+                    position: relative;
                     font-size: smaller;
-                    padding: 8px;
+                    padding: 8px !important;
+                    margin: 15px 0;
+                    top: 10px;
                   }
                 }
                 :disabled {

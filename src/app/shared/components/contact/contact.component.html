@@ -57,7 +57,10 @@
                 <div class="introMessage">
                   <h3>Or send me a message <mat-icon>mail</mat-icon></h3>
                 </div>
-                <form [formGroup]="contactForm" (ngSubmit)="sendForm(contactForm.value)">
+                <form
+                  [formGroup]="contactForm"
+                  (ngSubmit)="sendForm(contactForm.value)"
+                >
                   <mat-form-field appearance="standard" hideRequiredMarker>
                     <mat-label>To whom shall I reply to?</mat-label>
                     <input
@@ -92,7 +95,11 @@
                     >
                       Send Messages
                     </button>
-                    <button class="clear-form-btn" type="reset">
+                    <button
+                      class="clear-form-btn"
+                      type="reset"
+                      [disabled]="contactForm.invalid"
+                    >
                       Clear form
                     </button>
                   </div>
