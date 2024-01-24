@@ -26,7 +26,7 @@ import { ColorConditionDirective } from './directives/coloring/colorConditions.d
     ColorConditionDirective,
   ],
   exports: [
-    ...exported.components
+    ...exported.components,
   ]
 })
 export class SharedModule { }

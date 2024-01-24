@@ -136,7 +136,7 @@
     @media screen and (max-width: 992px) {
       overflow-x: hidden;
       overflow-y: auto;
-      position: fixed;
+      position: absolute;
       top: 0;
     }
     &:hover {
@@ -463,14 +463,17 @@
         }
         @media screen and (max-width: 992px) {
           padding: 0;
-          width: 90%;
+          max-width: 60%;
           margin: 0 auto;
-          p {
-            max-width: 85%;
+          display: flex;
+          justify-content: center;
+          .summary-paragraph {
+            width: 100% !important;
+            margin: 0 !important;
           }
-          // .portfolioBtn {
-          //   display: none;
-          // }
+          .portfolioBtn {
+            display: none;
+          }
         }
       }
     }

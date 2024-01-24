@@ -331,7 +331,7 @@
               @media screen and (max-width: 992px) {
                 padding-bottom: 15px;
                 &:hover {
-                  transform: translate3d(0);
+                  transform: translate3d(0, 0, 0);
                   color: var(--alt-text2);
                 }
               }

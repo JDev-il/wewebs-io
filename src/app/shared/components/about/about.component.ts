@@ -25,6 +25,7 @@ export class AboutComponent extends UnSubscriber implements OnInit, AfterContent
   }
 
   ngOnInit() {
+    this.cd.detectChanges();
   }
 
   public viewPortfolio() {

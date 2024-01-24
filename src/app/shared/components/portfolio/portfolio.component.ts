@@ -15,7 +15,7 @@ import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class PortfolioComponent extends UnSubscriber implements OnInit {
+export class PortfolioComponent extends UnSubscriber {
 
   @Input() projects!: ProjectModel[];
 
@@ -27,9 +27,6 @@ export class PortfolioComponent extends UnSubscriber implements OnInit {
   constructor(private cd: ChangeDetectorRef) {
     super();
     super.ngOnDestroy();
-  }
-
-  ngOnInit(): void {
-    this.cd.detectChanges();
+    this.cd.markForCheck();
   }
 }

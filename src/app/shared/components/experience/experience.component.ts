@@ -34,6 +34,7 @@ export class ExperienceComponent extends UnSubscriber implements OnInit {
   ) {
     super()
     super.ngOnDestroy();
+    this.cd.markForCheck();
   }
 
   ngOnInit(): void {
