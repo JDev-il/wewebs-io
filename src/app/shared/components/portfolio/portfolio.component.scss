@@ -17,6 +17,9 @@
       -webkit-backdrop-filter: blur(11px);
       z-index: 888;
       padding-top: 12vh;
+      @media screen and (max-width: 1440px) {
+        width: 68%;
+      }
       @media screen and (max-width: 992px) {
         padding-top: 0;
         height: 24%;
@@ -24,6 +27,8 @@
         right: 0;
         margin: 0 auto;
         width: 100%;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
       }
       @media screen and (min-width: 1880px) {
         width: 100%;
@@ -31,9 +36,15 @@
       }
       .portfolioTitle {
         position: relative;
-        left: 0;
         bottom: 15%;
         padding-bottom: 3px;
+        left: 0;
+        @media screen and (min-width: 1024px) and (max-width: 1921px) {
+          left: 5vw;
+        }
+        @media screen and (max-width: 1024px) {
+          left: 0;
+        }
         h1 {
           font-family: "Raleway", sans-serif;
           font-size: 3.4rem;
@@ -84,10 +95,13 @@
             @media screen and (max-width: 1920px) {
               width: 90%;
               right: 5%;
-                @media screen and (max-width: 992px) {
-                  right: 0;
-                  width: 100%;
-                }
+              @media screen and (max-width: 1440px) {
+                right: 3%;
+              }
+              @media screen and (max-width: 992px) {
+                right: 0;
+                width: 100%;
+              }
             }
             .mat-card-title {
               padding: 0 0 3rem;
