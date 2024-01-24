@@ -73,6 +73,7 @@
           }
 
           .mat-accordion-wrapper{
+            position: relative;
             max-height: 80%;
             overflow-y: auto;
             overflow-x: hidden;
@@ -88,7 +89,7 @@
               top: 12%;
               padding: 5% 0;
               @media screen and (max-width: 992px) {
-                top: 10%;
+                top: 11%;
                 padding: 10% 0;
                 max-height: 75%;
                }
