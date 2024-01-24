@@ -1102,6 +1102,7 @@
               left: 0;
               box-shadow: 0 2px 12px -1px #02fef6b7;
               .innerFormContainer {
+                position: relative;
                 padding: 10px 0;
                 .matBtn {
                   padding: 10px;
@@ -1115,7 +1116,8 @@
               }
               @media screen and (max-width: 768px) {
                 width: 60%;
-                margin-bottom: 6%;
+                bottom: 15px;
+                padding: 15px;
               }
             }
           }

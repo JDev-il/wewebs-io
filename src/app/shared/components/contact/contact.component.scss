@@ -59,6 +59,9 @@
             bottom: 0;
             position: relative;
           }
+          @media screen and (max-width: 992px) {
+            padding: 0px 0 8px;
+          }
         }
         .contactText {
           margin: 0;
@@ -67,6 +70,9 @@
             color: var(--primary-text-lighter);
             font-size: 1rem;
             color: var(--alt-text2);
+            @media screen and (max-width: 992px) {
+              font-size: .9rem;
+            }
           }
         }
         .contactOptionsDiv {
@@ -120,6 +126,9 @@
                     padding: 0;
                     margin: 0;
                   }
+                }
+                @media screen and (max-width: 992px) {
+                  font-size: .9rem;
                 }
               }
             }
