@@ -32,11 +32,10 @@
       <div class="aboutContent" [ngClass]="{'moveInTextFx': !isAboutTitleFxEnd}"
         (mouseenter)="fillHeader = true" (mouseleave)="fillHeader = false">
         <div class="aboutText">
-          <div class="aboutSummery" *ngFor="let summery of aboutData.summery">
-            <p>
-              {{ summery }}
+          <div class="aboutSummery" *ngFor="let summary of aboutData.summary">
+            <p class="summary-paragraph">
+              {{ summary }}
             </p>
-            <br />
           </div>
           <div class="portfolioBtn">
             <button (click)="viewPortfolio()">View Portfolio</button>

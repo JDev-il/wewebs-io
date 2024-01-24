@@ -468,9 +468,9 @@
           p {
             max-width: 85%;
           }
-          .portfolioBtn {
-            display: none;
-          }
+          // .portfolioBtn {
+          //   display: none;
+          // }
         }
       }
     }
@@ -1068,7 +1068,7 @@
           height: 100%;
           top: 18%;
           @media screen and (max-width: 768px) {
-            top: 10%;
+            top: 15%;
           }
           .contactDiv {
             left: unset;

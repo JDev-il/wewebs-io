@@ -316,18 +316,22 @@
           padding: 16px 0 0 0 !important;
           .aboutSummery {
             width: 55%;
-            p {
-              transition: color 0.15s cubic-bezier(0.47, 0, 0.745, 0.715);
+            .summary-paragraph {
+              transition: color 0.25s cubic-bezier(0.47, 0, 0.745, 0.715), transform 0.25s .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
               font-weight: 200;
               width: 75%;
+              padding-bottom: 25px;
               &:hover {
                 color: #02fef6;
+                transform: translate3d(3px, -1px, 0);
               }
               &:not(:hover) {
-                color: #ecfdfb;
+                color: var(--alt-text2);
               }
               @media screen and (max-width: 992px) {
+                padding-bottom: 15px;
                 &:hover {
+                  transform: translate3d(0);
                   color: var(--alt-text2);
                 }
               }
@@ -340,6 +344,12 @@
           left: 0;
           top: 15px;
           width: 65%;
+          @media screen and (max-width: 992px) {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 100%;
+          }
           button {
             opacity: 0;
             cursor: pointer;
@@ -360,7 +370,23 @@
               box-shadow: 0 2px 25px -2px #02fef6a9;
             }
             @media screen and (max-width: 992px) {
-              font-size: smaller;
+              &:hover {
+                color: unset;
+                border-color: unset;
+                background-color: unset;
+                box-shadow: unset;
+              }
+              opacity: 1;
+              position: absolute;
+              padding: 8px;
+              font-size: medium;
+              border-radius: 0.3em;
+              width: unset;
+              background-color: transparent;
+              color: #02fef6;
+              border: 1px solid #02fef6;
+              font-weight: 100;
+              left: 10vw;
             }
           }
         }

@@ -18,14 +18,15 @@ import { UserDetailsModel } from '../interfaces/Users.interface';
   providedIn: 'root',
 })
 export class ApiService {
-  private aboutCachedData!: AboutModel;
-  private portfolioCahchedData: ProjectModel[] = [];
-  private workCachedData: WorkModel[] = [];
 
   private isFormSent$: Subject<void> = new Subject();
   private aboutSource: BehaviorSubject<AboutModel> = new BehaviorSubject(<AboutModel>{});
   private portfolioSource: BehaviorSubject<ProjectModel[]> = new BehaviorSubject(<ProjectModel[]>[]);
   private workSource: BehaviorSubject<WorkModel[]> = new BehaviorSubject(<WorkModel[]>[]);
+
+  private aboutCachedData!: AboutModel;
+  private portfolioCahchedData: ProjectModel[] = [];
+  private workCachedData: WorkModel[] = [];
 
   public readonly about$ = this.aboutSource.asObservable();
   public readonly portfolio$ = this.portfolioSource.asObservable();
@@ -37,8 +38,17 @@ export class ApiService {
     this.fetchWorkExperienceData();
   }
 
+  public cachedData(pageName: string): AboutModel | ProjectModel[] | WorkModel[] {
+    if(pageName === PageName.About){
+      return this.aboutCachedData;
+    } else if(pageName === PageName.Portfolio){
+      return this.portfolioCahchedData;
+    }
+    return this.workCachedData;
+  }
+
   public async fetchAboutData() {
-    if (!this.aboutSource.getValue().summery) {
+    if (!this.aboutSource.getValue().summary) {
       await this.fs
         .collection(PageName.About)
         .get().forEach(data => {
@@ -55,7 +65,7 @@ export class ApiService {
     await this.fs.collection(PageName.Portfolio).get().forEach(async data => {
       const portfolioData = await data.query.orderBy('chronology').get();
       portfolioData.docs.forEach(async (doc: ProjectModel | any) => {
-        this.portfolioCahchedData.push(doc.data());
+        this.portfolioCahchedData.push(await doc.data());
         this.portfolioSource.next(this.portfolioCahchedData);
       })
     })
@@ -64,8 +74,8 @@ export class ApiService {
   public async fetchWorkExperienceData() {
     await this.fs.collection(PageName.Work).get().forEach(async data => {
       const orderByDate = await data.query.orderBy('date', 'desc').get();
-      orderByDate.docs.forEach((work: WorkModel | any) => {
-        this.workCachedData.push(work.data());
+      orderByDate.docs.forEach(async (work: WorkModel | any) => {
+        this.workCachedData.push(await work.data());
         this.workSource.next(this.workCachedData);
       });
     })

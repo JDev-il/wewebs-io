@@ -3,5 +3,5 @@ export interface AboutModel {
     intro: string,
     paths: Array<string[]>
   },
-  summery: Array<string[]>
+  summary: Array<string[]>
 }
