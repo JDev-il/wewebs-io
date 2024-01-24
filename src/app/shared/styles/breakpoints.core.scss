@@ -463,13 +463,10 @@
         }
         @media screen and (max-width: 992px) {
           padding: 0;
-          max-width: 60%;
+          width: 90%;
           margin: 0 auto;
-          display: flex;
-          justify-content: center;
-          .summary-paragraph {
-            width: 100% !important;
-            margin: 0 !important;
+          p {
+            max-width: 85%;
           }
           .portfolioBtn {
             display: none;

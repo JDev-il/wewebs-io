@@ -68,9 +68,6 @@
         .contactText {
           margin: 0;
           padding: 0 0 15px;
-          @media screen and (max-width: 992px) {
-            padding: 0 0 5px;
-          }
           p {
             color: var(--primary-text-lighter);
             font-size: 1rem;
