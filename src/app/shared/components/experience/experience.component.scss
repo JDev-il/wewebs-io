@@ -197,6 +197,7 @@
                         transition: all 0.3s
                           cubic-bezier(0.895, 0.03, 0.685, 0.22);
                         animation: yrsDisappear 0.2s forwards ease-in-out;
+                        transform: translate(0, 0, 0);
                         @keyframes yrsDisappear {
                           0% {
                             opacity: 0.5;
@@ -227,6 +228,7 @@
                 .mat-expansion-panel-content {
                   .mat-expansion-panel-body {
                     padding: 0px 10px 25px 10px !important;
+                    transform: translate(0, 0, 0);
                     animation: cardBackgroundAnimation both 1.4s
                       cubic-bezier(0.455, 0.03, 0.515, 0.955);
                     @keyframes cardBackgroundAnimation {
