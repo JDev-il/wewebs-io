@@ -228,7 +228,6 @@
           line-height: 1.5;
           left: 18%;
           width: fit-content;
-          padding: 45px 0;
           top: 0;
           z-index: 4;
           transition: background-color 0.35s
@@ -236,12 +235,6 @@
             width 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
             transform 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
             left 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
-          @media screen and (max-width: 992px) {
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            padding: 20px 0 !important;
-          }
           .aboutImg {
             .imgWrapper {
               transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
@@ -311,7 +304,6 @@
       }
       .aboutContent {
         @media screen and (max-width: 992px) {
-          // transform: translateY(20vh);
           transform: translateY(0);
         }
         padding: 0;
@@ -321,6 +313,7 @@
           position: relative;
           width: 100%;
           margin: auto 0 0 18%;
+          padding: 16px 0 0 0 !important;
           .aboutSummery {
             width: 55%;
             p {
@@ -335,7 +328,7 @@
               }
               @media screen and (max-width: 992px) {
                 &:hover {
-                  color: #ecfdfb;
+                  color: var(--alt-text2);
                 }
               }
             }
