@@ -73,22 +73,24 @@
           }
 
           .mat-accordion-wrapper{
-            max-height: 80vh;
+            max-height: 80%;
             overflow-y: auto;
             overflow-x: hidden;
             width: 65%;
             padding: 0 33px 0 10px;
             @media screen and (max-width: 1024px) {
-              padding: 5px 0;
+              position: absolute;
               width: 85%;
               left: 0;
               right: 0;
               margin: auto;
-              max-height: 75%;
+              max-height: 85%;
               top: 12%;
-              position: absolute;
+              padding: 5% 0;
               @media screen and (max-width: 992px) {
-                top: 13%;
+                top: 10%;
+                padding: 10% 0;
+                max-height: 75%;
                }
             }
 
