@@ -32,7 +32,10 @@
               margin: 0 auto;
               width: 80%;
               @media screen and (max-width: 768px) {
-                bottom: 12vh;
+                top: 20%;
+                @media screen and (max-width: 540px) {
+                  top: 22%;
+                }
               }
             }
           }
