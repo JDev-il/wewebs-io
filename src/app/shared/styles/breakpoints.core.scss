@@ -1063,17 +1063,14 @@
     .inComponentWrapper {
       display: flex;
       flex-flow: column;
-      position: fixed;
+      position: absolute;
+      max-height: 90%;
+      bottom: 0;
       .leftWrapper {
         width: 100%;
         .contactWelcome {
           left: unset;
           width: 100%;
-          height: 100%;
-          top: 15%;
-          @media screen and (max-width: 768px) {
-            top: 13%;
-          }
           .contactDiv {
             .contactTitle {
               h1 {
@@ -1092,6 +1089,7 @@
         width: 100%;
         .contactActions {
           left: auto;
+          bottom: 5vh;
           height: unset;
           .contactForm {
             display: flex;

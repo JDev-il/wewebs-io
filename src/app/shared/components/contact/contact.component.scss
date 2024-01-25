@@ -20,7 +20,7 @@
         flex-flow: column;
         justify-content: center;
         position: absolute;
-        top: 25%;
+        top: 25vh;
         right: 10%;
         @media screen and (max-width: 1600px) {
           right: unset;
@@ -32,9 +32,15 @@
               margin: 0 auto;
               width: 80%;
               @media screen and (max-width: 768px) {
-                top: 20%;
+                top: 16vh;
                 @media screen and (max-width: 540px) {
-                  top: 22%;
+                  top: 15vh;
+                  @media screen and (max-width: 375px) {
+                    top: 5vh;
+                    @media screen and (max-width: 365px) {
+                      top: 4vh;
+                    }
+                  }
                 }
               }
             }
@@ -80,7 +86,7 @@
             font-size: 1rem;
             color: var(--alt-text2);
             @media screen and (max-width: 992px) {
-              font-size: .9rem;
+              font-size: 0.9rem;
             }
           }
         }
@@ -137,7 +143,7 @@
                   }
                 }
                 @media screen and (max-width: 992px) {
-                  font-size: .9rem;
+                  font-size: 0.9rem;
                 }
               }
             }
