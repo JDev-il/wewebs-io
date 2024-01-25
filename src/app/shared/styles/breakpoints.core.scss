@@ -134,9 +134,7 @@
   /* ABOUT || ABOUT || ABOUT || ABOUT */
   .inComponentWrapper {
     @media screen and (max-width: 992px) {
-      overflow-x: hidden;
-      overflow-y: auto;
-      position: absolute;
+      position: fixed;
       top: 0;
     }
     &:hover {
@@ -252,9 +250,10 @@
                           padding-bottom: 4px;
                         }
                         width: 100%;
-                        position: absolute;
+                        position: fixed;
                         text-align: center;
                         left: 0;
+                        top: 15vh;
                       }
                     }
                   }
@@ -364,27 +363,25 @@
         }
       }
       .headerOverlay {
-        position: relative;
-        left: 18%;
-        top: 0;
         @media screen and (max-width: 992px) {
-          padding: 15px 0 0;
           left: 0 !important;
-          right: 0;
-          top: 18vh;
-          margin: 0 auto !important;
-          @media screen and (max-width: 768px) {
-            top: 24vh;
-            @media screen and (max-width: 540px) {
-              top: 23vh;
-              @media screen and (max-width: 375px) {
-                top: 24vh;
-              }
-            }
-          }
+          display: flex;
+          justify-content: center;
+          top: 18vh !important;
+          padding: 45px 0 0 !important;
+          // @media screen and (max-width: 768px) {
+          //   padding: 32px 0 0;
+          //   top: 24vh;
+          //   @media screen and (max-width: 540px) {
+          //     top: 23vh;
+          //     @media screen and (max-width: 375px) {
+          //       top: 24vh;
+          //     }
+          //   }
+          // }
         }
         @media screen and (min-width: 992px) {
-          padding: 45px 0 28px;
+          padding: 45px 0 0 0;
         }
         .aboutImg {
           .imgWrapper {
@@ -459,7 +456,7 @@
             flex-flow: column;
             @media screen and (max-width: 768px) {
               padding: 0;
-              margin: auto;
+              margin: 0;
               display: flex;
               flex-flow: column;
               align-items: center;
@@ -468,7 +465,10 @@
           }
         }
         @media screen and (max-width: 992px) {
-          .potfolio-btn {
+          padding: 0;
+          width: 100%;
+          background-color: red;
+          .portfolio-btn {
             display: none;
           }
         }
