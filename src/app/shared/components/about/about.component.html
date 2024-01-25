@@ -28,16 +28,16 @@
       </div>
     </div>
 
-    <div class="componentContent">
-      <div class="aboutContent" [ngClass]="{'moveInTextFx': !isAboutTitleFxEnd}"
+    <div class="component-content">
+      <div class="about-content-wrapper" [ngClass]="{'moveInTextFx': !isAboutTitleFxEnd}"
         (mouseenter)="fillHeader = true" (mouseleave)="fillHeader = false">
-        <div class="aboutText">
-          <div class="aboutSummery" *ngFor="let summary of aboutData.summary">
-            <p class="summary-paragraph">
+        <div class="about-text">
+          <div class="summary" *ngFor="let summary of aboutData.summary">
+            <p class="summary-text">
               {{ summary }}
             </p>
           </div>
-          <div class="portfolioBtn">
+          <div class="potfolio-btn">
             <button (click)="viewPortfolio()">View Portfolio</button>
           </div>
         </div>

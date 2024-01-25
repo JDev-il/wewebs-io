@@ -361,19 +361,26 @@
         }
       }
       .headerOverlay {
-        @media screen and (min-width: 992px) {
-          padding: 45px 0;
-        }
+        position: relative;
+        left: 18%;
+        top: 0;
         @media screen and (max-width: 992px) {
-          display: flex;
-          justify-content: center;
-          left: 0 !important;
+          left: 0;
           right: 0;
-          top: 18vh !important;
-          margin: 0 auto !important;
+          top: 18vh;
+          margin: 0 auto;
           @media screen and (max-width: 768px) {
-            padding: 32px 0 0;
+            top: 24vh;
+            @media screen and (max-width: 540px) {
+              top: 23vh;
+              @media screen and (max-width: 375px) {
+                top: 24vh;
+              }
+            }
           }
+        }
+        @media screen and (min-width: 992px) {
+          padding: 45px 0 28px;
         }
         .aboutImg {
           .imgWrapper {
@@ -405,32 +412,28 @@
         padding: 0;
       }
     }
-    .componentContent {
-      .aboutContent {
-        .aboutText {
-          .aboutSummery {
+    .component-content {
+      .about-content-wrapper {
+        .about-text {
+          .summary {
             @media screen and (max-width: 992px) {
               width: 100%;
             }
-            p {
+            .summary-text {
               @media screen and (max-width: 1920px) {
                 width: 80%;
                 font-size: 1.1rem;
                 @media screen and (max-width: 1600px) {
                   @media screen and (max-width: 1440px) {
-                    width: 95%;
+                    width: 85%;
                     @media screen and (max-width: 1366px) {
                       font-size: 1rem;
                       @media screen and (max-width: 1280px) {
                         @media screen and (max-width: 992px) {
-                          width: 65%;
+                          width: 60%;
                           margin: 0 auto;
                           @media screen and (max-width: 768px) {
                             font-size: .9rem;
-                            @media screen and (max-width: 544px) {
-                              @media screen and (max-width: 460px) {
-                              }
-                            }
                           }
                         }
                       }
@@ -452,7 +455,7 @@
             flex-flow: column;
             @media screen and (max-width: 768px) {
               padding: 0;
-              margin: 0;
+              margin: auto;
               display: flex;
               flex-flow: column;
               align-items: center;
@@ -461,13 +464,7 @@
           }
         }
         @media screen and (max-width: 992px) {
-          padding: 0;
-          width: 90%;
-          margin: 0 auto;
-          p {
-            max-width: 85%;
-          }
-          .portfolioBtn {
+          .potfolio-btn {
             display: none;
           }
         }
@@ -531,7 +528,7 @@
         }
       }
     }
-    .componentContent {
+    .component-content {
       @media screen and (min-width: 992px) {
         width: 100%;
       }
@@ -786,7 +783,7 @@
           }
         }
       }
-      .componentContent {
+      .component-content {
         @media screen and (min-width: 1601px) {
           left: 18vw;
         }
@@ -1036,7 +1033,7 @@
             @media screen and (max-width: 1600px) {
               height: 50%;
               width: 50%;
-              padding-top: 25px;
+              padding: 25px 25px 15px 25px;
               @media screen and (max-width: 1440px) {
                 @media screen and (max-width: 1366px) {
                   height: 60%;

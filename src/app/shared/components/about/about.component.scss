@@ -8,7 +8,7 @@
     transform: scale(1);
     width: 100% !important;
     left: 8vw;
-    @media screen and (min-width: 1366px) {
+    @media screen and (min-width: 1280px) {
       &:hover {
         .componentHeader:not(:hover) {
           .headerWrapper {
@@ -106,10 +106,9 @@
             }
           }
         }
-
-        .componentContent {
-          .aboutContent {
-            .portfolioBtn {
+        .component-content {
+          .about-content-wrapper {
+            .potfolio-btn {
               transition: top 0.2s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
               top: 0;
               button {
@@ -224,11 +223,8 @@
         }
 
         .headerOverlay {
-          position: relative;
           line-height: 1.5;
-          left: 18%;
           width: fit-content;
-          top: 0;
           z-index: 4;
           transition: background-color 0.35s
               cubic-bezier(0.445, 0.05, 0.55, 0.95),
@@ -239,7 +235,6 @@
             .imgWrapper {
               transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
               position: relative;
-              top: 0;
               transform: scale(1) translateY(0%);
               .aboutImageBackground {
                 transition: border-radius 0.3s
@@ -279,8 +274,9 @@
                   }
                 }
                 @media screen and (max-width: 992px) {
-                  width: 225px;
-                  height: 225px;
+                  animation-play-state: paused;
+                  width: 200px;
+                  height: 200px;
                 }
               }
             }
@@ -288,7 +284,7 @@
         }
       }
     }
-    .componentContent {
+    .component-content {
       font-weight: 300;
       font-size: 1.25rem;
       line-height: 1.5;
@@ -296,28 +292,32 @@
         position: relative;
         max-height: 48%;
         overflow: auto;
-        top: 18vh;
-        @media screen and (max-width: 375px) {
-          max-height: 40%;
-          top: 19vh;
+        top: 18%;
+        @media screen and (max-width: 768px) {
+          max-height: 45%;
+          top: 25%;
+          @media screen and (max-width: 375px) {
+            max-height: 40%;
+            // top: 19vh;
+          }
         }
       }
-      .aboutContent {
+      .about-content-wrapper {
         @media screen and (max-width: 992px) {
           transform: translateY(0);
         }
         padding: 0;
         position: relative;
         transition: top 0.2s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
-        .aboutText {
+        .about-text {
           position: relative;
           width: 100%;
           margin: auto 0 0 18%;
-          padding: 16px 0 0 0 !important;
-          .aboutSummery {
+          .summary {
             width: 55%;
-            .summary-paragraph {
-              transition: color 0.25s cubic-bezier(0.47, 0, 0.745, 0.715), transform 0.25s .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            .summary-text {
+              transition: color 0.25s cubic-bezier(0.47, 0, 0.745, 0.715),
+                transform 0.25s 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
               font-weight: 200;
               width: 75%;
               padding-bottom: 25px;
@@ -338,7 +338,7 @@
             }
           }
         }
-        .portfolioBtn {
+        .potfolio-btn {
           transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
           position: relative;
           left: 0;
