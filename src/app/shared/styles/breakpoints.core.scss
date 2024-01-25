@@ -206,6 +206,9 @@
           position: absolute;
           top: 0;
           left: 5%;
+          @media screen and (max-width: 992px) {
+            left: 0;
+          }
           .staticTitle {
             left: 28%;
             @media screen and (min-width: 1920px) {
@@ -249,7 +252,7 @@
                           padding-bottom: 4px;
                         }
                         width: 100%;
-                        position: fixed;
+                        position: absolute;
                         text-align: center;
                         left: 0;
                       }
@@ -365,10 +368,11 @@
         left: 18%;
         top: 0;
         @media screen and (max-width: 992px) {
-          left: 0;
+          padding: 15px 0 0;
+          left: 0 !important;
           right: 0;
           top: 18vh;
-          margin: 0 auto;
+          margin: 0 auto !important;
           @media screen and (max-width: 768px) {
             top: 24vh;
             @media screen and (max-width: 540px) {

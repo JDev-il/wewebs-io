@@ -235,6 +235,7 @@
             .imgWrapper {
               transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
               position: relative;
+              top: 0;
               transform: scale(1) translateY(0%);
               .aboutImageBackground {
                 transition: border-radius 0.3s
@@ -292,10 +293,10 @@
         position: relative;
         max-height: 48%;
         overflow: auto;
-        top: 18%;
+        top: 18vh;
         @media screen and (max-width: 768px) {
           max-height: 45%;
-          top: 25%;
+          top: 25vh;
           @media screen and (max-width: 375px) {
             max-height: 40%;
             // top: 19vh;
