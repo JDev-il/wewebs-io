@@ -4,7 +4,7 @@ import { MatTabGroup } from '@angular/material/tabs';
 import { FilesService } from 'src/app/core/services/files.service';
 import { Navigation } from 'src/app/core/enums/navigation.enum';
 import { PageName, Tabs } from 'src/app/core/enums/pages.enum';
-import { combineLatest, takeUntil, map, Subscription } from 'rxjs';
+import { combineLatest, takeUntil, map, Subscription, of } from 'rxjs';
 import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 import { ApiService } from 'src/app/core/services/api.service';
 import { AboutModel } from 'src/app/core/interfaces/About.interface';
@@ -17,7 +17,7 @@ import { WorkModel } from 'src/app/core/interfaces/Work.interface';
   styleUrls: ['./tabs-menu.component.scss', '../../styles/main-layout.core.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TabsMenuComponent extends UnSubscriber implements AfterContentInit {
+export class TabsMenuComponent extends UnSubscriber {
 
   @ViewChild('tabGroup', { static: false }) tab!: MatTabGroup;
   @ViewChild('matTabHeader') matTabHeader!: ElementRef;
@@ -39,6 +39,7 @@ export class TabsMenuComponent extends UnSubscriber implements AfterContentInit 
   public isDownloaded!: boolean;
   public about!: boolean;
   public work!: boolean;
+  public step!: boolean;
   public portfolio!: boolean;
   public isSideBarFxEnds: boolean = false;
   public isNavigatorsFxEnds: boolean = false;
@@ -51,7 +52,7 @@ export class TabsMenuComponent extends UnSubscriber implements AfterContentInit 
   ) {
     super();
     super.ngOnDestroy();
-
+    this.cd.markForCheck();
     this.changeCurrentTab = Tabs.About;
     this.selectedIndex = this.changeCurrentTab;
 

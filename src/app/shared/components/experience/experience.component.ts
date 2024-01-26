@@ -1,9 +1,9 @@
 import {
+  AfterContentInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   Input,
-  OnInit
 } from '@angular/core';
 import { WorkModel } from 'src/app/core/interfaces/Work.interface';
 import { ChartsService } from '../../services/charts.service';
@@ -20,7 +20,7 @@ import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExperienceComponent extends UnSubscriber implements OnInit {
+export class ExperienceComponent extends UnSubscriber implements AfterContentInit {
 
   @Input() isWorkFxEnd: boolean = false;
   @Input() workExperienceData!: WorkModel[];
@@ -32,17 +32,30 @@ export class ExperienceComponent extends UnSubscriber implements OnInit {
     private chartsService: ChartsService,
     private cd: ChangeDetectorRef
   ) {
-    super()
+    super();
     super.ngOnDestroy();
     this.cd.markForCheck();
   }
 
-  ngOnInit(): void {
-    this.workExperienceData.length ? this.isStep = true : '';
-    this.cd.detectChanges();
+  public get isExperienceAnimation(): boolean {
+    return !!sessionStorage.getItem('experienceAnimation');
   }
 
-  passDataToDataService(data: any) {
-    this.chartsService.setChartsData(data)
+  public passDataToDataService(data: any) {
+    this.chartsService.setChartsData(data);
+  }
+
+  public onAnimationEnd(animation: AnimationEvent) {
+    if (animation.animationName === 'translateFadeIn' && !this.isWorkFxEnd) {
+      sessionStorage.setItem('experienceAnimation', 'true');
+      this.isStep = true;
+    }
+  }
+
+  ngAfterContentInit(): void {
+    if (this.isExperienceAnimation) {
+      this.isStep = true;
+    }
+    this.cd.detectChanges();
   }
 }

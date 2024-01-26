@@ -1,8 +1,12 @@
-<div class="workComponent componentContainer experienceResponssiveComponent simpleFadeIn" Animations [pageName]="'work'">
+<div
+  class="workComponent componentContainer experienceResponssiveComponent simpleFadeIn"
+  Animations
+  [pageName]="'work'"
+>
   <div class="inComponentWrapper">
     <div class="leftSideWorkComponent">
       <!-- <div class="componentHeader"> -->
-     <!-- </div> -->
+      <!-- </div> -->
       <div class="component-content">
         <div class="workTitle simpleFadeIn">
           <div class="inner-work-title-wrapper">
@@ -14,15 +18,18 @@
           <section class="mat-accordion-wrapper">
             <mat-accordion>
               <mat-expansion-panel
+                (animationend)="onAnimationEnd($event)"
                 [ngClass]="!isWorkFxEnd ? 'translateFadeInFx' : ''"
                 *ngFor="let work of workExperienceData; let i = index"
                 [expanded]="i === 0 && isStep"
                 (opened)="i === 0 ? passDataToDataService(work) : null"
               >
-                <mat-expansion-panel-header (click)="passDataToDataService(work)">
+                <mat-expansion-panel-header
+                  (click)="passDataToDataService(work)"
+                >
                   <mat-panel-title>
-                      <h1>{{ work.role }}</h1>
-                      <h2> // {{ +work.date.total_in_months | M2Y }}</h2>
+                    <h1>{{ work.role }}</h1>
+                    <h2>// {{ +work.date.total_in_months | M2Y }}</h2>
                   </mat-panel-title>
                   <mat-panel-description>
                     <h5>
@@ -47,7 +54,11 @@
         </div>
       </div>
     </div>
-    <div class="rightSideWorkComponent">
+    <div
+      class="rightSideWorkComponent"
+      [ngClass]="isExperienceAnimation ? 'simpleFadeIn' : ''"
+      *ngIf="isExperienceAnimation"
+    >
       <div class="workExperienceChart">
         <div class="chartsContainer">
           <div class="pieChart">
