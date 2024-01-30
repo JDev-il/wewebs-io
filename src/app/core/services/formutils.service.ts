@@ -27,7 +27,7 @@ export class FormUtilsService {
   private get createNewForm(): ContactForm {
     return new ContactFormClass({
       name: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.email, Validators.required]),
+      email: new FormControl('', [Validators.email, Validators.required, Validators.pattern(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/)]),
       extra: new FormControl('')
     });
   }

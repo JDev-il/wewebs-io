@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-
 import {
   BehaviorSubject,
-  Observable,
   Subject,
-  map
+  map,
 } from 'rxjs';
 import { AboutModel } from '../interfaces/About.interface';
 import { ProjectModel } from '../interfaces/Project.interface';
 import { WorkModel } from '../interfaces/Work.interface';
 import { PageName } from '../enums/pages.enum';
 import { UserDetailsModel } from '../interfaces/Users.interface';
+import { environment, fiebaseapp } from 'src/environments/environment';
+import { HttpsCallableResult, getFunctions, httpsCallable } from 'firebase/functions';
 
 @Injectable({
   providedIn: 'root',
@@ -39,9 +39,9 @@ export class ApiService {
   }
 
   public cachedData(pageName: string): AboutModel | ProjectModel[] | WorkModel[] {
-    if(pageName === PageName.About){
+    if (pageName === PageName.About) {
       return this.aboutCachedData;
-    } else if(pageName === PageName.Portfolio){
+    } else if (pageName === PageName.Portfolio) {
       return this.portfolioCahchedData;
     }
     return this.workCachedData;
@@ -57,7 +57,7 @@ export class ApiService {
             this.aboutSource.next(this.aboutCachedData);
           })
         }
-      )
+        )
     }
   }
 
@@ -85,11 +85,16 @@ export class ApiService {
     return (await this.fs.firestore.collection("charts").doc(chosenExperience.chart_ref).get()).data();
   }
 
-  public responseConfirmation(userData: UserDetailsModel): string {
-    //Todo: reach api endpoint (firebase db >> godaddy domain > update microsoft365 account)
-    // this.http.post('http://localhost:3000', userData).pipe(map(data => data)).subscribe(console.log)
-    // this.isFormSent$.next();
-    return 'Ok for now';
+  public responseConfirmation(userData: UserDetailsModel): void {
+    const functions = getFunctions(fiebaseapp);
+    const sendEmail = httpsCallable(functions, 'sendEmail');
+    this.fs.collection('save_details').add(userData)
+      .then(() => {
+        sendEmail(userData)
+          .catch((error) => {
+            console.error("Cloud transfer error: ", error);
+          });
+      })
+      .catch(err => console.error("An error occured while saving details:: ",err));
   }
-
 }
