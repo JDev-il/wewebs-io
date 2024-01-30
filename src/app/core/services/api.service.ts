@@ -1,3 +1,4 @@
+import { app } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -11,7 +12,6 @@ import { ProjectModel } from '../interfaces/Project.interface';
 import { WorkModel } from '../interfaces/Work.interface';
 import { PageName } from '../enums/pages.enum';
 import { UserDetailsModel } from '../interfaces/Users.interface';
-import { app } from 'src/environments/environment';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 
 @Injectable({
@@ -85,16 +85,17 @@ export class ApiService {
     return (await this.fs.firestore.collection("charts").doc(chosenExperience.chart_ref).get()).data();
   }
 
-  public responseConfirmation(userData: UserDetailsModel): void {
-    const functions = getFunctions(app);
-    const sendEmail = httpsCallable(functions, 'sendEmail');
-    this.fs.collection('save_details').add(userData)
-      .then(() => {
-        sendEmail(userData)
-          .catch((error) => {
-            console.error("Cloud transfer error: ", error);
-          });
-      })
-      .catch(err => console.error("An error occured while saving details:: ",err));
+  public async responseConfirmation(userData: UserDetailsModel): Promise<void> {
+    try {
+      // Add user data to Firestore
+      await this.fs.collection('save_details').add(userData);
+
+      // Initialize Firebase functions and call 'sendEmail'
+      const functions = getFunctions(app);
+      const sendEmail = httpsCallable(functions, 'sendEmail');
+      await sendEmail(userData);
+    } catch (error) {
+      console.error("An error occurred: ", error);
+    }
   }
 }

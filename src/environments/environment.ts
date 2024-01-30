@@ -33,7 +33,7 @@ export const environment = {
   }
 };
 
-export const app = <FirebaseApp>initializeApp(environment.firebaseConfig);
+export const app = initializeApp(environment.firebaseConfig);
 
 /*
  * For easier debugging in development mode, you can import the following file
