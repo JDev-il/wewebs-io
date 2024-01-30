@@ -11,7 +11,7 @@ import { ProjectModel } from '../interfaces/Project.interface';
 import { WorkModel } from '../interfaces/Work.interface';
 import { PageName } from '../enums/pages.enum';
 import { UserDetailsModel } from '../interfaces/Users.interface';
-import { environment, fiebaseapp } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { HttpsCallableResult, getFunctions, httpsCallable } from 'firebase/functions';
 
 @Injectable({
@@ -86,7 +86,7 @@ export class ApiService {
   }
 
   public responseConfirmation(userData: UserDetailsModel): void {
-    const functions = getFunctions(fiebaseapp);
+    const functions = getFunctions(environment.fierbaseapp);
     const sendEmail = httpsCallable(functions, 'sendEmail');
     this.fs.collection('save_details').add(userData)
       .then(() => {
