@@ -1,11 +1,8 @@
-import { app } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import {
   BehaviorSubject,
-  Subject,
-  map,
+  Subject
 } from 'rxjs';
 import { AboutModel } from '../interfaces/About.interface';
 import { ProjectModel } from '../interfaces/Project.interface';
@@ -32,7 +29,7 @@ export class ApiService {
   public readonly portfolio$ = this.portfolioSource.asObservable();
   public readonly work$ = this.workSource.asObservable();
 
-  constructor(private http: HttpClient, private fs: AngularFirestore) {
+  constructor(private fs: AngularFirestore) {
     this.fetchAboutData();
     this.fetchPortfolioData();
     this.fetchWorkExperienceData();
@@ -91,7 +88,7 @@ export class ApiService {
       await this.fs.collection('save_details').add(userData);
 
       // Initialize Firebase functions and call 'sendEmail'
-      const functions = getFunctions(app);
+      const functions = getFunctions();
       const sendEmail = httpsCallable(functions, 'sendEmail');
       await sendEmail(userData);
     } catch (error) {
