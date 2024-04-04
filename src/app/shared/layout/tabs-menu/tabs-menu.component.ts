@@ -1,15 +1,16 @@
-import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { AnimationsService } from '../../services/animations.service';
+import { Location } from '@angular/common';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { MatTabGroup } from '@angular/material/tabs';
-import { FilesService } from 'src/app/core/services/files.service';
+import { combineLatest, map, Subscription, takeUntil } from 'rxjs';
+import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 import { Navigation } from 'src/app/core/enums/navigation.enum';
 import { PageName, Tabs } from 'src/app/core/enums/pages.enum';
-import { combineLatest, takeUntil, map, Subscription, of } from 'rxjs';
-import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
-import { ApiService } from 'src/app/core/services/api.service';
 import { AboutModel } from 'src/app/core/interfaces/About.interface';
 import { ProjectModel } from 'src/app/core/interfaces/Project.interface';
 import { WorkModel } from 'src/app/core/interfaces/Work.interface';
+import { ApiService } from 'src/app/core/services/api.service';
+import { FilesService } from 'src/app/core/services/files.service';
+import { AnimationsService } from '../../services/animations.service';
 
 @Component({
   selector: 'tabs-menu',
@@ -48,14 +49,14 @@ export class TabsMenuComponent extends UnSubscriber {
     private animationService: AnimationsService,
     private fileService: FilesService,
     private cd: ChangeDetectorRef,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private location: Location
   ) {
     super();
     super.ngOnDestroy();
     this.cd.markForCheck();
     this.changeCurrentTab = Tabs.About;
     this.selectedIndex = this.changeCurrentTab;
-
     this.subscriptions.add(combineLatest([
       this.animationService.isAbout$,
       this.animationService.isSideBar$,
@@ -106,6 +107,7 @@ export class TabsMenuComponent extends UnSubscriber {
       this.changeCurrentTab = Tabs.About;
     }
     this.changeCurrentTab = tab.index;
+    this.location.replaceState(`${Tabs[this.changeCurrentTab].toLowerCase()}`)
     this.nextPageEmmiter(this.changeCurrentTab)
   }
 
