@@ -1,4 +1,8 @@
-<div class="portfolioComponent componentContainer portfolioResponssiveComponent simpleFadeIn" Animations [pageName]="'portfolio'">
+<div
+  class="portfolioComponent componentContainer portfolioResponssiveComponent simpleFadeIn"
+  Animations
+  [pageName]="'portfolio'"
+>
   <div class="inComponentWrapper">
     <div class="componentHeader">
       <div class="portfolioTitle simpleFadeIn">
@@ -14,7 +18,10 @@
               <mat-card-title>
                 <div class="company-info">
                   <div class="img-protector">
-                    <img src="{{ project.logo }}" alt="{{ project.company | lowercase }}" />
+                    <img
+                      src="{{ project.logo }}"
+                      alt="{{ project.company | lowercase }}"
+                    />
                     <div class="mask"></div>
                   </div>
                   <h1>{{ project.company }}</h1>
@@ -34,9 +41,31 @@
                           <div class="desc">
                             <p>{{ projectData.desc.join(" ").trimEnd() }}</p>
                           </div>
+                          <div class="link">
+                            <p
+                              (click)="
+                                redirectToProject({
+                                  company: projectData.company,
+                                  title: projectData.title,
+                                  url: projectData.project_url
+                                })
+                              "
+                            >
+                              View Project >>
+                            </p>
+                          </div>
                         </div>
                       </div>
-                      <div class="cardImage">
+                      <div
+                        class="cardImage"
+                        (click)="
+                          redirectToProject({
+                            company: projectData.company,
+                            title: projectData.title,
+                            url: projectData.project_url
+                          })
+                        "
+                      >
                         <div class="imageOverlay"></div>
                         <div class="imageWrap">
                           <img

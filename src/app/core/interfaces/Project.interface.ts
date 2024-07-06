@@ -9,10 +9,16 @@ export interface ProjectModel {
       desc: string[],
       image: string,
       project_involvement: number,
-      project_url?: string
+      project_url: string
       stacks: string[]
     }
   ],
   work_period: string,
   chronology: number
+}
+
+export interface ProjectDetails {
+  company: string,
+  title: string,
+  url: string
 }

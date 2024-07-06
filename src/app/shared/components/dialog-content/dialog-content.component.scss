@@ -1,0 +1,55 @@
+.dialog-header {
+  display: flex;
+  align-items: center;
+  h1 {
+    margin-left: 15px;
+    color: #fff;
+    @media screen and (max-width: 992px) {
+      font-size: large;
+    }
+  }
+  .mat-dialog-actions {
+    max-width: min-content;
+    padding: 0;
+    margin: 0;
+    button {
+      transition: all .08s ease-in-out;
+      padding: 3px;
+      margin: 0;
+      min-width: unset;
+      background-color: var(--primary-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      @media screen and (max-width: 992px) {
+        width: 45px;
+      }
+    }
+    :hover {
+      background-color: #8892b0;
+      color: var(--primary-text);
+    }
+  }
+}
+iframe {
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 75vw;
+  min-height: 62vh;
+  overflow: hidden !important;
+  overflow-clip-margin: unset;
+  border-radius: 1em;
+  background-color: var(--primary-bg-v2);
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.507);
+  z-index: -1;
+  backdrop-filter: blur(5px);
+}

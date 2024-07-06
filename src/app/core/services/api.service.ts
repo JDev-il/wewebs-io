@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { getFunctions, httpsCallable } from 'firebase/functions';
 import {
-  BehaviorSubject,
-  Subject
+  BehaviorSubject
 } from 'rxjs';
+import { PageName } from '../enums/pages.enum';
 import { AboutModel } from '../interfaces/About.interface';
 import { ProjectModel } from '../interfaces/Project.interface';
-import { WorkModel } from '../interfaces/Work.interface';
-import { PageName } from '../enums/pages.enum';
 import { UserDetailsModel } from '../interfaces/Users.interface';
-import { getFunctions, httpsCallable } from 'firebase/functions';
+import { WorkModel } from '../interfaces/Work.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
 
-  private isFormSent$: Subject<void> = new Subject();
   private aboutSource: BehaviorSubject<AboutModel> = new BehaviorSubject(<AboutModel>{});
   private portfolioSource: BehaviorSubject<ProjectModel[]> = new BehaviorSubject(<ProjectModel[]>[]);
   private workSource: BehaviorSubject<WorkModel[]> = new BehaviorSubject(<WorkModel[]>[]);

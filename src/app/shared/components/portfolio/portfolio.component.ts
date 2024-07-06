@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { takeUntil } from 'rxjs';
-import { ProjectModel } from 'src/app/core/interfaces/Project.interface';
-import { ApiService } from 'src/app/core/services/api.service';
-import { PageName } from 'src/app/core/enums/pages.enum';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
+import { PageName } from 'src/app/core/enums/pages.enum';
+import { ProjectDetails, ProjectModel } from 'src/app/core/interfaces/Project.interface';
+import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 
 @Component({
   selector: 'Portfolio',
@@ -23,10 +24,27 @@ export class PortfolioComponent extends UnSubscriber {
 
   public pageName: string = PageName.Portfolio;
 
-
-  constructor(private cd: ChangeDetectorRef) {
+  constructor(private cd: ChangeDetectorRef, private dialog: MatDialog, private sanitizer: DomSanitizer) {
     super();
     super.ngOnDestroy();
     this.cd.markForCheck();
   }
+
+  public redirectToProject(details: ProjectDetails) {
+    let project_url = details.url;
+    if (project_url) {
+      const sanitizedUrl = this.sanitizeDom(project_url);
+      this.dialog.open(DialogContentComponent, {
+        data: {
+          url: sanitizedUrl,
+          details: details
+        }
+      });
+    }
+  }
+
+  private sanitizeDom(url: string): SafeUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
 }

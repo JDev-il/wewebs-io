@@ -10,11 +10,13 @@ import { MonthsToYears } from '../core/pipes/calculation.pipe';
 
 import { AnimationsDirective } from './directives/animations/animations.directive';
 import { ColorConditionDirective } from './directives/coloring/colorConditions.directive';
+import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 
 @NgModule({
   declarations: [
     ...exported.components,
     MonthsToYears,
+    DialogContentComponent,
   ],
   imports: [
     CommonModule,
