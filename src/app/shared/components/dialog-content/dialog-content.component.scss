@@ -13,7 +13,7 @@
     padding: 0;
     margin: 0;
     button {
-      transition: all .08s ease-in-out;
+      transition: all 0.08s ease-in-out;
       padding: 3px;
       margin: 0;
       min-width: unset;
@@ -26,9 +26,11 @@
         width: 45px;
       }
     }
-    :hover {
-      background-color: #8892b0;
-      color: var(--primary-text);
+    @media screen and (min-width: 1280px) {
+      :hover {
+        background-color: #8892b0;
+        color: var(--primary-text);
+      }
     }
   }
 }
@@ -37,11 +39,15 @@ iframe {
   padding: 0;
   margin: 0;
   width: 75vw;
-  min-height: 62vh;
+  min-height: 64vh;
   overflow: hidden !important;
   overflow-clip-margin: unset;
   border-radius: 1em;
   background-color: var(--primary-bg-v2);
+  @media screen and (max-width: 992px) {
+    max-width: 70vw;
+    min-height: 65vh;
+  }
 }
 .overlay {
   position: absolute;
