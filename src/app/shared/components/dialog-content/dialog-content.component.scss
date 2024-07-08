@@ -34,19 +34,24 @@
     }
   }
 }
-iframe {
-  border: none;
-  padding: 0;
-  margin: 0;
-  width: 75vw;
-  min-height: 64vh;
-  overflow: hidden !important;
-  overflow-clip-margin: unset;
-  border-radius: 1em;
-  background-color: var(--primary-bg-v2);
-  @media screen and (max-width: 992px) {
-    max-width: 70vw;
-    min-height: 65vh;
+.dialog-content{
+  .iframe-container{
+    overflow: hidden !important;
+    iframe {
+      border: none;
+      padding: 0;
+      margin: 0;
+      width: 75vw;
+      min-height: 64vh;
+      overflow: hidden !important;
+      overflow-clip-margin: unset;
+      border-radius: 1em;
+      background-color: var(--primary-bg-v2);
+      @media screen and (max-width: 992px) {
+        width: 70vw;
+        min-height: 65vh;
+      }
+    }
   }
 }
 .overlay {
