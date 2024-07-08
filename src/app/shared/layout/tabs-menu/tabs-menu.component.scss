@@ -166,9 +166,6 @@
       border: 1px solid #02fef627;
     }
   }
-  @media screen and (max-width: 992px) {
-    // height: 100%;
-  }
   ::ng-deep .mat-tab-group {
     //display: flex (applied)
     flex-direction: row;
@@ -191,7 +188,6 @@
         height: 100%;
         width: 100%;
         .mat-tab-list {
-          // color: #2a0944;
           color: #02fef6;
           .mat-tab-labels {
             height: 100%;
@@ -212,6 +208,9 @@
               margin: 0;
               transition: all 0.195s cubic-bezier(0.455, 0.03, 0.515, 0.955);
               font-family: "Raleway", sans-serif;
+              @media screen and (max-width: 992px) {
+                opacity: .45;
+              }
               &:not(.mat-tab-label-active) {
                 font-size: 1.08rem;
               }
@@ -227,7 +226,9 @@
                   &::after {
                     background-color: #02fef6c7;
                   }
-                  color: #02fef6c7;
+                  @media screen and (min-width: 992px) {
+                    color: #02fef6c7;
+                  }
                 }
                 &::after {
                   opacity: 1;
