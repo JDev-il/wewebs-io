@@ -1,9 +1,7 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
-import { BarController, Chart, ChartConfiguration, ChartOptions, Color } from 'chart.js';
-import { map, mergeMap, Subscription } from 'rxjs';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ChartsService } from 'src/app/shared/services/charts.service';
 import { BarChart } from '../../../interfaces/Chart.interface';
-import { WorkModel } from '../../../interfaces/Work.interface';
 
 @Component({
   selector: 'BarChart',
@@ -12,7 +10,7 @@ import { WorkModel } from '../../../interfaces/Work.interface';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class BarChartComponent implements OnInit, AfterViewInit {
+export class BarChartComponent implements OnInit {
 
   @Output() sendCurrentCompany = new EventEmitter;
 
@@ -96,9 +94,6 @@ export class BarChartComponent implements OnInit, AfterViewInit {
         }
       }
     }
-  }
-
-  ngAfterViewInit(): void {
   }
 
   ngOnDestroy(): void {
