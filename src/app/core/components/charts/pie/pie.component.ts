@@ -32,8 +32,8 @@ export class PieChartComponent implements OnInit {
           datasets: [
             {
               data: [pies[1].frontend, pies[1].backend],
-              backgroundColor: ["#914566" ,"#545479"],
-              hoverBackgroundColor: ["#762C4E", "#303254"]
+              backgroundColor: ["#F3B16C", "#326D98"],
+              hoverBackgroundColor: ["#E4A272", "#3F6181"],
             }
           ]
         }
@@ -43,9 +43,9 @@ export class PieChartComponent implements OnInit {
           labels: [],
           datasets: [
             {
-              data: [50, 50],
-              backgroundColor: ["#1F212B", "#2B212B"],
-              hoverBackgroundColor: ["#3032542B", "#762C4E2B"]
+              data: [0, 0],
+              backgroundColor: ["#E4A27221", "#3F618121"],
+              hoverBackgroundColor: ["##E4A2722B", "#3F61812B"]
             }
           ]
         }
@@ -65,7 +65,7 @@ export class PieChartComponent implements OnInit {
           onClick: false,
           display: true,
           labels: {
-            color: '#FFFADE'
+            color: '#ffffff'
           }
         }
       }
