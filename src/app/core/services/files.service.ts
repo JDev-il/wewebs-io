@@ -11,7 +11,7 @@ export class FilesService {
 
   constructor(@Inject(DOCUMENT) public document: Document) {
     const link: HTMLAnchorElement = this.document.createElement('a');
-    link.href = 'https://firebasestorage.googleapis.com/v0/b/jdev-il.appspot.com/o/files%2FResume%202024-Jonathan%20Daniel.pdf?alt=media&token=9cecb7ab-b5a6-4c57-bf0c-6eb850216738';
+    link.href = 'https://firebasestorage.googleapis.com/v0/b/jdev-il.appspot.com/o/files%2FJonathan%20Daniel%20CV%20-%20Frontend%20Developer.pdf?alt=media&token=95ef8f6a-ced4-4069-86e3-ed6579dec829';
     this.anchor = link;
   }
 
