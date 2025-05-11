@@ -9,7 +9,7 @@ export class MonthsToYears implements PipeTransform {
     let inYears = +(value / 12).toFixed(1)
     if (value < 12) {
       return `${value}mo`
-    } else if (value < 13) {
+    } else if (value === 12) {
       return `${inYears}yr`
     }
     return `${inYears}yrs`;
