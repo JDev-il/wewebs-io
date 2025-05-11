@@ -111,6 +111,7 @@
             .portfolio-btn {
               transition: top 0.2s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
               top: 0;
+              left: 18%;
               button {
                 transition: opacity 0.4s 0.1s
                   cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -250,7 +251,7 @@
                 width: 250px;
                 height: 250px;
                 position: relative;
-                background-image: url("../../../../assets/images/jonathan_daniel_facebook.jpeg");
+                background-image: url("../../../../assets/images/jonathan_daniel_facebook-2.jpeg");
                 background-repeat: no-repeat;
                 background-position: 50% 10%;
                 background-size: 180% 180%;
@@ -314,6 +315,8 @@
         position: relative;
         transition: top 0.2s 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
         .about-text {
+          max-height: 450px !important;
+          overflow-y: auto !important;
           position: relative;
           width: 100%;
           margin: auto 0 0 18%;
@@ -342,8 +345,9 @@
         .portfolio-btn {
           transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
           position: relative;
-          left: 0;
           top: 15px;
+          left: 18%;
+          padding: 5px 0;
           width: 65%;
           @media screen and (max-width: 992px) {
             position: relative;

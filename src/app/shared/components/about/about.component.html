@@ -1,45 +1,73 @@
-<div class="aboutComponent componentContainer aboutResponssiveComponent simpleFadeIn" Animations [pageName]="'about'">
-  <div class="inComponentWrapper" [ngClass]="{ componentWrapperFx: !isAboutTitleFxEnd }">
+<div
+  class="aboutComponent componentContainer aboutResponssiveComponent simpleFadeIn"
+  Animations
+  [pageName]="'about'"
+>
+  <div
+    class="inComponentWrapper"
+    [ngClass]="{ componentWrapperFx: !isAboutTitleFxEnd }"
+  >
     <div class="componentHeader">
       <div class="headerWrapper">
-        <div class="headerOverlay" [ngClass]="
+        <div
+          class="headerOverlay"
+          [ngClass]="
             isAboutTitleFxEnd ? 'headerOverlayAfterFx' : 'overlayAnimation'
-          ">
-          <div class="aboutImg" [ngClass]="{'postAboutImgFx': !isAboutTitleFxEnd}">
+          "
+        >
+          <div
+            class="aboutImg"
+            [ngClass]="{ postAboutImgFx: !isAboutTitleFxEnd }"
+          >
             <div class="imgWrapper">
               <div class="aboutImageBackground"></div>
             </div>
           </div>
         </div>
         <div class="aboutTitle">
-          <div class="staticTitle" [ngClass]="!isAboutTitleFxEnd ? 'staticTitleFx' : 'postStaticTitleFx'">
+          <div
+            class="staticTitle"
+            [ngClass]="
+              !isAboutTitleFxEnd ? 'staticTitleFx' : 'postStaticTitleFx'
+            "
+          >
             <h1>Jonathan Daniel</h1>
             <div [ngClass]="!isAboutTitleFxEnd ? 'awaiting-title' : ''">
               <span>Software Developer</span>
             </div>
           </div>
-          <div [ngClass]="{'moveTitleFx': !isAboutTitleFxEnd}"
-            *ngIf="!isAboutTitleFxEnd; else textcarousel">
-            <h1 [ngClass]="{'showUpFx': !isAboutTitleFxEnd}">Hi!</h1>
-            <h2 [ngClass]="{'showUpFx2': !isAboutTitleFxEnd}">I'm Jonathan..</h2>
-            <h3 [ngClass]="{'showUpFx3': !isAboutTitleFxEnd}">And this is my portfolio!</h3>
+          <div
+            [ngClass]="{ moveTitleFx: !isAboutTitleFxEnd }"
+            *ngIf="!isAboutTitleFxEnd; else textcarousel"
+          >
+            <h1 [ngClass]="{ showUpFx: !isAboutTitleFxEnd }">Hi!</h1>
+            <h2 [ngClass]="{ showUpFx2: !isAboutTitleFxEnd }">
+              I'm Jonathan..
+            </h2>
+            <h3 [ngClass]="{ showUpFx3: !isAboutTitleFxEnd }">
+              And this is my portfolio!
+            </h3>
           </div>
         </div>
       </div>
     </div>
 
     <div class="component-content">
-      <div class="about-content-wrapper" [ngClass]="{'moveInTextFx': !isAboutTitleFxEnd}"
-        (mouseenter)="fillHeader = true" (mouseleave)="fillHeader = false">
+      <div
+        class="about-content-wrapper"
+        [ngClass]="{ moveInTextFx: !isAboutTitleFxEnd }"
+        (mouseenter)="fillHeader = true"
+        (mouseleave)="fillHeader = false"
+      >
         <div class="about-text">
           <div class="summary" *ngFor="let summary of aboutData.summary">
             <p class="summary-text">
               {{ summary }}
             </p>
           </div>
-          <div class="portfolio-btn">
-            <button (click)="viewPortfolio()">View Portfolio</button>
-          </div>
+        </div>
+        <div class="portfolio-btn">
+          <button (click)="viewPortfolio()">View Portfolio</button>
         </div>
       </div>
     </div>
