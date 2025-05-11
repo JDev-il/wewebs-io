@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.42 47.25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: Roboto-Black, Roboto;
+        font-size: 7.63px;
+        font-weight: 800;
+      }
+
+      .cls-2 {
+        fill: #00fdf5;
+      }
+
+      .cls-3 {
+        fill: #271d3a;
+      }
+
+      .cls-4 {
+        fill: #02fef6;
+      }
+
+      .cls-5 {
+        letter-spacing: .05em;
+      }
+
+      .cls-6 {
+        letter-spacing: .05em;
+      }
+
+      .cls-7 {
+        letter-spacing: .04em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <path class="cls-2" d="M29.61,12h-10.2c-.14,0-.22.17-.13.28l9.46,11.62c.05.06.05.15,0,.21l-9.46,11.62c-.09.11-.01.28.13.28h10.2c.05,0,.1-.02.13-.06l9.63-11.83c.05-.06.05-.15,0-.21l-9.63-11.83s-.08-.06-.13-.06Z"/>
+        <path class="cls-3" d="M24.25,12h.61l9.68,11.89c.05.06.05.16,0,.22l-9.68,11.89h-.61l9.68-11.89c.05-.06.05-.16,0-.22l-9.68-11.89Z"/>
+        <g>
+          <path class="cls-4" d="M9.8,0h10.2c.14,0,.22.17.13.28l-9.46,11.62c-.05.06-.05.15,0,.21l9.46,11.62c.09.11.01.28-.13.28h-10.2c-.05,0-.1-.02-.13-.06L.04,12.11c-.05-.06-.05-.15,0-.21L9.67.06S9.75,0,9.8,0Z"/>
+          <path class="cls-3" d="M15.17,0h-.61L4.88,11.89c-.05.06-.05.16,0,.22l9.68,11.89h.61L5.49,12.11c-.05-.06-.05-.16,0-.22L15.17,0Z"/>
+        </g>
+      </g>
+      <text class="cls-1" transform="translate(0 45.18)"><tspan class="cls-6" x="0" y="0">WeD</tspan><tspan class="cls-7" x="16.86" y="0">e</tspan><tspan class="cls-5" x="21.34" y="0">vz.io</tspan></text>
+    </g>
+  </g>
+</svg>

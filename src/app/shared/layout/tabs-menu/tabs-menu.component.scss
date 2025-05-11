@@ -109,11 +109,11 @@
   }
   .jdev-logo {
     position: fixed;
-    background-image: url("../../../../assets/images/logo.svg");
+    background-image: url("../../../../assets/images/wedevz-logo.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    height: 50px;
-    width: 50px;
+    height: 65px;
+    width: 65px;
     left: 3.5vw;
     top: 5vh;
     z-index: 888;
@@ -142,7 +142,7 @@
       font-weight: 100;
       transition: all 0.215s cubic-bezier(0.47, 0, 0.745, 0.715) !important;
       span {
-        font-size: .9rem;
+        font-size: 0.9rem;
         padding-right: 5px;
         padding-top: 1px;
       }
@@ -155,7 +155,7 @@
       @media screen and (max-width: 992px) {
         font-size: smaller;
         span {
-          font-size: .5rem;
+          font-size: 0.5rem;
           padding-right: 2px;
         }
       }
@@ -209,7 +209,7 @@
               transition: all 0.195s cubic-bezier(0.455, 0.03, 0.515, 0.955);
               font-family: "Raleway", sans-serif;
               @media screen and (max-width: 992px) {
-                opacity: .45;
+                opacity: 0.45;
               }
               &:not(.mat-tab-label-active) {
                 font-size: 1.08rem;
@@ -355,7 +355,7 @@
           }
           @media screen and (max-width: 1440px) {
             font-size: 120%;
-             @media screen and (max-width: 1200px) {
+            @media screen and (max-width: 1200px) {
               font-size: 100%;
               @media screen and (max-width: 992px) {
                 width: 100%;

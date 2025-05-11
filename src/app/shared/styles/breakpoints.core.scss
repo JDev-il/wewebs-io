@@ -115,15 +115,13 @@
     }
   }
   .jdev-logo {
-    @media screen and (max-width: 1440px) {
-      left: 5.5vw;
-      @media screen and (max-width: 1200px) {
-        left: 3vw;
-        @media screen and (max-width: 992px) {
-          height: 30px;
-          width: 30px;
-          top: 11vh;
-        }
+    @media screen and (max-width: 1880px) {
+      left: 3.5rem;
+      @media screen and (max-width: 992px) {
+        left: 2rem;
+        height: 30px;
+        width: 30px;
+        top: 11vh;
       }
     }
   }
