@@ -27,10 +27,9 @@
           left: 25%;
           @media screen and (max-width: 1366px) {
             @media screen and (max-width: 992px) {
-              left: 0;
-              right: 0;
+              width: 100%;
+              top: 15vh;
               margin: 0 auto;
-              width: 80%;
               @media screen and (max-width: 768px) {
                 top: 16vh;
                 @media screen and (max-width: 540px) {

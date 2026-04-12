@@ -5,10 +5,10 @@ import {
   Component,
   Input,
 } from '@angular/core';
+import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
+import { PageName } from 'src/app/core/enums/pages.enum';
 import { WorkModel } from 'src/app/core/interfaces/Work.interface';
 import { ChartsService } from '../../services/charts.service';
-import { PageName } from 'src/app/core/enums/pages.enum';
-import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 
 @Component({
   selector: 'Experience',

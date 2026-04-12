@@ -1,5 +1,3 @@
-import { AngularFireStorageReference } from "@angular/fire/compat/storage";
-
 export interface WorkModel {
   company: string;
   role: string;
@@ -9,8 +7,7 @@ export interface WorkModel {
   chart_ref: any;
 }
 
-
-interface DateField {
+export interface DateField {
   from: string,
   to: string,
   total_in_months: string
