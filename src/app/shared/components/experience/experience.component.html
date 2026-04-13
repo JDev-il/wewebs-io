@@ -29,7 +29,7 @@
                 >
                   <mat-panel-title>
                     <h1>{{ work.role }}</h1>
-                    <h2>// {{ +work.date.total_in_months | M2Y }}</h2>
+                    <h2>{{ dateExtractor(work.date) | M2Y }}</h2>
                   </mat-panel-title>
                   <mat-panel-description>
                     <h5>

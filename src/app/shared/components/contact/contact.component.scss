@@ -26,19 +26,18 @@
           right: unset;
           left: 25%;
           @media screen and (max-width: 1366px) {
+            left: 33%;
             @media screen and (max-width: 992px) {
+              right: unset;
               width: 100%;
-              top: 15vh;
-              margin: 0 auto;
-              @media screen and (max-width: 768px) {
-                top: 16vh;
-                @media screen and (max-width: 540px) {
-                  top: 15vh;
-                  @media screen and (max-width: 375px) {
-                    top: 5vh;
-                    @media screen and (max-width: 365px) {
-                      top: 4vh;
-                    }
+              top: 12vh;
+              left: 25%;
+              @media screen and (max-width: 540px) {
+                top: 10vh;
+                @media screen and (max-width: 375px) {
+                  top: 5vh;
+                  @media screen and (max-width: 365px) {
+                    top: 4vh;
                   }
                 }
               }
@@ -72,6 +71,12 @@
             bottom: 0;
             position: relative;
           }
+          @media screen and (max-width: 1280px) {
+            justify-content: flex-start;
+            h1 {
+              font-size: 2.4rem;
+            }
+          }
           @media screen and (max-width: 992px) {
             padding: 0;
             justify-content: flex-start !important;
@@ -81,11 +86,17 @@
           margin: 0;
           padding: 0 0 15px;
           p {
-            color: var(--primary-text-lighter);
             font-size: 1rem;
             color: var(--alt-text2);
+            @media screen and (max-width: 1280px) {
+              max-width: 60%;
+            }
             @media screen and (max-width: 992px) {
               font-size: 0.9rem;
+              display: flex;
+              align-items: flex-start;
+              justify-self: flex-start;
+              max-width: 50%;
             }
           }
         }
@@ -176,7 +187,8 @@
           border-radius: 0.6em;
           overflow: hidden;
           box-shadow: 0 2px 15px -2px #02fef6b7;
-          transition: box-shadow 0.15s ease-in-out,
+          transition:
+            box-shadow 0.15s ease-in-out,
             background-color 0.15s ease-in-out;
           background-color: #1d1330;
           &:hover {

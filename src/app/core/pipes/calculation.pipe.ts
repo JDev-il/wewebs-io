@@ -6,12 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class MonthsToYears implements PipeTransform {
   transform(value: number): string {
-    let inYears = +(value / 12).toFixed(1)
     if (value < 12) {
-      return `${value}mo`
-    } else if (value === 12) {
-      return `${inYears}yr`
+      return `// ${value}mo`;
     }
-    return `${inYears}yrs`;
+    const years = value / 12;
+    const formatted = Number.isInteger(years) ? years : years.toFixed(1);
+    return `// ${formatted}yrs`;
   }
 }
+

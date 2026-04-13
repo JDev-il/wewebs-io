@@ -106,7 +106,7 @@
   }
   .resumeBtn {
     @media screen and (max-width: 992px) {
-      right: 3vw;
+      right: 20px;
       top: 11vh;
       button {
         padding: 6px;
@@ -141,7 +141,7 @@
           .aboutTitle {
             left: 5%;
             .textCarouselWrapper {
-              left: 26%;
+              left: 28%;
               @media screen and (max-width: 1600px) {
                 left: 30%;
                 @media screen and (max-width: 1440px) {
@@ -183,30 +183,27 @@
           }
           .staticTitle {
             left: 28%;
+            top: 8rem;
             @media screen and (min-width: 1920px) {
               h1 {
                 font-size: 3.2rem;
               }
-              top: 13vh;
             }
             @media screen and (max-width: 1920px) {
               h1 {
                 font-size: 2.8rem;
               }
               left: 28%;
-              top: 10vh;
               @media screen and (max-width: 1600px) {
                 h1 {
                   font-size: 2.6rem;
                 }
                 left: 30%;
-                top: 15vh;
                 @media screen and (max-width: 1440px) {
                   h1 {
                     font-size: 2.4rem;
                   }
                   left: 33%;
-                  top: 16vh;
                   @media screen and (max-width: 1366px) {
                     h1 {
                       font-size: 2.2rem;
@@ -215,19 +212,20 @@
                       h1 {
                         font-size: 2rem;
                       }
-                      left: 35%;
-                      top: 14vh;
-
-                      @media screen and (max-width: 992px) {
-                        h1 {
-                          font-size: 1.9rem;
-                          padding-bottom: 4px;
+                      left: 36%;
+                      @media screen and (max-width: 1024px) {
+                        left: 40%;
+                        @media screen and (max-width: 992px) {
+                          h1 {
+                            font-size: 1.9rem;
+                            padding-bottom: 4px;
+                          }
+                          width: 100%;
+                          position: fixed;
+                          text-align: center;
+                          left: 0;
+                          top: 9rem;
                         }
-                        width: 100%;
-                        position: fixed;
-                        text-align: center;
-                        left: 0;
-                        top: 15vh;
                       }
                     }
                   }
@@ -985,7 +983,6 @@
               }
             }
             img {
-              // padding-left: 5px;
               bottom: 0;
               position: relative;
             }

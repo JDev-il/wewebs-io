@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { UnSubscriber } from 'src/app/core/abstracts/UnSubscriber';
 import { PageName } from 'src/app/core/enums/pages.enum';
-import { WorkModel } from 'src/app/core/interfaces/Work.interface';
+import { DateField, WorkModel } from 'src/app/core/interfaces/Work.interface';
 import { ChartsService } from '../../services/charts.service';
 
 @Component({
@@ -39,6 +39,21 @@ export class ExperienceComponent extends UnSubscriber implements AfterContentIni
 
   public get isExperienceAnimation(): boolean {
     return !!sessionStorage.getItem('experienceAnimation');
+  }
+
+  public dateExtractor(dates: DateField): number {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+
+    const normalizedTo = dates.to.toLowerCase().includes("present")
+      ? `${year}/${month}`
+      : dates.to;
+
+    const [y1, m1] = dates.from.split('/').map(Number);
+    const [y2, m2] = normalizedTo.split('/').map(Number);
+
+    return (y2 - y1) * 12 + (m2 - m1) + 1;
   }
 
   public passDataToDataService(data: any) {

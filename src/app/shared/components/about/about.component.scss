@@ -31,8 +31,8 @@
               .textCarouselWrapper {
                 width: 33%;
                 position: relative;
-                transition: left 0.45s 0.8s
-                    cubic-bezier(0.455, 0.03, 0.515, 0.955),
+                transition:
+                  left 0.45s 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955),
                   top 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955),
                   opacity 0.3s 0.9s cubic-bezier(0.6, 0.04, 0.98, 0.335);
                 opacity: 1;
@@ -91,8 +91,8 @@
                   top: 8px;
                   transform: scale(0.99) translateY(0);
                   .aboutImageBackground {
-                    transition: border-radius 0.3s
-                        cubic-bezier(0.47, 0, 0.745, 0.715),
+                    transition:
+                      border-radius 0.3s cubic-bezier(0.47, 0, 0.745, 0.715),
                       background-color 0.4s 0.2s
                         cubic-bezier(0.39, 0.575, 0.565, 1),
                       box-shadow 0.3s 0.2s cubic-bezier(0.23, 1, 0.32, 1);
@@ -126,7 +126,8 @@
       display: flex;
       align-items: center;
       position: relative;
-      transition: background-color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+      transition:
+        background-color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95),
         width 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
         transform 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
       width: 100%;
@@ -177,7 +178,8 @@
           }
           .textCarouselWrapper {
             position: relative;
-            transition: left 0.2s 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+            transition:
+              left 0.2s 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),
               top 0.2s 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955),
               opacity 0.3s 0.02s cubic-bezier(0.6, 0.04, 0.98, 0.335);
             width: 100%;
@@ -230,8 +232,8 @@
           padding: 45px 0;
           top: 0;
           z-index: 4;
-          transition: background-color 0.35s
-              cubic-bezier(0.445, 0.05, 0.55, 0.95),
+          transition:
+            background-color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95),
             width 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
             transform 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95),
             left 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
@@ -242,8 +244,8 @@
               top: 0;
               transform: scale(1) translateY(0%);
               .aboutImageBackground {
-                transition: border-radius 0.3s
-                    cubic-bezier(0.47, 0, 0.745, 0.715),
+                transition:
+                  border-radius 0.3s cubic-bezier(0.47, 0, 0.745, 0.715),
                   background-color 0.4s 0.2s cubic-bezier(0.39, 0.575, 0.565, 1),
                   box-shadow 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
                 border-radius: 10%;
@@ -284,6 +286,29 @@
                   height: 200px;
                 }
               }
+              @media screen and (max-width: 992px) {
+                top: 1rem;
+                .aboutImageBackground {
+                  transform: scale(0.9);
+                  max-width: 8rem;
+                  max-height: 8rem;
+                }
+              }
+              @media screen and (max-width: 544px) {
+                top: 0.5rem;
+                .aboutImageBackground {
+                  transform: scale(0.88);
+                }
+              }
+              @media screen and (max-width: 375px) {
+                top: 2rem;
+                .aboutImageBackground {
+                  transform: scale(0.85);
+                }
+              }
+              @media screen and (max-width: 992px) and (min-height: 1024px) {
+                top: -2rem;
+              }
             }
           }
         }
@@ -297,15 +322,10 @@
         position: relative;
         max-height: 48%;
         overflow: auto;
-        top: 18vh;
-        @media screen and (max-width: 768px) {
-          max-height: 45%;
-          top: 19vh;
-          @media screen and (max-width: 375px) {
-            max-height: 40%;
-            top: 20vh;
-          }
-        }
+        top: 12rem;
+      }
+      @media screen and (max-width: 375px) {
+        top: 10rem;
       }
       .about-content-wrapper {
         @media screen and (max-width: 992px) {
@@ -320,6 +340,9 @@
           position: relative;
           width: 100%;
           margin: auto 0 0 18%;
+          @media screen and (max-width: 992px) {
+            margin: auto 0;
+          }
           .summary {
             width: 55%;
             .summary-text {
