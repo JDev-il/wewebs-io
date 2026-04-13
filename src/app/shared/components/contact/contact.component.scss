@@ -20,7 +20,7 @@
         flex-flow: column;
         justify-content: center;
         position: absolute;
-        top: 25vh;
+        top: 18rem;
         right: 10%;
         @media screen and (max-width: 1600px) {
           right: unset;
@@ -30,15 +30,12 @@
             @media screen and (max-width: 992px) {
               right: unset;
               width: 100%;
-              top: 12vh;
+              top: 8rem;
               left: 25%;
               @media screen and (max-width: 540px) {
-                top: 10vh;
+                top: 5rem;
                 @media screen and (max-width: 375px) {
-                  top: 5vh;
-                  @media screen and (max-width: 365px) {
-                    top: 4vh;
-                  }
+                  top: 2rem;
                 }
               }
             }

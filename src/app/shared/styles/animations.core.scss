@@ -80,7 +80,6 @@
           right: 6vw;
         }
       }
-
     }
   }
 
@@ -180,7 +179,7 @@
 
 .overlayAnimation {
   z-index: 0;
-  animation: moveImgAfterDoneFx both 2s 5.5s
+  animation: moveImgAfterDoneFx both 3.2s 5.8s
     cubic-bezier(0.645, 0.045, 0.355, 1);
   @media screen and (max-width: 992px) {
     @keyframes moveImgAfterDoneFx {
@@ -208,8 +207,6 @@
       }
     }
   }
-
-
 }
 
 .headerOverlayAfterFx {

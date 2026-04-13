@@ -389,7 +389,7 @@
     &:hover {
       .verticalFloatingDiv {
         a {
-          height: 345px;
+          height: 205px;
           color: var(--alt-text2);
         }
         &::after {
@@ -423,7 +423,7 @@
         -webkit-writing-mode: vertical-rl;
         writing-mode: vertical-rl;
         text-decoration: none;
-        height: 340px;
+        height: 200px;
         color: var(--primary-text-light);
       }
       &::after {
